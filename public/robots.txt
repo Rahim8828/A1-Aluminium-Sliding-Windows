@@ -1,0 +1,14 @@
+# robots.txt for A1 Aluminium, Glass & Netting Solutions
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow API routes and private paths
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://a1aluminium.com/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+# Crawl-delay: 1
