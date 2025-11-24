@@ -20,6 +20,27 @@ body {
   font-family: var(--font-poppins), 'Poppins', Arial, Helvetica, sans-serif;
 }
 
+/* Safe area support for iOS devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Touch optimization */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Accessibility: Enhanced focus indicators */
 *:focus-visible {
   outline: 3px solid #f97316;

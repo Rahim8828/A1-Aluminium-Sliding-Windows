@@ -8,6 +8,7 @@ import { generateLocalBusinessSchema } from "@/lib/structured-data";
 import { BUSINESS_INFO, SEO_KEYWORDS } from "@/lib/constants";
 import Header from "@/components/layout/Header";
 import { GA_TRACKING_ID } from "@/lib/analytics";
+import { CartProvider } from "@/contexts/CartContext";
 
 // Dynamic imports for non-critical layout components
 // Footer can be SSR'd as it's not interactive
@@ -19,6 +20,8 @@ const MobileNav = dynamic(() => import("@/components/layout/MobileNav"));
 const EmergencyBanner = dynamic(() => import("@/components/layout/EmergencyBanner"));
 
 const Analytics = dynamic(() => import("@/components/analytics/Analytics"));
+
+const BookingSummaryBar = dynamic(() => import("@/components/cart/BookingSummaryBar"));
 
 const inter = Inter({
   variable: "--font-inter",
@@ -109,43 +112,45 @@ export default function RootLayout({
         <StructuredData data={localBusinessSchema} />
       </head>
       <body className="font-sans antialiased">
-        {/* Skip to main content link for keyboard navigation */}
-        <a href="#main-content" className="skip-to-content">
-          Skip to main content
-        </a>
-        
-        {/* Google Analytics */}
-        {GA_TRACKING_ID && (
-          <>
-            <Script
-              strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-            />
-            <Script
-              id="google-analytics"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${GA_TRACKING_ID}', {
-                    page_path: window.location.pathname,
-                  });
-                `,
-              }}
-            />
-          </>
-        )}
-        
-        <Analytics />
-        <EmergencyBanner />
-        <Header />
-        <main id="main-content" className="min-h-screen pt-20 pb-16 md:pb-0">
-          {children}
-        </main>
-        <Footer />
-        <MobileNav />
+        <CartProvider>
+          {/* Skip to main content link for keyboard navigation */}
+          <a href="#main-content" className="skip-to-content">
+            Skip to main content
+          </a>
+          
+          {/* Google Analytics */}
+          {GA_TRACKING_ID && (
+            <>
+              <Script
+                strategy="afterInteractive"
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+              />
+              <Script
+                id="google-analytics"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${GA_TRACKING_ID}', {
+                      page_path: window.location.pathname,
+                    });
+                  `,
+                }}
+              />
+            </>
+          )}
+          
+          <Analytics />
+          <Header />
+          <main id="main-content" className="min-h-screen pt-16 md:pt-20 pb-20 md:pb-0">
+            {children}
+          </main>
+          <Footer />
+          <BookingSummaryBar />
+          <MobileNav />
+        </CartProvider>
       </body>
     </html>
   );

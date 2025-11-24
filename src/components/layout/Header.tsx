@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Menu, X, ChevronDown, Phone, MessageCircle } from 'lucide-react';
 import { BUSINESS_INFO, NAV_LINKS, SERVICE_CATEGORIES } from '@/lib/constants';
 import { trackCTAClick, trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
+import { CartIcon } from '@/components/cart';
 
 interface HeaderProps {
   transparent?: boolean;
@@ -48,7 +49,7 @@ export default function Header({ transparent = false }: HeaderProps) {
   return (
     <header className={headerClasses}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image 
@@ -56,7 +57,7 @@ export default function Header({ transparent = false }: HeaderProps) {
               alt="A1 Aluminium, Glass & Netting Solutions" 
               width={120}
               height={60}
-              className="h-12 w-auto"
+              className="h-10 md:h-12 w-auto"
               priority
             />
           </Link>
@@ -136,6 +137,7 @@ export default function Header({ transparent = false }: HeaderProps) {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
+            <CartIcon />
             <a
               href={`tel:${BUSINESS_INFO.phone.primary}`}
               onClick={handleCallClick}

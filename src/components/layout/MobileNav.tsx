@@ -2,89 +2,78 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { Home, Briefcase, Mail, Phone } from 'lucide-react';
-import { BUSINESS_INFO } from '@/lib/constants';
+import { Home, Wrench, ShoppingBag, ShoppingCart } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
 
 export default function MobileNav() {
   const pathname = usePathname();
-
-  const handleCallClick = () => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'phone_click', {
-        event_category: 'engagement',
-        event_label: 'mobile_nav_call',
-      });
-    }
-  };
+  const { getItemCount } = useCart();
+  const itemCount = getItemCount();
 
   const navItems = [
     {
-      label: 'Home',
+      label: 'A1',
       href: '/',
       icon: Home,
     },
     {
       label: 'Services',
       href: '/services',
-      icon: Briefcase,
+      icon: Wrench,
     },
     {
-      label: 'Contact',
-      href: '/contact',
-      icon: Mail,
+      label: 'Products',
+      href: '/services',
+      icon: ShoppingBag,
     },
     {
-      label: 'Call',
-      href: `tel:${BUSINESS_INFO.phone.primary}`,
-      icon: Phone,
-      isExternal: true,
-      onClick: handleCallClick,
+      label: 'Cart',
+      href: '/cart',
+      icon: ShoppingCart,
+      badge: itemCount,
     },
   ];
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-lg md:hidden"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg md:hidden safe-area-bottom"
+      style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       aria-label="Mobile navigation"
     >
-      <div className="flex items-center justify-around h-16">
+      <div className="flex items-center justify-around min-h-[64px]">
         {navItems.map((item) => {
           const Icon = item.icon;
-          const isActive = pathname === item.href;
-
-          if (item.isExternal) {
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={item.onClick}
-                className={`flex flex-col items-center justify-center flex-1 h-full space-y-1 transition-colors ${
-                  isActive
-                    ? 'text-orange-600'
-                    : 'text-gray-600 hover:text-orange-600'
-                }`}
-                aria-label={item.label}
-              >
-                <Icon className="w-6 h-6" />
-                <span className="text-xs font-medium">{item.label}</span>
-              </a>
-            );
-          }
+          const isActive = pathname === item.href || 
+            (item.href === '/services' && pathname?.startsWith('/services'));
 
           return (
             <Link
               key={item.label}
               href={item.href}
-              className={`flex flex-col items-center justify-center flex-1 h-full space-y-1 transition-colors ${
+              className={`flex flex-col items-center justify-center flex-1 min-h-[64px] py-2 px-1 transition-colors relative touch-manipulation ${
                 isActive
                   ? 'text-orange-600'
-                  : 'text-gray-600 hover:text-orange-600'
+                  : 'text-gray-600 active:text-orange-600'
               }`}
               aria-label={item.label}
               aria-current={isActive ? 'page' : undefined}
             >
-              <Icon className="w-6 h-6" />
-              <span className="text-xs font-medium">{item.label}</span>
+              {/* Active Indicator */}
+              {isActive && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-1 bg-orange-600 rounded-b-full" />
+              )}
+
+              {/* Icon with Badge */}
+              <div className="relative mb-1">
+                <Icon className="w-5 h-5" />
+                {item.badge !== undefined && item.badge > 0 && (
+                  <span className="absolute -top-1.5 -right-1.5 bg-orange-600 text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1">
+                    {item.badge > 9 ? '9+' : item.badge}
+                  </span>
+                )}
+              </div>
+
+              <span className="text-[10px] font-medium leading-tight">{item.label}</span>
             </Link>
           );
         })}

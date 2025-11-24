@@ -7,20 +7,16 @@ import { generateLocalBusinessSchema } from '@/lib/structured-data';
 import { BUSINESS_INFO, SEO_KEYWORDS } from '@/lib/constants';
 
 // Dynamic imports for below-the-fold components to improve initial load performance
-const WhyChooseUs = dynamic(() => import('../components/home/WhyChooseUs').then(mod => ({ default: mod.WhyChooseUs })), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+const WhyChooseUsWithStats = dynamic(() => import('../components/home/WhyChooseUsWithStats').then(mod => ({ default: mod.WhyChooseUsWithStats })), {
+  loading: () => <div className="h-96 animate-pulse bg-orange-600" />,
 });
 
 const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => ({ default: mod.Testimonials })), {
   loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
 });
 
-const StatsCounter = dynamic(() => import('../components/home/StatsCounter').then(mod => ({ default: mod.StatsCounter })), {
-  loading: () => <div className="h-64 animate-pulse bg-orange-600" />,
-});
-
-const BlogPreview = dynamic(() => import('../components/home/BlogPreview').then(mod => ({ default: mod.BlogPreview })), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+const FinalCTA = dynamic(() => import('../components/home/FinalCTA').then(mod => ({ default: mod.FinalCTA })), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />,
 });
 
 // SEO Metadata optimized for main keywords
@@ -95,74 +91,16 @@ export default function Home() {
         <HeroSection />
 
         {/* Services Overview Section */}
-        <section className="bg-white py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-                Our Services
-              </h2>
-              <p className="mx-auto max-w-2xl text-lg text-gray-600">
-                Comprehensive aluminium, glass, and netting solutions for residential and
-                commercial properties across Mumbai
-              </p>
-            </div>
-            <ServicesOverview />
-          </div>
-        </section>
+        <ServicesOverview />
 
-        {/* Why Choose Us Section */}
-        <section className="bg-gray-50 py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-                Why Choose A1 Aluminium?
-              </h2>
-              <p className="mx-auto max-w-2xl text-lg text-gray-600">
-                Experience the difference with Mumbai&apos;s trusted aluminium, glass, and
-                netting experts
-              </p>
-            </div>
-            <WhyChooseUs />
-          </div>
-        </section>
-
-        {/* Stats Counter Section */}
-        <section className="bg-orange-600 py-16 md:py-20">
-          <div className="container mx-auto px-4">
-            <StatsCounter />
-          </div>
-        </section>
+        {/* Why Choose Us with Stats - Merged Section */}
+        <WhyChooseUsWithStats />
 
         {/* Testimonials Section */}
-        <section className="bg-white py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-                What Our Customers Say
-              </h2>
-              <p className="mx-auto max-w-2xl text-lg text-gray-600">
-                Don&apos;t just take our word for it - hear from our satisfied customers
-                across Mumbai
-              </p>
-            </div>
-            <Testimonials />
-          </div>
-        </section>
+        <Testimonials />
 
-        {/* Blog Preview Section */}
-        <section className="bg-gray-50 py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-                Latest from Our Blog
-              </h2>
-              <p className="mx-auto max-w-2xl text-lg text-gray-600">
-                Tips, guides, and insights about aluminium, glass, and netting solutions
-              </p>
-            </div>
-            <BlogPreview />
-          </div>
-        </section>
+        {/* Final CTA Section */}
+        <FinalCTA />
       </main>
     </>
   );

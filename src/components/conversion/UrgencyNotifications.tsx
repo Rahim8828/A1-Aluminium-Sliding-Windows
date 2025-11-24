@@ -1,16 +1,17 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { X, Users, CheckCircle, Clock } from 'lucide-react';
+import { X, Users, CheckCircle, Clock, ShoppingCart, TrendingUp } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
 
 interface UrgencyNotification {
   id: string;
   message: string;
   type: 'info' | 'success';
-  icon?: 'users' | 'check' | 'clock';
+  icon?: 'users' | 'check' | 'clock' | 'cart' | 'trending';
 }
 
-const NOTIFICATIONS: UrgencyNotification[] = [
+const BASE_NOTIFICATIONS: UrgencyNotification[] = [
   {
     id: '1',
     message: '3 customers contacted us today from Andheri',
@@ -43,10 +44,50 @@ const NOTIFICATIONS: UrgencyNotification[] = [
   }
 ];
 
+const CART_NOTIFICATIONS: UrgencyNotification[] = [
+  {
+    id: 'cart-1',
+    message: 'Someone just completed a booking with 3 services',
+    type: 'success',
+    icon: 'cart'
+  },
+  {
+    id: 'cart-2',
+    message: '8 customers added items to cart in the last hour',
+    type: 'info',
+    icon: 'trending'
+  },
+  {
+    id: 'cart-3',
+    message: 'Complete your booking now - limited slots remaining!',
+    type: 'info',
+    icon: 'clock'
+  },
+  {
+    id: 'cart-4',
+    message: 'Free consultation included with all bookings today',
+    type: 'success',
+    icon: 'check'
+  },
+  {
+    id: 'cart-5',
+    message: '12 customers booked services this week',
+    type: 'success',
+    icon: 'users'
+  }
+];
+
 export default function UrgencyNotifications() {
+  const { getItemCount } = useCart();
+  const hasCartItems = getItemCount() > 0;
   const [currentNotification, setCurrentNotification] = useState<UrgencyNotification | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [notificationIndex, setNotificationIndex] = useState(0);
+
+  // Select notification pool based on cart state
+  const notifications = hasCartItems 
+    ? [...CART_NOTIFICATIONS, ...BASE_NOTIFICATIONS] 
+    : BASE_NOTIFICATIONS;
 
   useEffect(() => {
     // Show first notification after 10 seconds
@@ -69,14 +110,14 @@ export default function UrgencyNotifications() {
   }, [isVisible]);
 
   const showNotification = (index: number) => {
-    const notification = NOTIFICATIONS[index % NOTIFICATIONS.length];
+    const notification = notifications[index % notifications.length];
     setCurrentNotification(notification);
     setIsVisible(true);
 
     // Schedule next notification (30-45 seconds later)
     const nextDelay = 30000 + Math.random() * 15000;
     setTimeout(() => {
-      const nextIndex = (index + 1) % NOTIFICATIONS.length;
+      const nextIndex = (index + 1) % notifications.length;
       setNotificationIndex(nextIndex);
       showNotification(nextIndex);
     }, nextDelay + 6000); // Add display duration
@@ -94,6 +135,10 @@ export default function UrgencyNotifications() {
         return <CheckCircle className="w-5 h-5" />;
       case 'clock':
         return <Clock className="w-5 h-5" />;
+      case 'cart':
+        return <ShoppingCart className="w-5 h-5" />;
+      case 'trending':
+        return <TrendingUp className="w-5 h-5" />;
       default:
         return <CheckCircle className="w-5 h-5" />;
     }

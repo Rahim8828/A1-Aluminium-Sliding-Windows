@@ -36,13 +36,16 @@ a1-aluminium-website/
 │   │   ├── about/
 │   │   │   └── page.tsx
 │   │   ├── services/
-│   │   │   ├── page.tsx               # Services overview
+│   │   │   ├── page.tsx               # Services grid with modal
+│   │   │   ├── ServicesPageClient.tsx # Client component for modal
 │   │   │   ├── aluminium/
 │   │   │   │   └── page.tsx
 │   │   │   ├── glass/
 │   │   │   │   └── page.tsx
 │   │   │   └── netting/
 │   │   │       └── page.tsx
+│   │   ├── cart/
+│   │   │   └── page.tsx               # Shopping cart page
 │   │   ├── contact/
 │   │   │   └── page.tsx
 │   │   ├── blog/
@@ -69,8 +72,18 @@ a1-aluminium-website/
 │   │   │   └── BlogPreview.tsx
 │   │   ├── services/
 │   │   │   ├── ServiceCard.tsx
+│   │   │   ├── ServiceGrid.tsx
+│   │   │   ├── ServiceDetailModal.tsx
+│   │   │   ├── ServiceOptionCard.tsx
 │   │   │   ├── ServiceDetail.tsx
 │   │   │   └── ServiceFAQ.tsx
+│   │   ├── cart/
+│   │   │   ├── CartIcon.tsx
+│   │   │   ├── FloatingCartButton.tsx
+│   │   │   ├── CartItem.tsx
+│   │   │   ├── CartSummary.tsx
+│   │   │   ├── CouponSection.tsx
+│   │   │   └── BookingSummaryBar.tsx
 │   │   ├── contact/
 │   │   │   ├── ContactForm.tsx
 │   │   │   ├── WhatsAppButton.tsx
@@ -85,16 +98,25 @@ a1-aluminium-website/
 │   │   └── ui/
 │   │       ├── Button.tsx
 │   │       ├── Card.tsx
-│   │       └── Modal.tsx
+│   │       ├── Modal.tsx
+│   │       └── QuantitySelector.tsx
+│   ├── contexts/
+│   │   └── CartContext.tsx            # Cart state management
+│   ├── hooks/
+│   │   ├── useCart.ts                 # Cart hook
+│   │   └── useLocalStorage.ts         # localStorage hook
 │   ├── lib/
 │   │   ├── analytics.ts               # GA4 tracking utilities
 │   │   ├── constants.ts               # Business info, phone numbers
+│   │   ├── cart-storage.ts            # Cart localStorage utilities
+│   │   ├── whatsapp-booking.ts        # WhatsApp integration
 │   │   └── utils.ts                   # Helper functions
 │   ├── data/
-│   │   ├── services.ts                # Service data
+│   │   ├── services.ts                # Service data with options
 │   │   ├── testimonials.ts            # Customer testimonials
 │   │   ├── blog-posts.ts              # Blog content
-│   │   └── locations.ts               # Mumbai service areas
+│   │   ├── locations.ts               # Mumbai service areas
+│   │   └── coupons.ts                 # Coupon codes
 │   └── types/
 │       └── index.ts                   # TypeScript interfaces
 ├── public/
@@ -114,10 +136,11 @@ Next.js App Router will be used for all pages with the following structure:
 
 - `/` - Home page (SSG)
 - `/about` - About page (SSG)
-- `/services` - Services overview (SSG)
+- `/services` - Services overview with grid and modal (SSG)
 - `/services/aluminium` - Aluminium services (SSG)
 - `/services/glass` - Glass services (SSG)
 - `/services/netting` - Netting services (SSG)
+- `/cart` - Shopping cart page (Client-side)
 - `/contact` - Contact page (SSG)
 - `/blog` - Blog listing (SSG with ISR)
 - `/blog/[slug]` - Individual blog posts (SSG with ISR)
@@ -440,6 +463,193 @@ interface BlogPostProps {
 // - Table of contents for long posts
 ```
 
+### Cart and Service Selection Components
+
+#### Service Grid
+```typescript
+interface ServiceGridProps {
+  services: Service[];
+  onServiceClick: (serviceId: string) => void;
+}
+
+// Features:
+// - Responsive grid (4/6/8 columns based on screen size)
+// - Compact service cards with images
+// - Click to open service detail modal
+// - Loading states
+// - Empty state handling
+```
+
+#### Service Detail Modal
+```typescript
+interface ServiceOption {
+  id: string;
+  name: string;
+  price: number;
+  rating: number;
+  reviewCount: number;
+  estimatedTime: string;
+  image?: string;
+}
+
+interface ProcessStep {
+  step: number;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+interface ServiceDetailModalProps {
+  service: {
+    id: string;
+    name: string;
+    rating: number;
+    reviewCount: number;
+    duration: string;
+    options: ServiceOption[];
+    priceIncludes: string[];
+    processSteps: ProcessStep[];
+    faqs: FAQItem[];
+    trustBadges: string[];
+  };
+  isOpen: boolean;
+  onClose: () => void;
+  onAddToCart: (serviceId: string, optionId: string, quantity: number) => void;
+}
+
+// Features:
+// - Full-screen modal on mobile, centered on desktop
+// - Service header with rating and duration
+// - Multiple pricing options with quantity selectors
+// - "What's Included" section
+// - 6-step process visualization
+// - FAQ accordion
+// - Trust badges
+// - Add to cart functionality
+// - Close button and backdrop click to close
+```
+
+#### Service Option Card
+```typescript
+interface ServiceOptionCardProps {
+  option: ServiceOption;
+  quantity: number;
+  onQuantityChange: (quantity: number) => void;
+  onAddToCart: () => void;
+}
+
+// Features:
+// - Option name and price display
+// - Rating and review count
+// - Estimated time
+// - Quantity selector (- / number / +)
+// - Add to cart button
+// - Min quantity: 1, Max quantity: 10
+```
+
+#### Cart Icon
+```typescript
+interface CartIconProps {
+  itemCount: number;
+  onClick: () => void;
+}
+
+// Features:
+// - Shopping cart icon
+// - Badge showing item count
+// - Animated badge when count changes
+// - Click to navigate to cart page
+```
+
+#### Floating Cart Button
+```typescript
+interface FloatingCartButtonProps {
+  itemCount: number;
+  total: number;
+  onClick: () => void;
+}
+
+// Features:
+// - Fixed position at bottom (above mobile nav)
+// - Shows item count and total price
+// - Animated entrance when cart has items
+// - Click to navigate to cart page
+// - Hide when cart is empty
+```
+
+#### Cart Page
+```typescript
+interface CartItem {
+  serviceId: string;
+  serviceName: string;
+  optionId: string;
+  optionName: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+interface CartPageProps {
+  items: CartItem[];
+  onUpdateQuantity: (serviceId: string, optionId: string, quantity: number) => void;
+  onRemoveItem: (serviceId: string, optionId: string) => void;
+  onApplyCoupon: (code: string) => void;
+  onBookNow: () => void;
+}
+
+// Features:
+// - List of cart items with images
+// - Quantity update controls
+// - Remove item button
+// - Coupon input and apply button
+// - Payment summary (subtotal, discount, total)
+// - Book Now via WhatsApp button
+// - Empty cart state
+// - Back to services link
+```
+
+#### Booking Summary Bar
+```typescript
+interface BookingSummaryBarProps {
+  itemCount: number;
+  total: number;
+  onViewCart: () => void;
+  onBookNow: () => void;
+}
+
+// Features:
+// - Sticky bottom bar (above mobile nav)
+// - Shows item count and total
+// - View Cart button
+// - Book Now button
+// - Slide up animation
+// - Hide when cart is empty
+```
+
+#### Coupon Modal
+```typescript
+interface Coupon {
+  code: string;
+  description: string;
+  discount: number;
+  type: 'percentage' | 'fixed';
+}
+
+interface CouponModalProps {
+  coupons: Coupon[];
+  onApply: (code: string) => void;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+// Features:
+// - List of available coupons
+// - Coupon code, description, discount display
+// - Apply button for each coupon
+// - Close button
+// - Success feedback when applied
+```
+
 ### SEO Components
 
 #### SEO Head
@@ -479,23 +689,44 @@ interface StructuredDataProps {
 
 ### Service Data Structure
 ```typescript
+interface ServiceOption {
+  id: string;
+  name: string;
+  price: number;
+  rating: number;
+  reviewCount: number;
+  estimatedTime: string;
+  image?: string;
+}
+
+interface ProcessStep {
+  step: number;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+interface TrustBadge {
+  icon: string;
+  text: string;
+}
+
 interface Service {
   id: string;
   slug: string;
+  name: string;
   category: 'aluminium' | 'glass' | 'netting';
-  title: string;
-  shortDescription: string;
-  fullDescription: string;
-  benefits: string[];
-  useCases: string[];
-  images: string[];
-  pricing: {
-    type: 'fixed' | 'quote' | 'range';
-    min?: number;
-    max?: number;
-    unit?: string;
-  };
+  rating: number;
+  reviewCount: number;
+  duration: string;
+  features: string[];
+  image: string;
+  options: ServiceOption[];
+  priceIncludes: string[];
+  materials: string[];
+  processSteps: ProcessStep[];
   faqs: FAQItem[];
+  trustBadges: TrustBadge[];
   relatedServices: string[];
 }
 ```
@@ -545,6 +776,41 @@ interface ContactSubmission {
   message: string;
   timestamp: Date;
   source: string; // 'contact-page', 'service-page', etc.
+}
+```
+
+### Cart Data Structure
+```typescript
+interface CartItem {
+  serviceId: string;
+  serviceName: string;
+  optionId: string;
+  optionName: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+interface Cart {
+  items: CartItem[];
+  appliedCoupon?: {
+    code: string;
+    discount: number;
+    type: 'percentage' | 'fixed';
+  };
+  version: number; // For localStorage versioning
+}
+
+interface CartState {
+  cart: Cart;
+  addItem: (item: CartItem) => void;
+  updateQuantity: (serviceId: string, optionId: string, quantity: number) => void;
+  removeItem: (serviceId: string, optionId: string) => void;
+  applyCoupon: (code: string) => void;
+  removeCoupon: () => void;
+  clearCart: () => void;
+  getTotal: () => number;
+  getItemCount: () => number;
 }
 ```
 
@@ -877,6 +1143,146 @@ export const event = ({ action, category, label, value }: {
 - Required fields clearly marked
 - Helpful placeholder text
 - Clear validation feedback
+
+## Cart Management System
+
+### localStorage Implementation
+```typescript
+// lib/cart-storage.ts
+const CART_STORAGE_KEY = 'a1-aluminium-cart';
+const CART_VERSION = 1;
+
+export const saveCart = (cart: Cart) => {
+  const cartData = {
+    ...cart,
+    version: CART_VERSION,
+    timestamp: Date.now(),
+  };
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartData));
+};
+
+export const loadCart = (): Cart | null => {
+  const stored = localStorage.getItem(CART_STORAGE_KEY);
+  if (!stored) return null;
+  
+  const cartData = JSON.parse(stored);
+  if (cartData.version !== CART_VERSION) {
+    // Clear old version cart
+    localStorage.removeItem(CART_STORAGE_KEY);
+    return null;
+  }
+  
+  return cartData;
+};
+
+export const clearCart = () => {
+  localStorage.removeItem(CART_STORAGE_KEY);
+};
+```
+
+### Cart Context Provider
+```typescript
+// contexts/CartContext.tsx
+'use client';
+
+import { createContext, useContext, useState, useEffect } from 'react';
+
+const CartContext = createContext<CartState | undefined>(undefined);
+
+export function CartProvider({ children }: { children: React.ReactNode }) {
+  const [cart, setCart] = useState<Cart>({ items: [], version: 1 });
+
+  // Load cart from localStorage on mount
+  useEffect(() => {
+    const savedCart = loadCart();
+    if (savedCart) {
+      setCart(savedCart);
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    if (cart.items.length > 0 || cart.appliedCoupon) {
+      saveCart(cart);
+    }
+  }, [cart]);
+
+  const addItem = (item: CartItem) => {
+    setCart(prev => {
+      const existingIndex = prev.items.findIndex(
+        i => i.serviceId === item.serviceId && i.optionId === item.optionId
+      );
+      
+      if (existingIndex >= 0) {
+        const newItems = [...prev.items];
+        newItems[existingIndex].quantity += item.quantity;
+        return { ...prev, items: newItems };
+      }
+      
+      return { ...prev, items: [...prev.items, item] };
+    });
+  };
+
+  // ... other cart methods
+
+  return (
+    <CartContext.Provider value={{ cart, addItem, /* ... */ }}>
+      {children}
+    </CartContext.Provider>
+  );
+}
+
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (!context) throw new Error('useCart must be used within CartProvider');
+  return context;
+};
+```
+
+### WhatsApp Booking Integration
+```typescript
+// lib/whatsapp-booking.ts
+export const formatWhatsAppMessage = (cart: Cart): string => {
+  const items = cart.items.map(item => 
+    `• ${item.serviceName} - ${item.optionName} - ₹${item.price} x ${item.quantity}`
+  ).join('\n');
+  
+  const subtotal = cart.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const discount = cart.appliedCoupon 
+    ? cart.appliedCoupon.type === 'percentage'
+      ? subtotal * (cart.appliedCoupon.discount / 100)
+      : cart.appliedCoupon.discount
+    : 0;
+  const total = subtotal - discount;
+  
+  return `🛋️ *New Booking Request*
+
+📋 *Services:*
+${items}
+
+💰 *Item Total:* ₹${subtotal.toLocaleString()}
+${discount > 0 ? `🎟️ *Discount:* -₹${discount.toLocaleString()}\n` : ''}
+💵 *Total:* ₹${total.toLocaleString()}
+
+📍 *Location:* [Customer fills]
+📅 *Preferred Date:* [Customer fills]`;
+};
+
+export const openWhatsAppBooking = (cart: Cart, phoneNumber: string) => {
+  const message = formatWhatsAppMessage(cart);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+  
+  // Track booking event
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'booking_initiated', {
+      event_category: 'conversion',
+      event_label: 'whatsapp_booking',
+      value: cart.items.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+    });
+  }
+};
+```
 
 ## Deployment and Hosting
 

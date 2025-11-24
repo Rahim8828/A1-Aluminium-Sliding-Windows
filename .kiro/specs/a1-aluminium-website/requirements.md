@@ -162,3 +162,99 @@ The website will be built using Next.js, TypeScript, and Tailwind CSS, following
 3. THE Website System SHALL support keyboard navigation for all interactive elements
 4. THE Website System SHALL include ARIA labels for icon-only buttons
 5. THE Website System SHALL provide focus indicators for all focusable elements
+
+### Requirement 13: Service Selection and Cart System
+
+**User Story:** As a customer, I want to browse services in a grid layout, select specific options with quantities, and add them to a cart, so that I can book multiple services at once through WhatsApp.
+
+#### Acceptance Criteria
+
+1. THE Website System SHALL display services in a compact grid layout with service images and names WHEN the User visits the services page
+2. THE Website System SHALL open a service detail modal with multiple pricing options WHEN the User clicks on a service card
+3. THE Website System SHALL allow the User to select quantity for each service option with minimum value of 1 and maximum value of 10
+4. THE Website System SHALL add selected service options to a shopping cart with persistent storage using localStorage
+5. THE Website System SHALL display a floating cart button showing the total item count WHEN the cart contains one or more items
+
+### Requirement 14: Service Detail Modal
+
+**User Story:** As a customer evaluating a service, I want to see detailed information including pricing options, ratings, duration, and process steps in a modal, so that I can make an informed decision without leaving the current page.
+
+#### Acceptance Criteria
+
+1. THE Website System SHALL display service name, rating, review count, and estimated duration in the modal header
+2. THE Website System SHALL show multiple service options with individual names, prices, ratings, and estimated times
+3. THE Website System SHALL include a quantity selector with increment and decrement buttons for each service option
+4. THE Website System SHALL display "What's Included" section with feature list in the modal
+5. THE Website System SHALL show a 6-step process with descriptions explaining the service workflow
+
+### Requirement 15: Shopping Cart Management
+
+**User Story:** As a customer who has selected services, I want to review my cart, update quantities, apply coupons, and see the total price, so that I can manage my booking before contacting via WhatsApp.
+
+#### Acceptance Criteria
+
+1. THE Website System SHALL display all cart items with service name, option name, price, quantity, and thumbnail image
+2. THE Website System SHALL allow the User to update item quantities or remove items from the cart
+3. THE Website System SHALL provide a coupon input field that applies discount codes to the cart total
+4. THE Website System SHALL display a payment summary showing item total, discount amount, and final total
+5. THE Website System SHALL persist cart data in localStorage with version management to maintain cart across sessions
+
+### Requirement 16: WhatsApp Booking Integration
+
+**User Story:** As a customer ready to book, I want to send my cart details via WhatsApp with a pre-filled message, so that I can confirm my booking directly with the business.
+
+#### Acceptance Criteria
+
+1. THE Website System SHALL generate a formatted WhatsApp message including all cart items with quantities and prices WHEN the User clicks "Book Now"
+2. THE Website System SHALL open WhatsApp with the pre-filled message to the business phone number in a new window
+3. THE Website System SHALL include item total and final total in the WhatsApp message
+4. THE Website System SHALL track WhatsApp booking initiation as a conversion event in analytics
+5. THE Website System SHALL maintain the cart data after WhatsApp booking to allow the User to return and modify if needed
+
+### Requirement 17: Mobile Bottom Navigation Update
+
+**User Story:** As a mobile user, I want quick access to key sections through a bottom navigation bar with intuitive labels, so that I can easily navigate the website on my phone.
+
+#### Acceptance Criteria
+
+1. THE Website System SHALL display a bottom navigation bar with four tabs: Home, Products, Contact, and Call
+2. THE Website System SHALL navigate to the home page WHEN the User taps the Home tab
+3. THE Website System SHALL navigate to the services page WHEN the User taps the Products tab
+4. THE Website System SHALL navigate to the contact page WHEN the User taps the Contact tab
+5. THE Website System SHALL initiate a phone call to the business number WHEN the User taps the Call tab
+
+### Requirement 18: Service Data Structure
+
+**User Story:** As a developer, I want a comprehensive service data structure that supports multiple pricing options, ratings, process steps, and FAQs, so that I can easily manage and display service information.
+
+#### Acceptance Criteria
+
+1. THE Website System SHALL define a Service interface with fields for id, name, category, rating, reviewCount, duration, features, and image
+2. THE Website System SHALL support multiple ServiceOption objects within each service containing id, name, price, rating, reviewCount, and estimatedTime
+3. THE Website System SHALL include priceIncludes array, materials array, processSteps array, and faqs array in the service data structure
+4. THE Website System SHALL organize services into categories: furniture-polish, repair-services, and specialized-services
+5. THE Website System SHALL store all service data in a centralized data file for easy maintenance and updates
+
+### Requirement 19: Conversion Optimization with Cart
+
+**User Story:** As a business owner, I want to encourage customers to complete their booking by showing urgency notifications and exit-intent offers, so that I can increase conversion rates.
+
+#### Acceptance Criteria
+
+1. THE Website System SHALL display urgency notifications showing recent booking activity at intervals during the User session
+2. THE Website System SHALL show an exit-intent popup with a discount offer WHEN the User attempts to leave the site with items in cart
+3. THE Website System SHALL display a booking summary bar at the bottom of the screen showing cart total and "Book Now" button WHEN the cart is not empty
+4. THE Website System SHALL highlight popular services with badges or indicators on the services page
+5. THE Website System SHALL show trust badges and customer photos to build credibility on service pages
+
+### Requirement 20: Responsive Service Grid Layout
+
+**User Story:** As a user on any device, I want the service grid to adapt to my screen size, so that I can comfortably browse services whether on mobile, tablet, or desktop.
+
+#### Acceptance Criteria
+
+1. THE Website System SHALL display services in a 4-column grid layout WHEN the User accesses the site on mobile devices
+2. THE Website System SHALL display services in a 6-column grid layout WHEN the User accesses the site on tablet devices
+3. THE Website System SHALL display services in an 8-column grid layout WHEN the User accesses the site on desktop devices
+4. THE Website System SHALL ensure service cards maintain consistent aspect ratios across all screen sizes
+5. THE Website System SHALL implement touch-optimized interactions for mobile users including tap to open modal and swipe gestures

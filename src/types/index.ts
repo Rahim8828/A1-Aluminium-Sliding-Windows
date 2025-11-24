@@ -1,5 +1,17 @@
 // Core type definitions for A1 Aluminium website
 
+export interface ProcessStep {
+  step: number;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+export interface TrustBadge {
+  icon: string;
+  text: string;
+}
+
 export interface Service {
   id: string;
   slug: string;
@@ -7,6 +19,9 @@ export interface Service {
   title: string;
   shortDescription: string;
   fullDescription: string;
+  rating: number;
+  reviewCount: number;
+  duration: string;
   benefits: string[];
   useCases: string[];
   images: string[];
@@ -16,7 +31,12 @@ export interface Service {
     max?: number;
     unit?: string;
   };
+  options: ServiceOption[];
+  priceIncludes: string[];
+  materials: string[];
+  processSteps: ProcessStep[];
   faqs: FAQItem[];
+  trustBadges: TrustBadge[];
   relatedServices: string[];
 }
 
@@ -70,4 +90,56 @@ export interface ContactFormData {
   email: string;
   serviceType: string;
   message: string;
+}
+
+// Cart-related types
+export interface ServiceOption {
+  id: string;
+  name: string;
+  price: number;
+  rating: number;
+  reviewCount: number;
+  estimatedTime: string;
+  image?: string;
+}
+
+export interface CartItem {
+  serviceId: string;
+  serviceName: string;
+  optionId: string;
+  optionName: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+export interface Coupon {
+  code: string;
+  description: string;
+  discount: number;
+  type: 'percentage' | 'fixed';
+}
+
+export interface Cart {
+  items: CartItem[];
+  appliedCoupon?: {
+    code: string;
+    discount: number;
+    type: 'percentage' | 'fixed';
+  };
+  version: number;
+}
+
+export interface CartState {
+  cart: Cart;
+  addItem: (item: CartItem) => void;
+  updateQuantity: (serviceId: string, optionId: string, quantity: number) => void;
+  removeItem: (serviceId: string, optionId: string) => void;
+  applyCoupon: (code: string) => boolean;
+  removeCoupon: () => void;
+  clearCart: () => void;
+  getTotal: () => number;
+  getSubtotal: () => number;
+  getDiscount: () => number;
+  getItemCount: () => number;
 }

@@ -157,6 +157,163 @@ export const trackExitIntentAction = (action: string): void => {
   });
 };
 
+/**
+ * Track adding items to cart
+ * @param serviceId - The ID of the service
+ * @param serviceName - The name of the service
+ * @param optionName - The name of the service option
+ * @param price - The price of the item
+ * @param quantity - The quantity added
+ */
+export const trackAddToCart = (
+  serviceId: string,
+  serviceName: string,
+  optionName: string,
+  price: number,
+  quantity: number
+): void => {
+  if (!isGAEnabled() || !window.gtag) return;
+  
+  // Enhanced ecommerce event for GA4
+  window.gtag('event', 'add_to_cart', {
+    currency: 'INR',
+    value: price * quantity,
+    items: [
+      {
+        item_id: serviceId,
+        item_name: serviceName,
+        item_variant: optionName,
+        price: price,
+        quantity: quantity,
+      },
+    ],
+  });
+  
+  // Also track as custom event for easier reporting
+  event({
+    action: 'add_to_cart',
+    category: 'Cart',
+    label: `${serviceName} - ${optionName}`,
+    value: price * quantity,
+  });
+};
+
+/**
+ * Track removing items from cart
+ * @param serviceId - The ID of the service
+ * @param serviceName - The name of the service
+ * @param optionName - The name of the service option
+ * @param price - The price of the item
+ * @param quantity - The quantity removed
+ */
+export const trackRemoveFromCart = (
+  serviceId: string,
+  serviceName: string,
+  optionName: string,
+  price: number,
+  quantity: number
+): void => {
+  if (!isGAEnabled() || !window.gtag) return;
+  
+  // Enhanced ecommerce event for GA4
+  window.gtag('event', 'remove_from_cart', {
+    currency: 'INR',
+    value: price * quantity,
+    items: [
+      {
+        item_id: serviceId,
+        item_name: serviceName,
+        item_variant: optionName,
+        price: price,
+        quantity: quantity,
+      },
+    ],
+  });
+  
+  // Also track as custom event
+  event({
+    action: 'remove_from_cart',
+    category: 'Cart',
+    label: `${serviceName} - ${optionName}`,
+    value: price * quantity,
+  });
+};
+
+/**
+ * Track cart page views
+ * @param itemCount - Number of items in cart
+ * @param cartValue - Total value of cart
+ */
+export const trackCartView = (itemCount: number, cartValue: number): void => {
+  event({
+    action: 'cart_view',
+    category: 'Cart',
+    label: `${itemCount} items`,
+    value: cartValue,
+  });
+};
+
+/**
+ * Track coupon application
+ * @param couponCode - The coupon code applied
+ * @param discountAmount - The discount amount
+ * @param discountType - The type of discount (percentage or fixed)
+ */
+export const trackCouponApply = (
+  couponCode: string,
+  discountAmount: number,
+  discountType: 'percentage' | 'fixed'
+): void => {
+  event({
+    action: 'coupon_apply',
+    category: 'Cart',
+    label: `${couponCode} - ${discountType}`,
+    value: discountAmount,
+  });
+};
+
+/**
+ * Track booking initiation via WhatsApp
+ * @param itemCount - Number of items in cart
+ * @param cartValue - Total value before discount
+ * @param discountAmount - Discount amount applied
+ * @param finalValue - Final value after discount
+ * @param couponCode - Coupon code if applied
+ */
+export const trackBookingInitiated = (
+  itemCount: number,
+  cartValue: number,
+  discountAmount: number,
+  finalValue: number,
+  couponCode?: string
+): void => {
+  if (!isGAEnabled() || !window.gtag) return;
+  
+  // Enhanced ecommerce event for GA4
+  window.gtag('event', 'begin_checkout', {
+    currency: 'INR',
+    value: finalValue,
+    coupon: couponCode || '',
+    items: [], // Items would be passed from cart context if needed
+  });
+  
+  // Track as conversion event
+  event({
+    action: 'booking_initiated',
+    category: 'Conversion',
+    label: couponCode ? `With Coupon: ${couponCode}` : 'No Coupon',
+    value: finalValue,
+  });
+  
+  // Track additional details
+  event({
+    action: 'booking_details',
+    category: 'Conversion',
+    label: `${itemCount} items - Discount: ₹${discountAmount}`,
+    value: cartValue,
+  });
+};
+
 // Extend Window interface for TypeScript
 declare global {
   interface Window {

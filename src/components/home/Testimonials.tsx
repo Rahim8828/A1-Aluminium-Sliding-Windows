@@ -24,14 +24,14 @@ export function Testimonials({ displayCount = 6 }: TestimonialsProps) {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-orange-50 to-gray-50">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 px-4">
             What Our Customers Say
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Don't just take our word for it - hear from our satisfied customers across Mumbai
           </p>
         </div>
@@ -121,18 +121,18 @@ export function Testimonials({ displayCount = 6 }: TestimonialsProps) {
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <article className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
+    <article className="bg-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
       {/* Quote Icon */}
-      <div className="absolute top-4 right-4 text-orange-100" aria-hidden="true">
-        <Quote className="w-12 h-12" />
+      <div className="absolute top-3 right-3 md:top-4 md:right-4 text-orange-100" aria-hidden="true">
+        <Quote className="w-8 h-8 md:w-12 md:h-12" />
       </div>
 
       {/* Rating */}
-      <div className="flex gap-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
+      <div className="flex gap-1 mb-3 md:mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
         {Array.from({ length: 5 }).map((_, index) => (
           <Star
             key={index}
-            className={`w-5 h-5 ${
+            className={`w-4 h-4 md:w-5 md:h-5 ${
               index < testimonial.rating
                 ? 'text-yellow-400 fill-yellow-400'
                 : 'text-gray-300'
@@ -143,16 +143,16 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       </div>
 
       {/* Testimonial Text */}
-      <p className="text-gray-700 mb-6 leading-relaxed relative z-10">
+      <p className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed relative z-10">
         "{testimonial.text}"
       </p>
 
       {/* Customer Info */}
-      <div className="border-t border-gray-100 pt-4">
-        <div className="font-semibold text-gray-900">{testimonial.name}</div>
-        <div className="text-sm text-gray-600">{testimonial.location}</div>
+      <div className="border-t border-gray-100 pt-3 md:pt-4">
+        <div className="text-sm md:text-base font-semibold text-gray-900">{testimonial.name}</div>
+        <div className="text-xs md:text-sm text-gray-600">{testimonial.location}</div>
         {testimonial.service && (
-          <div className="mt-2 inline-block px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full">
+          <div className="mt-2 inline-block px-2 md:px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full">
             {testimonial.service}
           </div>
         )}

@@ -125,7 +125,7 @@
     - Add links to full blog posts
     - _Requirements: 7.5_
 
-- [ ] 8. Build Home page
+- [x] 8. Build Home page
   - Create `src/app/page.tsx` assembling all home components
   - Add SEO metadata optimized for main keywords
   - Implement proper heading hierarchy
@@ -278,41 +278,213 @@
   - Create deployment documentation
   - _Requirements: 10.4, 11.1_
 
-- [ ]* 22. Testing and quality assurance
-  - [ ]* 22.1 Run Lighthouse performance audit
+- [x] 22. Implement Cart Context and State Management
+  - Create `src/contexts/CartContext.tsx` with cart state provider
+  - Implement cart actions: addItem, updateQuantity, removeItem, applyCoupon, clearCart
+  - Create `src/hooks/useCart.ts` hook for accessing cart context
+  - Create `src/hooks/useLocalStorage.ts` for persistent storage
+  - Create `src/lib/cart-storage.ts` with localStorage utilities and versioning
+  - Wrap root layout with CartProvider
+  - _Requirements: 13.4, 15.5_
+
+- [x] 23. Build Cart UI Components
+- [x] 23.1 Create Cart Icon component
+  - Implement `src/components/cart/CartIcon.tsx` with item count badge
+  - Add animated badge when count changes
+  - Add click handler to navigate to cart page
+  - Integrate into Header component
+  - _Requirements: 13.5_
+
+- [x] 23.2 Create Floating Cart Button
+  - Implement `src/components/cart/FloatingCartButton.tsx` as fixed position button
+  - Show item count and total price
+  - Add animated entrance/exit based on cart state
+  - Position above mobile navigation
+  - Add click handler to navigate to cart page
+  - _Requirements: 13.5_
+
+- [x] 23.3 Create Quantity Selector component
+  - Implement `src/components/ui/QuantitySelector.tsx` with increment/decrement buttons
+  - Enforce min (1) and max (10) quantity limits
+  - Add disabled states for min/max reached
+  - Style with proper touch targets (44x44px)
+  - _Requirements: 13.3, 14.3_
+
+- [x] 23.4 Create Cart Item component
+  - Implement `src/components/cart/CartItem.tsx` for individual cart items
+  - Display service image, name, option name, price
+  - Integrate QuantitySelector for quantity updates
+  - Add remove button with confirmation
+  - _Requirements: 15.1, 15.2_
+
+- [x] 23.5 Create Cart Summary component
+  - Implement `src/components/cart/CartSummary.tsx` for payment summary
+  - Display subtotal, discount, and total
+  - Show applied coupon with remove option
+  - Add Book Now button
+  - _Requirements: 15.4_
+
+- [x] 23.6 Create Coupon Section component
+  - Implement `src/components/cart/CouponSection.tsx` with input and apply button
+  - Create `src/data/coupons.ts` with available coupons
+  - Add coupon validation logic
+  - Show success/error messages
+  - Display discount amount when applied
+  - _Requirements: 15.3_
+
+- [x] 24. Update Mobile Navigation
+  - Update `src/components/layout/MobileNav.tsx` with new tab labels
+  - Change "Services" to "Products" with appropriate icon
+  - Update navigation items: Home, Products, Contact, Call
+  - Ensure active state works correctly
+  - Test on mobile devices
+  - _Requirements: 17.1, 17.2, 17.3, 17.4, 17.5_
+
+- [x] 25. Create Service Data with Options
+  - Update `src/data/services.ts` with comprehensive service data
+  - Add multiple ServiceOption objects for each service (1-seater, 2-seater, etc.)
+  - Add processSteps array with 6 steps for each service
+  - Add priceIncludes, materials, trustBadges arrays
+  - Include rating, reviewCount, duration for each service and option
+  - Create at least 10-15 services with full data
+  - _Requirements: 18.1, 18.2, 18.3, 18.4, 18.5_
+
+- [x] 26. Build Service Selection Components
+- [x] 26.1 Create Service Grid component
+  - Implement `src/components/services/ServiceGrid.tsx` with responsive grid
+  - Use 4 columns on mobile, 6 on tablet, 8 on desktop
+  - Display compact service cards with images and names
+  - Add click handler to open service detail modal
+  - Implement loading and empty states
+  - _Requirements: 13.1, 20.1, 20.2, 20.3, 20.4_
+
+- [x] 26.2 Create Service Option Card component
+  - Implement `src/components/services/ServiceOptionCard.tsx`
+  - Display option name, price, rating, review count, estimated time
+  - Integrate QuantitySelector component
+  - Add "Add to Cart" button
+  - Show option image if available
+  - _Requirements: 14.2, 14.3_
+
+- [x] 26.3 Create Service Detail Modal component
+  - Implement `src/components/services/ServiceDetailModal.tsx` as full-screen modal
+  - Add modal header with service name, rating, duration
+  - Display all service options using ServiceOptionCard
+  - Add "What's Included" section with feature list
+  - Add 6-step process section with step cards
+  - Add FAQ accordion section
+  - Add trust badges section
+  - Implement close button and backdrop click to close
+  - Make responsive (full-screen on mobile, centered on desktop)
+  - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5_
+
+- [x] 27. Update Services Page with Grid and Modal
+  - Update `src/app/services/page.tsx` to use ServiceGrid
+  - Create `src/app/services/ServicesPageClient.tsx` as client component
+  - Implement modal state management (open/close, selected service)
+  - Add service filtering by category (optional)
+  - Integrate with cart context for adding items
+  - Add SEO metadata
+  - _Requirements: 13.1, 13.2, 13.3, 13.4_
+
+- [x] 28. Build Cart Page
+  - Create `src/app/cart/page.tsx` for shopping cart
+  - Display list of cart items using CartItem component
+  - Add CouponSection component
+  - Add CartSummary component with payment breakdown
+  - Implement empty cart state with "Browse Services" link
+  - Add "Continue Shopping" button
+  - Ensure mobile responsiveness
+  - _Requirements: 15.1, 15.2, 15.3, 15.4_
+
+- [x] 29. Implement WhatsApp Booking Integration
+  - Create `src/lib/whatsapp-booking.ts` with message formatting
+  - Implement formatWhatsAppMessage function with cart items, prices, totals
+  - Implement openWhatsAppBooking function to open WhatsApp with pre-filled message
+  - Add analytics tracking for booking initiation
+  - Integrate with Cart Summary "Book Now" button
+  - Test WhatsApp link generation and message format
+  - _Requirements: 16.1, 16.2, 16.3, 16.4, 16.5_
+
+- [x] 30. Implement Booking Summary Bar
+  - Create `src/components/cart/BookingSummaryBar.tsx` as sticky bottom bar
+  - Show item count and total price
+  - Add "View Cart" and "Book Now" buttons
+  - Position above mobile navigation
+  - Add slide-up animation when cart has items
+  - Hide when cart is empty
+  - Make responsive for mobile and desktop
+  - _Requirements: 19.3_
+
+- [x] 31. Enhance Conversion Features for Cart
+  - Update `src/components/conversion/ExitIntentPopup.tsx` to show when cart has items
+  - Update `src/components/conversion/UrgencyNotifications.tsx` with cart-related messages
+  - Add popular service badges to ServiceGrid
+  - Add customer photos section to service pages
+  - Ensure trust badges display in ServiceDetailModal
+  - _Requirements: 19.1, 19.2, 19.4, 19.5_
+
+- [x] 32. Update Analytics Tracking for Cart
+  - Update `src/lib/analytics.ts` with cart-specific events
+  - Add trackAddToCart event
+  - Add trackRemoveFromCart event
+  - Add trackCartView event
+  - Add trackCouponApply event
+  - Add trackBookingInitiated event with cart value
+  - Integrate tracking throughout cart components
+  - _Requirements: 16.4_
+
+- [ ]* 33. Testing and quality assurance
+  - [ ]* 33.1 Test cart functionality
+    - Test adding items to cart from service modal
+    - Test quantity updates and item removal
+    - Test coupon application and validation
+    - Test cart persistence across page refreshes
+    - Test cart clearing
+    - _Requirements: 13.3, 13.4, 15.2, 15.3, 15.5_
+  
+  - [ ]* 33.2 Test WhatsApp booking flow
+    - Test message formatting with various cart combinations
+    - Test WhatsApp link opening
+    - Verify message includes all cart details
+    - Test with and without coupons
+    - _Requirements: 16.1, 16.2, 16.3_
+  
+  - [ ]* 33.3 Test service modal functionality
+    - Test modal opening and closing
+    - Test service option selection
+    - Test quantity selector
+    - Test add to cart from modal
+    - Test modal responsiveness
+    - _Requirements: 14.1, 14.2, 14.3_
+  
+  - [ ]* 33.4 Test mobile navigation update
+    - Verify new tab labels (Home, Products, Contact, Call)
+    - Test navigation to correct pages
+    - Test call functionality
+    - Test active states
+    - _Requirements: 17.1, 17.2, 17.3, 17.4, 17.5_
+  
+  - [ ]* 33.5 Test responsive grid layouts
+    - Test service grid on mobile (4 columns)
+    - Test service grid on tablet (6 columns)
+    - Test service grid on desktop (8 columns)
+    - Verify touch interactions on mobile
+    - _Requirements: 20.1, 20.2, 20.3, 20.4, 20.5_
+  
+  - [ ]* 33.6 Run Lighthouse performance audit
     - Test on mobile and desktop
     - Ensure performance score ≥ 85
     - Verify Core Web Vitals
     - _Requirements: 10.4_
   
-  - [ ]* 22.2 Test accessibility compliance
+  - [ ]* 33.7 Test accessibility compliance
     - Run automated accessibility tests with axe-core
     - Test keyboard navigation
     - Verify ARIA labels and semantic HTML
     - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5_
   
-  - [ ]* 22.3 Test mobile responsiveness
-    - Test on various screen sizes (320px to 1920px)
-    - Verify touch targets are 44x44px minimum
-    - Test mobile navigation
-    - Verify no horizontal scrolling
-    - _Requirements: 5.1, 5.2, 5.4, 5.5_
-  
-  - [ ]* 22.4 Test form functionality
-    - Test contact form validation
-    - Test form submission flow
-    - Test error handling
-    - Verify success messages
-    - _Requirements: 4.1_
-  
-  - [ ]* 22.5 Test SEO implementation
-    - Verify meta tags on all pages
-    - Validate structured data with Google Rich Results Test
-    - Check sitemap.xml generation
-    - Verify robots.txt
-    - _Requirements: 6.1, 6.2, 6.3, 6.5_
-  
-  - [ ]* 22.6 Cross-browser testing
+  - [ ]* 33.8 Cross-browser testing
     - Test on Chrome, Firefox, Safari, Edge
     - Verify all features work across browsers
     - Test on iOS and Android devices

@@ -1,12 +1,10 @@
-import React from 'react';
 import { Metadata } from 'next';
 import { getServicesByCategory, getServiceBySlug } from '@/data/services';
 import ServiceDetail from '@/components/services/ServiceDetail';
 import ServiceFAQ from '@/components/services/ServiceFAQ';
 import ServiceCard from '@/components/services/ServiceCard';
+import CustomerPhotos from '@/components/services/CustomerPhotos';
 import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
-import { ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
 
 // Enable ISR - revalidate every 7200 seconds (2 hours)
 export const revalidate = 7200;
@@ -95,19 +93,6 @@ export default function GlassServicesPage() {
       />
 
       <div className="min-h-screen bg-gray-50">
-        {/* Breadcrumb Navigation */}
-        <div className="bg-white border-b">
-          <div className="container mx-auto px-4 py-4">
-            <Link
-              href="/services"
-              className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to All Services
-            </Link>
-          </div>
-        </div>
-
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-12 md:py-16">
           <div className="container mx-auto px-4">
@@ -250,6 +235,9 @@ export default function GlassServicesPage() {
             </div>
           </div>
         </section>
+
+        {/* Customer Photos Section */}
+        <CustomerPhotos title="Real Glass Projects from Happy Customers" />
 
         {/* FAQ Section */}
         <section className="py-12 md:py-16">
