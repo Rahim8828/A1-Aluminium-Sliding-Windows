@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Get Your Free Quote Today</h2>
       <p>Contact us for a free consultation and quote. Our experts will visit your property in Andheri and provide personalized recommendations.</p>
     `,
-    image: '/images/blog/andheri-aluminium-windows.jpg',
+    image: '/website-images/blog/andheri-aluminium-windows.jpg',
     category: 'Local Services',
     tags: ['Andheri', 'Aluminium Windows', 'Mumbai', 'Home Improvement'],
     date: '2024-01-15',
@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Serving All of Bandra</h2>
       <p>We provide services across Bandra West, Bandra East, Bandra Kurla Complex (BKC), Pali Hill, and surrounding areas. Same-day consultation available.</p>
     `,
-    image: '/images/blog/bandra-glass-partition.jpg',
+    image: '/website-images/blog/bandra-glass-partition.jpg',
     category: 'Local Services',
     tags: ['Bandra', 'Glass Partition', 'Interior Design', 'Office Solutions'],
     date: '2024-01-20',
@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Maintenance Tips</h2>
       <p>Regular inspection every 6 months, cleaning with mild soap solution, checking for wear and tear, and immediate repair of damaged sections ensure long-lasting protection.</p>
     `,
-    image: '/images/blog/goregaon-safety-nets.jpg',
+    image: '/website-images/blog/goregaon-safety-nets.jpg',
     category: 'Local Services',
     tags: ['Goregaon', 'Safety Nets', 'Child Safety', 'Balcony Protection'],
     date: '2024-01-25',
@@ -267,7 +267,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Get Expert Advice</h2>
       <p>Still confused? Our experts can visit your property and recommend the best solution based on your specific needs, location, and budget.</p>
     `,
-    image: '/images/blog/aluminium-vs-upvc-comparison.jpg',
+    image: '/website-images/blog/aluminium-vs-upvc-comparison.jpg',
     category: 'Service Guides',
     tags: ['Aluminium Windows', 'uPVC Windows', 'Comparison', 'Home Improvement'],
     date: '2024-02-01',
@@ -365,7 +365,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Get Your Custom Design</h2>
       <p>Contact us for a free consultation. Our design experts will help you choose the perfect glass railing solution for your Mumbai home.</p>
     `,
-    image: '/images/blog/glass-railing-designs.jpg',
+    image: '/website-images/blog/glass-railing-designs.jpg',
     category: 'Service Guides',
     tags: ['Glass Railing', 'Interior Design', 'Home Improvement', 'Modern Design'],
     date: '2024-02-05',
@@ -498,7 +498,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Get Monsoon-Ready Today</h2>
       <p>Don't wait for the first rains to discover leaks. Contact us for a free window inspection and waterproofing consultation. Our experts will assess your windows and recommend the best solutions.</p>
     `,
-    image: '/images/blog/monsoon-proof-windows.jpg',
+    image: '/website-images/blog/monsoon-proof-windows.jpg',
     category: 'DIY Tips',
     tags: ['Monsoon', 'Window Maintenance', 'Waterproofing', 'Mumbai'],
     date: '2024-02-10',
@@ -624,7 +624,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Start Your Transformation Today</h2>
       <p>Contact us for a free site visit and quotation. Our experts will help you design and execute the perfect balcony renovation within your budget.</p>
     `,
-    image: '/images/blog/balcony-renovation-ideas.jpg',
+    image: '/website-images/blog/balcony-renovation-ideas.jpg',
     category: 'DIY Tips',
     tags: ['Balcony Renovation', 'Home Improvement', 'Mumbai', 'Interior Design'],
     date: '2024-02-15',
@@ -785,7 +785,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Get Your Office Transformation Started</h2>
       <p>Contact us for a free site visit and quotation. We'll help you design the perfect glass partition solution for your Mumbai office.</p>
     `,
-    image: '/images/blog/office-glass-partitions.jpg',
+    image: '/website-images/blog/office-glass-partitions.jpg',
     category: 'Service Guides',
     tags: ['Office Design', 'Glass Partition', 'Commercial', 'Workspace'],
     date: '2024-02-20',
@@ -961,7 +961,7 @@ export const blogPosts: BlogPost[] = [
       <p><strong>Call Now:</strong> Available 7 days a week for Powai residents</p>
       <p><strong>Emergency Services:</strong> Available for urgent repairs and installations</p>
     `,
-    image: '/images/blog/powai-aluminium-services.jpg',
+    image: '/website-images/blog/powai-aluminium-services.jpg',
     category: 'Local Services',
     tags: ['Powai', 'Aluminium Fabrication', 'Windows', 'Doors'],
     date: '2024-02-25',

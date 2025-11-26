@@ -29,7 +29,7 @@ const getCategories = (services: Service[]) => {
     } else {
       categoryMap.set(service.category, {
         name: service.category,
-        images: [service.images[0] || '/images/placeholder-service.jpg'],
+        images: [service.images[0] || '/website-images/placeholder-service.jpg'],
         count: 1,
       });
     }
@@ -58,7 +58,7 @@ const getCategoryImage = (category: string): string => {
     glass: '/glass-category/Full glass partitions.webp',
     netting: '/netting-category/Pigeon netting.webp',
   };
-  return images[category] || '/images/placeholder-service.jpg';
+  return images[category] || '/website-images/placeholder-service.jpg';
 };
 
 export default function ServiceCategoryGrid({

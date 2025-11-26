@@ -134,7 +134,7 @@ export default function ServicesPageClient({
       optionName: option.name,
       price: option.price,
       quantity,
-      image: option.image || service.images[0] || '/images/placeholder-service.jpg',
+      image: option.image || service.images[0] || '/website-images/placeholder-service.jpg',
     };
 
     addItem(cartItem);

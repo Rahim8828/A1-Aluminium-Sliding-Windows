@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-home.jpg',
+        url: '/website-images/og-home.jpg',
         width: 1200,
         height: 630,
         alt: `${BUSINESS_INFO.name} - Aluminium, Glass & Netting Solutions`,
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: `${BUSINESS_INFO.name} | Premium Solutions in Mumbai`,
     description:
       'Professional aluminium fabrication, glass installation, and safety netting services across Mumbai.',
-    images: ['/images/og-home.jpg'],
+    images: ['/website-images/og-home.jpg'],
   },
   alternates: {
     canonical: '/',

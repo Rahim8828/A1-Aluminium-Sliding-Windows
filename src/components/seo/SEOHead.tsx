@@ -20,7 +20,7 @@ export function generateSEOMetadata({
   title,
   description,
   keywords = [],
-  ogImage = '/images/og-default.jpg',
+  ogImage = '/website-images/og-default.jpg',
   canonical,
   type = 'website',
   publishedTime,

@@ -36,7 +36,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
         <div className="space-y-4">
           <div className="relative h-96 w-full overflow-hidden rounded-lg bg-gray-100">
             <Image
-              src={service.images[selectedImage] || '/images/placeholder-service.jpg'}
+              src={service.images[selectedImage] || '/website-images/placeholder-service.jpg'}
               alt={`${service.title} - Professional installation example ${selectedImage + 1} in Mumbai`}
               fill
               className="object-cover"

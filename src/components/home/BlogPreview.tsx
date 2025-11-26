@@ -20,7 +20,7 @@ const recentPosts: BlogPost[] = [
     title: 'Complete Guide to Choosing Aluminium Windows in Mumbai',
     excerpt:
       'Learn everything you need to know about selecting the perfect aluminium windows for your Mumbai home, including styles, benefits, and pricing.',
-    image: '/images/blog/aluminium-windows-guide.jpg',
+    image: '/website-images/blog/aluminium-windows-guide.jpg',
     category: 'Service Guides',
     date: '2024-10-20',
     readTime: 5,
@@ -30,7 +30,7 @@ const recentPosts: BlogPost[] = [
     title: 'Why Safety Nets Are Essential for Child Protection in High-Rise Buildings',
     excerpt:
       'Discover how safety nets can protect your children and pets in Mumbai apartments, with tips on choosing the right netting solution.',
-    image: '/images/blog/safety-nets-guide.jpg',
+    image: '/website-images/blog/safety-nets-guide.jpg',
     category: 'Safety Tips',
     date: '2024-10-15',
     readTime: 4,
@@ -40,7 +40,7 @@ const recentPosts: BlogPost[] = [
     title: 'Modern Office Design: The Benefits of Glass Partitions',
     excerpt:
       'Explore how glass partitions can transform your office space, improve productivity, and create a modern work environment.',
-    image: '/images/blog/glass-partitions-office.jpg',
+    image: '/website-images/blog/glass-partitions-office.jpg',
     category: 'Design Ideas',
     date: '2024-10-10',
     readTime: 6,

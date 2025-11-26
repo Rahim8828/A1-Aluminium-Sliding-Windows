@@ -204,7 +204,7 @@ export default function ServiceGrid({
                           {/* Service Image */}
                           <div className="relative w-20 h-20 rounded-lg overflow-hidden bg-gray-100">
                             <Image
-                              src={service.images[0] || '/images/placeholder-service.jpg'}
+                              src={service.images[0] || '/website-images/placeholder-service.jpg'}
                               alt={service.title}
                               fill
                               sizes="80px"
