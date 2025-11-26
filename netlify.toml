@@ -6,10 +6,16 @@
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
 
-# Redirects for Next.js
+# Next.js specific settings
+[functions]
+  node_bundler = "esbuild"
+
+# Redirects are handled by Next.js
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/:splat"
   status = 200
+  force = false
