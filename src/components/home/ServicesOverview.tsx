@@ -24,7 +24,7 @@ const serviceCategories: ServiceCategory[] = [
       'Premium aluminium windows, doors, partitions, and sliding systems. Durable, modern, and energy-efficient solutions for your space.',
     icon: <Wrench className="w-12 h-12" strokeWidth={2} />,
     href: '/services/aluminium',
-    image: '/Aluminium Category Images/Showroom front.webp',
+    image: '/aluminium-category/Showroom front.webp',
     startingPrice: '₹8,000',
     popular: true,
   },
@@ -35,7 +35,7 @@ const serviceCategories: ServiceCategory[] = [
       'Elegant glass partitions, doors, shower enclosures, and railings. Transform your space with sophisticated glass installations.',
     icon: <Sparkles className="w-12 h-12" strokeWidth={2} />,
     href: '/services/glass',
-    image: '/Glass Category Images/Full glass partitions.webp',
+    image: '/glass-category/Full glass partitions.webp',
     startingPrice: '₹12,000',
   },
   {
@@ -45,7 +45,7 @@ const serviceCategories: ServiceCategory[] = [
       'Safety nets, bird protection, anti-monkey nets, and sports nets. Comprehensive protection for your property and loved ones.',
     icon: <Shield className="w-12 h-12" strokeWidth={2} />,
     href: '/services/netting',
-    image: '/Netting Category/Pigeon netting.webp',
+    image: '/netting-category/Pigeon netting.webp',
     startingPrice: '₹3,500',
   },
 ];

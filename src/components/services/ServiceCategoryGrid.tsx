@@ -54,9 +54,9 @@ const formatCategoryName = (category: string): string => {
 // Get category image path
 const getCategoryImage = (category: string): string => {
   const images: Record<string, string> = {
-    aluminium: '/Aluminium Category Images/Showroom front.webp',
-    glass: '/Glass Category Images/Full glass partitions.webp',
-    netting: '/Netting Category/Pigeon netting.webp',
+    aluminium: '/aluminium-category/Showroom front.webp',
+    glass: '/glass-category/Full glass partitions.webp',
+    netting: '/netting-category/Pigeon netting.webp',
   };
   return images[category] || '/images/placeholder-service.jpg';
 };

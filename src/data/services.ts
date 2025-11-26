@@ -30,8 +30,8 @@ export const services: Service[] = [
       'Shop fronts and commercial entrances',
     ],
     images: [
-      '/Aluminium Category Images/Single sliding door.webp',
-      '/Aluminium Category Images/Double sliding door.webp',
+      '/aluminium-category/Single sliding door.webp',
+      '/aluminium-category/Double sliding door.webp',
     ],
     pricing: {
       type: 'range',
@@ -47,7 +47,7 @@ export const services: Service[] = [
         rating: 4.6,
         reviewCount: 56,
         estimatedTime: '3 days',
-        image: '/Aluminium Category Images/Single sliding door.webp',
+        image: '/aluminium-category/Single sliding door.webp',
       },
       {
         id: 'alu-door-sliding-double',
@@ -56,7 +56,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 42,
         estimatedTime: '3-4 days',
-        image: '/Aluminium Category Images/Double sliding door.webp',
+        image: '/aluminium-category/Double sliding door.webp',
       },
       {
         id: 'alu-door-hinged',
@@ -65,7 +65,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 38,
         estimatedTime: '3 days',
-        image: '/Aluminium Category Images/Hinged door.webp',
+        image: '/aluminium-category/Hinged door.webp',
       },
       {
         id: 'alu-door-folding',
@@ -175,7 +175,7 @@ export const services: Service[] = [
       'Hospital and clinic divisions',
       'Home office spaces',
     ],
-    images: ['/Aluminium Category Images/Profile partition.webp'],
+    images: ['/aluminium-category/Profile partition.webp'],
     pricing: {
       type: 'range',
       min: 300,
@@ -190,7 +190,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 45,
         estimatedTime: '3-4 days',
-        image: '/Aluminium Category Images/Profile partition.webp',
+        image: '/aluminium-category/Profile partition.webp',
       },
       {
         id: 'alu-part-glass-half',
@@ -199,7 +199,7 @@ export const services: Service[] = [
         rating: 4.6,
         reviewCount: 38,
         estimatedTime: '2-3 days',
-        image: '/Aluminium Category Images/Profile partition.webp',
+        image: '/aluminium-category/Profile partition.webp',
       },
       {
         id: 'alu-part-solid',
@@ -208,7 +208,7 @@ export const services: Service[] = [
         rating: 4.5,
         reviewCount: 32,
         estimatedTime: '2 days',
-        image: '/Aluminium Category Images/Solid panel partitions.webp',
+        image: '/aluminium-category/Solid panel partitions.webp',
       },
       {
         id: 'alu-part-combo',
@@ -318,7 +318,7 @@ export const services: Service[] = [
       'Room dividers',
       'Wardrobe doors',
     ],
-    images: ['/Aluminium Category Images/2-Track-sliding-Window.webp'],
+    images: ['/aluminium-category/2-Track-sliding-Window.webp'],
     pricing: {
       type: 'range',
       min: 380,
@@ -454,8 +454,8 @@ export const services: Service[] = [
       'Hospitals and clinics',
     ],
     images: [
-      '/Aluminium Category Images/2-Track-sliding-Window.webp',
-      '/Aluminium Category Images/3-Track-sliding-Window..webp',
+      '/aluminium-category/2-Track-sliding-Window.webp',
+      '/aluminium-category/3-Track-sliding-Window..webp',
     ],
     pricing: {
       type: 'range',
@@ -471,7 +471,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 450,
         estimatedTime: '2 days',
-        image: '/Aluminium Category Images/2-Track-sliding-Window.webp',
+        image: '/aluminium-category/2-Track-sliding-Window.webp',
       },
       {
         id: 'alu-slide-3track',
@@ -480,7 +480,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 520,
         estimatedTime: '2-3 days',
-        image: '/Aluminium Category Images/3-Track-sliding-Window..webp',
+        image: '/aluminium-category/3-Track-sliding-Window..webp',
       },
       {
         id: 'alu-slide-4track',
@@ -489,7 +489,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 380,
         estimatedTime: '3 days',
-        image: '/Aluminium Category Images/4-Track-Window.webp',
+        image: '/aluminium-category/4-Track-Window.webp',
       },
       {
         id: 'alu-slide-soundproof',
@@ -498,7 +498,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 160,
         estimatedTime: '3-4 days',
-        image: '/Aluminium Category Images/Soundoroof-Window.webp',
+        image: '/aluminium-category/Soundoroof-Window.webp',
       },
     ],
     priceIncludes: [
@@ -556,8 +556,8 @@ export const services: Service[] = [
       'Terrace doors',
     ],
     images: [
-      '/Aluminium Category Images/Office-Cabin-Sliding.webp',
-      '/Aluminium Category Images/Partitions-sliding-Door.webp',
+      '/aluminium-category/Office-Cabin-Sliding.webp',
+      '/aluminium-category/Partitions-sliding-Door.webp',
     ],
     pricing: {
       type: 'range',
@@ -573,7 +573,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 520,
         estimatedTime: '3-4 days',
-        image: '/Aluminium Category Images/Office-Cabin-Sliding.webp',
+        image: '/aluminium-category/Office-Cabin-Sliding.webp',
       },
       {
         id: 'alu-door-partition',
@@ -582,7 +582,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 450,
         estimatedTime: '2-3 days',
-        image: '/Aluminium Category Images/Partitions-sliding-Door.webp',
+        image: '/aluminium-category/Partitions-sliding-Door.webp',
       },
       {
         id: 'alu-door-toughened',
@@ -591,7 +591,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 250,
         estimatedTime: '4 days',
-        image: '/Aluminium Category Images/Profile door.webp',
+        image: '/aluminium-category/Profile door.webp',
       },
     ],
     priceIncludes: [
@@ -649,8 +649,8 @@ export const services: Service[] = [
       'Co-working spaces',
     ],
     images: [
-      '/Aluminium Category Images/Profile partition.webp',
-      '/Aluminium Category Images/Solid panel partitions.webp',
+      '/aluminium-category/Profile partition.webp',
+      '/aluminium-category/Solid panel partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -666,7 +666,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '4 days',
-        image: '/Aluminium Category Images/Profile partition.webp',
+        image: '/aluminium-category/Profile partition.webp',
       },
       {
         id: 'alu-part-shop',
@@ -675,7 +675,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 560,
         estimatedTime: '3-4 days',
-        image: '/Aluminium Category Images/Profile partition.webp',
+        image: '/aluminium-category/Profile partition.webp',
       },
       {
         id: 'alu-part-frosted',
@@ -684,7 +684,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 420,
         estimatedTime: '4-5 days',
-        image: '/Aluminium Category Images/Profile partition.webp',
+        image: '/aluminium-category/Profile partition.webp',
       },
       {
         id: 'alu-part-acrylic',
@@ -693,7 +693,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 330,
         estimatedTime: '3 days',
-        image: '/Aluminium Category Images/Solid panel partitions.webp',
+        image: '/aluminium-category/Solid panel partitions.webp',
       },
     ],
     priceIncludes: [
@@ -751,8 +751,8 @@ export const services: Service[] = [
       'Dressing rooms',
     ],
     images: [
-      '/Aluminium Category Images/Profile cabinet.webp',
-      '/Aluminium Category Images/Profile door.webp',
+      '/aluminium-category/Profile cabinet.webp',
+      '/aluminium-category/Profile door.webp',
     ],
     pricing: {
       type: 'range',
@@ -768,7 +768,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 890,
         estimatedTime: '2-3 days',
-        image: '/Aluminium Category Images/Profile cabinet.webp',
+        image: '/aluminium-category/Profile cabinet.webp',
       },
       {
         id: 'alu-wardrobe-sliding',
@@ -777,7 +777,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1120,
         estimatedTime: '3 days',
-        image: '/Aluminium Category Images/Profile door.webp',
+        image: '/aluminium-category/Profile door.webp',
       },
       {
         id: 'alu-slim-profile',
@@ -786,7 +786,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 440,
         estimatedTime: '3-4 days',
-        image: '/Aluminium Category Images/Profile door.webp',
+        image: '/aluminium-category/Profile door.webp',
       },
     ],
     priceIncludes: [
@@ -844,8 +844,8 @@ export const services: Service[] = [
       'Hotels and resorts',
     ],
     images: [
-      '/Aluminium Category Images/Showroom front.webp',
-      '/Aluminium Category Images/Thermal break.webp',
+      '/aluminium-category/Showroom front.webp',
+      '/aluminium-category/Thermal break.webp',
     ],
     pricing: {
       type: 'range',
@@ -861,7 +861,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 280,
         estimatedTime: '8 days',
-        image: '/Aluminium Category Images/Showroom front.webp',
+        image: '/aluminium-category/Showroom front.webp',
       },
       {
         id: 'alu-industrial',
@@ -870,7 +870,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 190,
         estimatedTime: '7 days',
-        image: '/Aluminium Category Images/Showroom front.webp',
+        image: '/aluminium-category/Showroom front.webp',
       },
       {
         id: 'alu-facade',
@@ -879,7 +879,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 250,
         estimatedTime: '10 days',
-        image: '/Aluminium Category Images/Showroom front.webp',
+        image: '/aluminium-category/Showroom front.webp',
       },
       {
         id: 'alu-thermal-break',
@@ -888,7 +888,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 170,
         estimatedTime: '10-12 days',
-        image: '/Aluminium Category Images/Thermal break.webp',
+        image: '/aluminium-category/Thermal break.webp',
       },
     ],
     priceIncludes: [
@@ -948,8 +948,8 @@ export const services: Service[] = [
       'Solar panels',
     ],
     images: [
-      '/Netting Category/Pigeon netting.webp',
-      '/Netting Category/Transparent bird net.webp',
+      '/netting-category/Pigeon netting.webp',
+      '/netting-category/Transparent bird net.webp',
     ],
     pricing: {
       type: 'range',
@@ -965,7 +965,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1500,
         estimatedTime: '1 day',
-        image: '/Netting Category/Pigeon netting.webp',
+        image: '/netting-category/Pigeon netting.webp',
       },
       {
         id: 'bird-spike',
@@ -974,7 +974,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 320,
         estimatedTime: '1 day',
-        image: '/Netting Category/Bird-spike-installation.webp',
+        image: '/netting-category/Bird-spike-installation.webp',
       },
       {
         id: 'bird-transparent',
@@ -983,7 +983,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 200,
         estimatedTime: '1-2 days',
-        image: '/Netting Category/Transparent bird net.webp',
+        image: '/netting-category/Transparent bird net.webp',
       },
     ],
     priceIncludes: [
@@ -1041,8 +1041,8 @@ export const services: Service[] = [
       'Storage facilities',
     ],
     images: [
-      '/Netting Category/Industrial safety net.webp',
-      '/Netting Category/Cargo Net.webp',
+      '/netting-category/Industrial safety net.webp',
+      '/netting-category/Cargo Net.webp',
     ],
     pricing: {
       type: 'range',
@@ -1058,7 +1058,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 380,
         estimatedTime: '3-4 days',
-        image: '/Netting Category/Industrial safety net.webp',
+        image: '/netting-category/Industrial safety net.webp',
       },
       {
         id: 'industrial-cargo',
@@ -1067,7 +1067,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 220,
         estimatedTime: '2-3 days',
-        image: '/Netting Category/Cargo Net.webp',
+        image: '/netting-category/Cargo Net.webp',
       },
     ],
     priceIncludes: [
@@ -1125,8 +1125,8 @@ export const services: Service[] = [
       'Bedroom windows',
     ],
     images: [
-      '/Netting Category/Window mosquito net.webp',
-      '/Netting Category/Sliding Frame Mosquito Net.webp',
+      '/netting-category/Window mosquito net.webp',
+      '/netting-category/Sliding Frame Mosquito Net.webp',
     ],
     pricing: {
       type: 'range',
@@ -1142,7 +1142,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1800,
         estimatedTime: '1 day',
-        image: '/Netting Category/Window mosquito net.webp',
+        image: '/netting-category/Window mosquito net.webp',
       },
       {
         id: 'pest-sliding',
@@ -1151,7 +1151,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 980,
         estimatedTime: '1 day',
-        image: '/Netting Category/Sliding Frame Mosquito Net.webp',
+        image: '/netting-category/Sliding Frame Mosquito Net.webp',
       },
       {
         id: 'pest-pleated',
@@ -1160,7 +1160,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 180,
         estimatedTime: '1 day',
-        image: '/Netting Category/Pleated net.webp',
+        image: '/netting-category/Pleated net.webp',
       },
     ],
     priceIncludes: [
@@ -1220,8 +1220,8 @@ export const services: Service[] = [
       'Staircases',
     ],
     images: [
-      '/Glass Category Images/Toughened glass.webp',
-      '/Glass Category Images/Full glass partitions.webp',
+      '/glass-category/Toughened glass.webp',
+      '/glass-category/Full glass partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -1237,7 +1237,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 680,
         estimatedTime: '3 days',
-        image: '/Glass Category Images/Toughened glass.webp',
+        image: '/glass-category/Toughened glass.webp',
       },
       {
         id: 'tough-balcony',
@@ -1246,7 +1246,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 520,
         estimatedTime: '4 days',
-        image: '/Glass Category Images/Toughened glass.webp',
+        image: '/glass-category/Toughened glass.webp',
       },
       {
         id: 'tough-office',
@@ -1255,7 +1255,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 450,
         estimatedTime: '4-5 days',
-        image: '/Glass Category Images/Full glass partitions.webp',
+        image: '/glass-category/Full glass partitions.webp',
       },
       {
         id: 'tough-shopfront',
@@ -1264,7 +1264,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 280,
         estimatedTime: '5 days',
-        image: '/Glass Category Images/Showroom front.webp',
+        image: '/glass-category/Showroom front.webp',
       },
       {
         id: 'tough-staircase',
@@ -1273,7 +1273,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 170,
         estimatedTime: '4 days',
-        image: '/Glass Category Images/Toughened glass.webp',
+        image: '/glass-category/Toughened glass.webp',
       },
     ],
     priceIncludes: [
@@ -1331,8 +1331,8 @@ export const services: Service[] = [
       'Luxury apartments',
     ],
     images: [
-      '/Glass Category Images/Toughened glass.webp',
-      '/Glass Category Images/Full glass partitions.webp',
+      '/glass-category/Toughened glass.webp',
+      '/glass-category/Full glass partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -1348,7 +1348,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '3 days',
-        image: '/Glass Category Images/Toughened glass.webp',
+        image: '/glass-category/Toughened glass.webp',
       },
       {
         id: 'shower-semi-frameless',
@@ -1357,7 +1357,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 560,
         estimatedTime: '2-3 days',
-        image: '/Glass Category Images/Toughened glass.webp',
+        image: '/glass-category/Toughened glass.webp',
       },
       {
         id: 'shower-framed',
@@ -1366,7 +1366,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 400,
         estimatedTime: '2 days',
-        image: '/Glass Category Images/Toughened glass.webp',
+        image: '/glass-category/Toughened glass.webp',
       },
     ],
     priceIncludes: [
@@ -1425,8 +1425,8 @@ export const services: Service[] = [
       'Executive cabins',
     ],
     images: [
-      '/Glass Category Images/Full glass partitions.webp',
-      '/Glass Category Images/Half glass partitions.webp',
+      '/glass-category/Full glass partitions.webp',
+      '/glass-category/Half glass partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -1442,7 +1442,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1100,
         estimatedTime: '5 days',
-        image: '/Glass Category Images/Full glass partitions.webp',
+        image: '/glass-category/Full glass partitions.webp',
       },
       {
         id: 'office-frosted',
@@ -1451,7 +1451,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '5-6 days',
-        image: '/Glass Category Images/Half glass partitions.webp',
+        image: '/glass-category/Half glass partitions.webp',
       },
       {
         id: 'office-cabin',
@@ -1460,7 +1460,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 460,
         estimatedTime: '6-7 days',
-        image: '/Glass Category Images/Full glass partitions.webp',
+        image: '/glass-category/Full glass partitions.webp',
       },
     ],
     priceIncludes: [
@@ -1518,8 +1518,8 @@ export const services: Service[] = [
       'Conference rooms',
     ],
     images: [
-      '/Glass Category Images/Glass facade sliding.webp',
-      '/Glass Category Images/Toughened glass.webp',
+      '/glass-category/Glass facade sliding.webp',
+      '/glass-category/Toughened glass.webp',
     ],
     pricing: {
       type: 'range',
@@ -1535,7 +1535,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 780,
         estimatedTime: '3 days',
-        image: '/Glass Category Images/Toughened glass.webp',
+        image: '/glass-category/Toughened glass.webp',
       },
       {
         id: 'door-patch',
@@ -1544,7 +1544,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 620,
         estimatedTime: '3-4 days',
-        image: '/Glass Category Images/Toughened glass.webp',
+        image: '/glass-category/Toughened glass.webp',
       },
       {
         id: 'door-sliding',
@@ -1553,7 +1553,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 520,
         estimatedTime: '4 days',
-        image: '/Glass Category Images/Glass facade sliding.webp',
+        image: '/glass-category/Glass facade sliding.webp',
       },
     ],
     priceIncludes: [
@@ -1612,8 +1612,8 @@ export const services: Service[] = [
       'Retail showrooms',
     ],
     images: [
-      '/Glass Category Images/Toughened glass.webp',
-      '/Glass Category Images/Full glass partitions.webp',
+      '/glass-category/Toughened glass.webp',
+      '/glass-category/Full glass partitions.webp',
     ],
     pricing: {
       type: 'range',

@@ -27,7 +27,7 @@ interface CustomerPhotosProps {
 const DEFAULT_PHOTOS: CustomerPhoto[] = [
   {
     id: '1',
-    image: '/Aluminium Category Images/2-Track-sliding-Window.webp',
+    image: '/aluminium-category/2-Track-sliding-Window.webp',
     customerName: 'Rajesh K.',
     location: 'Andheri West',
     service: 'Aluminium Window Sliding',
@@ -43,7 +43,7 @@ const DEFAULT_PHOTOS: CustomerPhoto[] = [
   },
   {
     id: '3',
-    image: '/Netting Category/Pigeon netting.webp',
+    image: '/netting-category/Pigeon netting.webp',
     customerName: 'Amit M.',
     location: 'Goregaon',
     service: 'Bird Control Netting',
