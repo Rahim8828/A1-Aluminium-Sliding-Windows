@@ -11,7 +11,7 @@ import { Service, CartItem } from '@/types';
 import ServiceGrid from '@/components/services/ServiceGrid';
 import ServiceCategoryGrid from '@/components/services/ServiceCategoryGrid';
 import ServiceDetailModal from '@/components/services/ServiceDetailModal';
-import { Phone, MessageCircle, Filter, X } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { BUSINESS_INFO } from '@/lib/constants';
 import { useCart } from '@/contexts/CartContext';
@@ -33,8 +33,8 @@ export default function ServicesPageClient({
 }: ServicesPageClientProps) {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState<SortOption>('popular');
+  const [searchQuery] = useState('');
+  const [sortBy] = useState<SortOption>('popular');
   const { addItem } = useCart();
 
   // Combine all services

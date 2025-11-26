@@ -20,6 +20,7 @@ export default function CartIcon() {
   useEffect(() => {
     const count = getItemCount();
     if (count !== itemCount) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsAnimating(true);
       setItemCount(count);
       

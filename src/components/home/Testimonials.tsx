@@ -32,7 +32,7 @@ export function Testimonials({ displayCount = 6 }: TestimonialsProps) {
             What Our Customers Say
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-            Don't just take our word for it - hear from our satisfied customers across Mumbai
+            Don&apos;t just take our word for it - hear from our satisfied customers across Mumbai
           </p>
         </div>
 
@@ -144,7 +144,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
       {/* Testimonial Text */}
       <p className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed relative z-10">
-        "{testimonial.text}"
+        &quot;{testimonial.text}&quot;
       </p>
 
       {/* Customer Info */}

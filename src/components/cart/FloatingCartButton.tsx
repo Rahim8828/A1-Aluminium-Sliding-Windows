@@ -7,12 +7,13 @@
  */
 
 import { ShoppingCart } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useCart } from '@/contexts/CartContext';
 import { useEffect, useState } from 'react';
 
 export default function FloatingCartButton() {
   const router = useRouter();
+  const pathname = usePathname();
   const { getItemCount, getTotal } = useCart();
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -24,6 +25,7 @@ export default function FloatingCartButton() {
     if (shouldBeVisible !== isVisible) {
       if (shouldBeVisible) {
         // Show with animation
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsVisible(true);
         setTimeout(() => setIsAnimating(true), 10);
       } else {
@@ -43,10 +45,13 @@ export default function FloatingCartButton() {
   const itemCount = getItemCount();
   const total = getTotal();
 
+  // Hide on cart page and when BookingSummaryBar is visible
+  if (pathname === '/cart') return null;
+
   return (
     <button
       onClick={handleClick}
-      className={`fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 bg-orange-600 text-white rounded-full shadow-lg hover:bg-orange-700 transition-all duration-300 ${
+      className={`fixed bottom-32 right-4 md:bottom-6 md:right-6 z-30 bg-orange-600 text-white rounded-full shadow-lg hover:bg-orange-700 transition-all duration-300 ${
         isAnimating ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`}
       aria-label={`View cart with ${itemCount} items, total ₹${total.toLocaleString()}`}

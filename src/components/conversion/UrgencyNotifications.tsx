@@ -82,12 +82,29 @@ export default function UrgencyNotifications() {
   const hasCartItems = getItemCount() > 0;
   const [currentNotification, setCurrentNotification] = useState<UrgencyNotification | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [notificationIndex, setNotificationIndex] = useState(0);
 
   // Select notification pool based on cart state
   const notifications = hasCartItems 
     ? [...CART_NOTIFICATIONS, ...BASE_NOTIFICATIONS] 
     : BASE_NOTIFICATIONS;
+
+  // Define functions before useEffect to avoid declaration order issues
+  const hideNotification = () => {
+    setIsVisible(false);
+  };
+
+  const showNotification = (index: number) => {
+    const notification = notifications[index % notifications.length];
+    setCurrentNotification(notification);
+    setIsVisible(true);
+
+    // Schedule next notification (30-45 seconds later)
+    const nextDelay = 30000 + Math.random() * 15000;
+    setTimeout(() => {
+      const nextIndex = (index + 1) % notifications.length;
+      showNotification(nextIndex);
+    }, nextDelay + 6000); // Add display duration
+  };
 
   useEffect(() => {
     // Show first notification after 10 seconds
@@ -96,6 +113,7 @@ export default function UrgencyNotifications() {
     }, 10000);
 
     return () => clearTimeout(initialTimer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -108,24 +126,6 @@ export default function UrgencyNotifications() {
 
     return () => clearTimeout(hideTimer);
   }, [isVisible]);
-
-  const showNotification = (index: number) => {
-    const notification = notifications[index % notifications.length];
-    setCurrentNotification(notification);
-    setIsVisible(true);
-
-    // Schedule next notification (30-45 seconds later)
-    const nextDelay = 30000 + Math.random() * 15000;
-    setTimeout(() => {
-      const nextIndex = (index + 1) % notifications.length;
-      setNotificationIndex(nextIndex);
-      showNotification(nextIndex);
-    }, nextDelay + 6000); // Add display duration
-  };
-
-  const hideNotification = () => {
-    setIsVisible(false);
-  };
 
   const getIcon = (iconType?: string) => {
     switch (iconType) {

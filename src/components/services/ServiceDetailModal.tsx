@@ -7,8 +7,9 @@
  */
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Service } from '@/types';
-import { X, Star, Clock, CheckCircle, ChevronDown, ChevronUp, Minus, Plus } from 'lucide-react';
+import { X, Star, Clock, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface ServiceDetailModalProps {
   service: Service;
@@ -25,7 +26,7 @@ export default function ServiceDetailModal({
 }: ServiceDetailModalProps) {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [selectedOption, setSelectedOption] = useState<string>(service.options[0]?.id || '');
-  const [quantity, setQuantity] = useState(1);
+  const quantity = 1; // Fixed quantity for now
 
   // Handle escape key and body scroll
   useEffect(() => {
@@ -150,10 +151,12 @@ export default function ServiceDetailModal({
                       {/* Option Image - Compact */}
                       <div className="relative w-full aspect-square bg-gray-100">
                         {option.image ? (
-                          <img
+                          <Image
                             src={option.image}
                             alt={option.name}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 50vw, 25vw"
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-gray-300">
@@ -239,7 +242,7 @@ export default function ServiceDetailModal({
                   <div className="bg-green-50 rounded-xl p-4 border border-green-100">
                     <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-green-600" />
-                      What's Included
+                      What&apos;s Included
                     </h3>
                     <ul className="space-y-2">
                       {service.priceIncludes.map((item, index) => (

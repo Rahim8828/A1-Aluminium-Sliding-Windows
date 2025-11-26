@@ -434,6 +434,24 @@
   - Integrate tracking throughout cart components
   - _Requirements: 16.4_
 
+- [x] 34. Implement Priority 1 UX Improvements
+  - [x] Add floating WhatsApp button (already exists)
+  - [x] Add sticky "Get Quote" button on scroll
+  - [x] Add urgency banner (already exists)
+  - [x] Add trust badges row below hero (already exists)
+  - [x] Add Projects Gallery section
+  - [x] Add FAQ section to home page
+  - [x] Add Quick Quote Form component
+  - _Requirements: UX Improvements Priority 1_
+
+- [x] 35. Implement Priority 2 UX Improvements
+  - [x] Add Live Activity Feed showing recent bookings
+  - [x] Add Price Calculator with interactive estimator
+  - [x] Enhance Hero Section with social proof stats
+  - [x] Add fadeIn animation to globals.css
+  - [x] Integrate all components into home page
+  - _Requirements: UX Improvements Priority 2_
+
 - [ ]* 33. Testing and quality assurance
   - [ ]* 33.1 Test cart functionality
     - Test adding items to cart from service modal

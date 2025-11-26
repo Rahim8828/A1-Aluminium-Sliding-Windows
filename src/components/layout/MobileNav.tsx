@@ -12,7 +12,7 @@ export default function MobileNav() {
 
   const navItems = [
     {
-      label: 'A1',
+      label: 'Home',
       href: '/',
       icon: Home,
     },
@@ -23,7 +23,7 @@ export default function MobileNav() {
     },
     {
       label: 'Products',
-      href: '/services',
+      href: '/products',
       icon: ShoppingBag,
     },
     {
@@ -36,15 +36,16 @@ export default function MobileNav() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg md:hidden safe-area-bottom"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg md:hidden safe-area-bottom overflow-hidden"
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       aria-label="Mobile navigation"
     >
-      <div className="flex items-center justify-around min-h-[64px]">
+      <div className="flex items-center justify-around min-h-[64px] overflow-x-hidden">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href || 
-            (item.href === '/services' && pathname?.startsWith('/services'));
+            (item.href === '/services' && pathname?.startsWith('/services')) ||
+            (item.href === '/products' && pathname?.startsWith('/products'));
 
           return (
             <Link

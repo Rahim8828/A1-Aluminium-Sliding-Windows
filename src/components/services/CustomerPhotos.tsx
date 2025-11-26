@@ -27,26 +27,26 @@ interface CustomerPhotosProps {
 const DEFAULT_PHOTOS: CustomerPhoto[] = [
   {
     id: '1',
-    image: '/images/services/aluminium-windows-1.jpg',
+    image: '/Aluminium Category Images/2-Track-sliding-Window.webp',
     customerName: 'Rajesh K.',
     location: 'Andheri West',
-    service: 'Aluminium Windows',
+    service: 'Aluminium Window Sliding',
     date: 'Nov 2024'
   },
   {
     id: '2',
-    image: '/images/services/glass-partitions-1.jpg',
+    image: '/images/placeholder-service.jpg',
     customerName: 'Priya S.',
     location: 'Bandra',
-    service: 'Glass Partitions',
+    service: 'Office Glass Partition',
     date: 'Oct 2024'
   },
   {
     id: '3',
-    image: '/images/services/safety-nets-1.jpg',
+    image: '/Netting Category/Pigeon netting.webp',
     customerName: 'Amit M.',
     location: 'Goregaon',
-    service: 'Safety Nets',
+    service: 'Bird Control Netting',
     date: 'Nov 2024'
   },
   {
@@ -59,10 +59,10 @@ const DEFAULT_PHOTOS: CustomerPhoto[] = [
   },
   {
     id: '5',
-    image: '/images/services/glass-railings-1.jpg',
+    image: '/images/placeholder-service.jpg',
     customerName: 'Vikram R.',
     location: 'Jogeshwari',
-    service: 'Glass Railings',
+    service: 'Toughened Glass Work',
     date: 'Sep 2024'
   },
   {

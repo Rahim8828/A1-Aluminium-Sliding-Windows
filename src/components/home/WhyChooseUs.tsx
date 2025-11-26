@@ -64,7 +64,7 @@ export function WhyChooseUs() {
             Why Choose A1 Aluminium?
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            We're committed to delivering excellence in every project, backed by experience, quality, and customer satisfaction
+            We&apos;re committed to delivering excellence in every project, backed by experience, quality, and customer satisfaction
           </p>
         </div>
 

@@ -1,7 +1,5 @@
 import { MetadataRoute } from 'next';
-import { services } from '@/data/services';
 import { blogPosts } from '@/data/blog-posts';
-import { locations } from '@/data/locations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com';
@@ -25,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/products`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/contact`,

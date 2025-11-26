@@ -32,6 +32,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const savedCart = loadCart();
     if (savedCart) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCart(savedCart);
     }
     setIsInitialized(true);

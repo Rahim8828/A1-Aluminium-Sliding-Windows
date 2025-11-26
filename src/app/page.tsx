@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { HeroSection } from '../components/home/HeroSection';
 import { ServicesOverview } from '../components/home/ServicesOverview';
+import { TrustBadges } from '../components/home/TrustBadges';
 import StructuredData from '@/components/seo/StructuredData';
 import { generateLocalBusinessSchema } from '@/lib/structured-data';
 import { BUSINESS_INFO, SEO_KEYWORDS } from '@/lib/constants';
@@ -11,7 +12,19 @@ const WhyChooseUsWithStats = dynamic(() => import('../components/home/WhyChooseU
   loading: () => <div className="h-96 animate-pulse bg-orange-600" />,
 });
 
+const ProjectsGallery = dynamic(() => import('../components/home/ProjectsGallery').then(mod => ({ default: mod.ProjectsGallery })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
 const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => ({ default: mod.Testimonials })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const FAQSection = dynamic(() => import('../components/home/FAQSection').then(mod => ({ default: mod.FAQSection })), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+});
+
+const PriceCalculator = dynamic(() => import('../components/home/PriceCalculator').then(mod => ({ default: mod.PriceCalculator })), {
   loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
 });
 
@@ -90,14 +103,26 @@ export default function Home() {
         {/* Hero Section - H1 is inside this component */}
         <HeroSection />
 
+        {/* Trust Badges Row */}
+        <TrustBadges />
+
         {/* Services Overview Section */}
         <ServicesOverview />
 
         {/* Why Choose Us with Stats - Merged Section */}
         <WhyChooseUsWithStats />
 
+        {/* Recent Projects Gallery */}
+        <ProjectsGallery />
+
+        {/* Price Calculator */}
+        <PriceCalculator />
+
         {/* Testimonials Section */}
         <Testimonials />
+
+        {/* FAQ Section */}
+        <FAQSection />
 
         {/* Final CTA Section */}
         <FinalCTA />

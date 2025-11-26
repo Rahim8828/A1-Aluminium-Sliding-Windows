@@ -33,7 +33,7 @@ export default function ServiceOptionCard({
       setTimeout(() => {
         setIsAdding(false);
       }, 500);
-    } catch (error) {
+    } catch {
       setIsAdding(false);
     }
   };

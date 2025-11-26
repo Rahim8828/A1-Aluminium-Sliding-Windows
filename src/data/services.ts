@@ -3,158 +3,6 @@ import { Service } from '@/types';
 export const services: Service[] = [
   // ALUMINIUM SERVICES
   {
-    id: 'aluminium-windows',
-    slug: 'aluminium-windows',
-    category: 'aluminium',
-    title: 'Aluminium Windows',
-    shortDescription:
-      'Premium quality aluminium windows with superior durability and modern aesthetics for residential and commercial spaces.',
-    fullDescription:
-      'Our aluminium windows combine strength, style, and energy efficiency. Manufactured using high-grade aluminium profiles, these windows offer excellent thermal insulation, weather resistance, and require minimal maintenance. Available in sliding, casement, and fixed configurations with powder-coated finishes in various colors.',
-    rating: 4.8,
-    reviewCount: 156,
-    duration: '2-3 days',
-    benefits: [
-      'Corrosion-resistant and long-lasting',
-      'Low maintenance requirements',
-      'Energy-efficient thermal insulation',
-      'Sleek modern design',
-      'Available in multiple colors and finishes',
-      'Weather-proof and dust-proof sealing',
-    ],
-    useCases: [
-      'Residential apartments and villas',
-      'Commercial offices and showrooms',
-      'Hotels and hospitality spaces',
-      'Educational institutions',
-      'Healthcare facilities',
-    ],
-    images: [
-      '/images/services/aluminium-windows-1.jpg',
-      '/images/services/aluminium-windows-2.jpg',
-      '/images/services/aluminium-windows-3.jpg',
-    ],
-    pricing: {
-      type: 'range',
-      min: 350,
-      max: 800,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'alu-win-sliding-2track',
-        name: '2-Track Sliding Window',
-        price: 380,
-        rating: 4.7,
-        reviewCount: 89,
-        estimatedTime: '2 days',
-        image: '/Aluminium Category Images/2-Track-sliding-Window.webp',
-      },
-      {
-        id: 'alu-win-sliding-3track',
-        name: '3-Track Sliding Window',
-        price: 450,
-        rating: 4.8,
-        reviewCount: 67,
-        estimatedTime: '2-3 days',
-        image: '/Aluminium Category Images/3-Track-sliding-Window..webp',
-      },
-      {
-        id: 'alu-win-casement',
-        name: 'Casement Window',
-        price: 520,
-        rating: 4.9,
-        reviewCount: 54,
-        estimatedTime: '2-3 days',
-        image: '/images/services/aluminium-windows-3.jpg',
-      },
-      {
-        id: 'alu-win-fixed',
-        name: 'Fixed Window',
-        price: 350,
-        rating: 4.6,
-        reviewCount: 43,
-        estimatedTime: '1-2 days',
-      },
-    ],
-    priceIncludes: [
-      'High-grade aluminium profiles',
-      'Toughened glass (5mm or 6mm)',
-      'Premium quality hardware and locks',
-      'Weather-proof sealing',
-      'Professional installation',
-      '1-year warranty on installation',
-    ],
-    materials: [
-      'Aluminium profiles (6063-T5 grade)',
-      'Toughened glass',
-      'Stainless steel hardware',
-      'EPDM rubber seals',
-      'Powder-coated finish',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Site Visit & Measurement',
-        description: 'Our expert visits your location to take precise measurements and understand your requirements.',
-      },
-      {
-        step: 2,
-        title: 'Design & Quotation',
-        description: 'We create a customized design and provide a detailed quotation based on your needs.',
-      },
-      {
-        step: 3,
-        title: 'Material Selection',
-        description: 'Choose from various colors, finishes, and glass options to match your interior.',
-      },
-      {
-        step: 4,
-        title: 'Fabrication',
-        description: 'Windows are fabricated in our workshop with precision cutting and assembly.',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Professional installation by trained technicians ensuring perfect fit and finish.',
-      },
-      {
-        step: 6,
-        title: 'Quality Check & Handover',
-        description: 'Final inspection and demonstration of operation with warranty documentation.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'How long do aluminium windows last?',
-        answer:
-          'With proper maintenance, aluminium windows can last 20-30 years or more. They are highly durable and resistant to corrosion.',
-      },
-      {
-        question: 'Are aluminium windows energy efficient?',
-        answer:
-          'Yes, modern aluminium windows with thermal breaks provide excellent insulation and can significantly reduce energy costs.',
-      },
-      {
-        question: 'What colors are available?',
-        answer:
-          'We offer powder-coated finishes in white, black, bronze, silver, and custom colors to match your interior design.',
-      },
-      {
-        question: 'Do you provide installation services?',
-        answer:
-          'Yes, professional installation is included in our service with a 1-year warranty.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: '10+ Years Experience' },
-      { icon: '✓', text: 'ISI Certified Materials' },
-      { icon: '✓', text: '1000+ Happy Customers' },
-      { icon: '✓', text: '1-Year Warranty' },
-    ],
-    relatedServices: ['aluminium-doors', 'aluminium-partitions'],
-  },
-  {
     id: 'aluminium-doors',
     slug: 'aluminium-doors',
     category: 'aluminium',
@@ -182,8 +30,8 @@ export const services: Service[] = [
       'Shop fronts and commercial entrances',
     ],
     images: [
-      '/images/services/aluminium-doors-1.jpg',
-      '/images/services/aluminium-doors-2.jpg',
+      '/Aluminium Category Images/Single sliding door.webp',
+      '/Aluminium Category Images/Double sliding door.webp',
     ],
     pricing: {
       type: 'range',
@@ -199,7 +47,7 @@ export const services: Service[] = [
         rating: 4.6,
         reviewCount: 56,
         estimatedTime: '3 days',
-        image: '/images/services/aluminium-doors-1.jpg',
+        image: '/Aluminium Category Images/Single sliding door.webp',
       },
       {
         id: 'alu-door-sliding-double',
@@ -208,7 +56,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 42,
         estimatedTime: '3-4 days',
-        image: '/images/services/aluminium-doors-2.jpg',
+        image: '/Aluminium Category Images/Double sliding door.webp',
       },
       {
         id: 'alu-door-hinged',
@@ -217,6 +65,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 38,
         estimatedTime: '3 days',
+        image: '/Aluminium Category Images/Hinged door.webp',
       },
       {
         id: 'alu-door-folding',
@@ -297,7 +146,7 @@ export const services: Service[] = [
       { icon: '✓', text: 'Expert Installation' },
       { icon: '✓', text: 'Lifetime Support' },
     ],
-    relatedServices: ['aluminium-windows', 'aluminium-sliding-systems'],
+    relatedServices: ['aluminium-window-sliding', 'aluminium-sliding-systems'],
   },
   {
     id: 'aluminium-partitions',
@@ -326,7 +175,7 @@ export const services: Service[] = [
       'Hospital and clinic divisions',
       'Home office spaces',
     ],
-    images: ['/images/services/aluminium-partitions-1.jpg'],
+    images: ['/Aluminium Category Images/Profile partition.webp'],
     pricing: {
       type: 'range',
       min: 300,
@@ -341,7 +190,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 45,
         estimatedTime: '3-4 days',
-        image: '/images/services/aluminium-partitions-1.jpg',
+        image: '/Aluminium Category Images/Profile partition.webp',
       },
       {
         id: 'alu-part-glass-half',
@@ -350,6 +199,7 @@ export const services: Service[] = [
         rating: 4.6,
         reviewCount: 38,
         estimatedTime: '2-3 days',
+        image: '/Aluminium Category Images/Profile partition.webp',
       },
       {
         id: 'alu-part-solid',
@@ -358,6 +208,7 @@ export const services: Service[] = [
         rating: 4.5,
         reviewCount: 32,
         estimatedTime: '2 days',
+        image: '/Aluminium Category Images/Solid panel partitions.webp',
       },
       {
         id: 'alu-part-combo',
@@ -438,7 +289,7 @@ export const services: Service[] = [
       { icon: '✓', text: 'Relocatable' },
       { icon: '✓', text: 'Sound Insulation' },
     ],
-    relatedServices: ['glass-partitions', 'aluminium-doors'],
+    relatedServices: ['aluminium-doors', 'aluminium-partitions'],
   },
   {
     id: 'aluminium-sliding-systems',
@@ -467,7 +318,7 @@ export const services: Service[] = [
       'Room dividers',
       'Wardrobe doors',
     ],
-    images: ['/images/services/aluminium-sliding-1.jpg'],
+    images: ['/Aluminium Category Images/2-Track-sliding-Window.webp'],
     pricing: {
       type: 'range',
       min: 380,
@@ -566,1569 +417,14 @@ export const services: Service[] = [
       { icon: '✓', text: 'Weather Sealed' },
       { icon: '✓', text: 'Space Saving' },
     ],
-    relatedServices: ['aluminium-windows', 'aluminium-doors'],
-  },
-  {
-    id: 'aluminium-railings',
-    slug: 'aluminium-railings',
-    category: 'aluminium',
-    title: 'Aluminium Railings',
-    shortDescription:
-      'Elegant and durable aluminium railing systems for balconies, staircases, and terraces.',
-    fullDescription:
-      'Our aluminium railing systems combine safety with style. Lightweight yet strong, these railings are perfect for balconies, staircases, and outdoor areas. Available in various designs from modern to traditional, with powder-coated finishes that resist weathering.',
-    rating: 4.7,
-    reviewCount: 87,
-    duration: '1-2 days',
-    benefits: [
-      'Lightweight and strong',
-      'Corrosion-resistant',
-      'Low maintenance',
-      'Various design options',
-      'Weather-resistant finish',
-      'Easy installation',
-    ],
-    useCases: [
-      'Balcony railings',
-      'Staircase railings',
-      'Terrace perimeter',
-      'Walkway railings',
-      'Deck railings',
-    ],
-    images: ['/images/services/aluminium-category.jpg'],
-    pricing: {
-      type: 'range',
-      min: 280,
-      max: 550,
-      unit: 'per running ft',
-    },
-    options: [
-      {
-        id: 'alu-rail-basic',
-        name: 'Basic Railing System',
-        price: 320,
-        rating: 4.6,
-        reviewCount: 42,
-        estimatedTime: '1 day',
-      },
-      {
-        id: 'alu-rail-designer',
-        name: 'Designer Railing',
-        price: 480,
-        rating: 4.8,
-        reviewCount: 35,
-        estimatedTime: '1-2 days',
-      },
-      {
-        id: 'alu-rail-glass-combo',
-        name: 'Glass Combination Railing',
-        price: 650,
-        rating: 4.9,
-        reviewCount: 28,
-        estimatedTime: '2 days',
-      },
-    ],
-    priceIncludes: [
-      'Aluminium railing profiles',
-      'Mounting brackets',
-      'Powder-coated finish',
-      'Installation hardware',
-      'Professional installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'Aluminium profiles',
-      'Stainless steel brackets',
-      'Powder coating',
-      'Mounting anchors',
-      'End caps and accessories',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Measurement',
-        description: 'Accurate measurement of railing length and height requirements.',
-      },
-      {
-        step: 2,
-        title: 'Design Selection',
-        description: 'Choose railing design, color, and finish options.',
-      },
-      {
-        step: 3,
-        title: 'Fabrication',
-        description: 'Custom fabrication to exact measurements.',
-      },
-      {
-        step: 4,
-        title: 'Surface Preparation',
-        description: 'Prepare mounting surface and mark installation points.',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Secure installation with proper anchoring.',
-      },
-      {
-        step: 6,
-        title: 'Safety Check',
-        description: 'Final inspection and stability testing.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'How strong are aluminium railings?',
-        answer:
-          'Our aluminium railings meet all safety standards and can withstand significant force.',
-      },
-      {
-        question: 'Do they rust?',
-        answer:
-          'No, aluminium is naturally corrosion-resistant and our powder coating provides additional protection.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Safety Certified' },
-      { icon: '✓', text: 'Weather Resistant' },
-      { icon: '✓', text: 'Custom Designs' },
-      { icon: '✓', text: 'Quick Install' },
-    ],
-    relatedServices: ['glass-railings', 'aluminium-windows'],
+    relatedServices: ['aluminium-window-sliding', 'aluminium-doors'],
   },
 
   // GLASS SERVICES
-  {
-    id: 'glass-partitions',
-    slug: 'glass-partitions',
-    category: 'glass',
-    title: 'Glass Partitions',
-    shortDescription:
-      'Elegant frameless and framed glass partitions for modern offices and homes, maximizing light and space.',
-    fullDescription:
-      'Create sophisticated, light-filled spaces with our glass partition solutions. Available in frameless, semi-framed, and fully framed options, our partitions use toughened safety glass for durability and security. Perfect for modern offices, homes, and commercial spaces.',
-    rating: 4.9,
-    reviewCount: 143,
-    duration: '3-5 days',
-    benefits: [
-      'Maximizes natural light flow',
-      'Creates open, spacious feel',
-      'Sound insulation options available',
-      'Easy to clean and maintain',
-      'Toughened safety glass',
-      'Customizable with frosted or tinted glass',
-    ],
-    useCases: [
-      'Office meeting rooms',
-      'Manager cabins',
-      'Bathroom enclosures',
-      'Living room dividers',
-      'Retail display areas',
-    ],
-    images: ['/images/services/glass-partitions-1.jpg'],
-    pricing: {
-      type: 'range',
-      min: 450,
-      max: 1000,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'glass-part-frameless',
-        name: 'Frameless Glass Partition',
-        price: 850,
-        rating: 4.9,
-        reviewCount: 67,
-        estimatedTime: '4-5 days',
-        image: '/images/services/glass-partitions-1.jpg',
-      },
-      {
-        id: 'glass-part-semi-framed',
-        name: 'Semi-Framed Partition',
-        price: 650,
-        rating: 4.8,
-        reviewCount: 54,
-        estimatedTime: '3-4 days',
-      },
-      {
-        id: 'glass-part-framed',
-        name: 'Fully Framed Partition',
-        price: 520,
-        rating: 4.7,
-        reviewCount: 48,
-        estimatedTime: '3 days',
-      },
-      {
-        id: 'glass-part-frosted',
-        name: 'Frosted Glass Partition',
-        price: 720,
-        rating: 4.8,
-        reviewCount: 42,
-        estimatedTime: '3-4 days',
-      },
-    ],
-    priceIncludes: [
-      '10mm or 12mm toughened glass',
-      'Aluminium or stainless steel frame',
-      'Door with lock (if required)',
-      'Premium quality hardware',
-      'Professional installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'Toughened safety glass',
-      'Aluminium/SS frame',
-      'Glass door hardware',
-      'Patch fittings',
-      'Silicone sealant',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Consultation',
-        description: 'Discuss partition layout, glass type, and design preferences.',
-      },
-      {
-        step: 2,
-        title: 'Precise Measurement',
-        description: 'Accurate measurement of partition area and door openings.',
-      },
-      {
-        step: 3,
-        title: 'Glass Fabrication',
-        description: 'Custom cutting and toughening of glass panels.',
-      },
-      {
-        step: 4,
-        title: 'Frame Preparation',
-        description: 'Fabrication of frame system (if applicable).',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Expert installation with proper alignment and sealing.',
-      },
-      {
-        step: 6,
-        title: 'Quality Inspection',
-        description: 'Final inspection, cleaning, and warranty documentation.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Is toughened glass safe?',
-        answer:
-          'Yes, toughened glass is 4-5 times stronger than regular glass and shatters into small, harmless pieces if broken.',
-      },
-      {
-        question: 'Can I get frosted glass for privacy?',
-        answer:
-          'Absolutely. We offer frosted, sandblasted, and decorative film options for privacy.',
-      },
-      {
-        question: 'What thickness of glass is used?',
-        answer:
-          'We typically use 10mm or 12mm toughened glass for partitions.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Toughened Glass' },
-      { icon: '✓', text: 'Premium Hardware' },
-      { icon: '✓', text: 'Expert Installation' },
-      { icon: '✓', text: 'Sound Insulation' },
-    ],
-    relatedServices: ['aluminium-partitions', 'glass-doors'],
-  },
-  {
-    id: 'glass-doors',
-    slug: 'glass-doors',
-    category: 'glass',
-    title: 'Glass Doors',
-    shortDescription:
-      'Premium frameless and framed glass doors for entrances, offices, and bathrooms with modern aesthetics.',
-    fullDescription:
-      'Our glass door solutions combine elegance with functionality. From frameless shower doors to office entrance doors, we offer a range of options using high-quality toughened glass and premium hardware. Each installation is customized to your specific requirements.',
-    rating: 4.8,
-    reviewCount: 126,
-    duration: '2-3 days',
-    benefits: [
-      'Contemporary and elegant design',
-      'Toughened safety glass',
-      'Premium quality hardware',
-      'Easy maintenance',
-      'Variety of glass finishes',
-      'Professional installation',
-    ],
-    useCases: [
-      'Office entrances',
-      'Bathroom shower enclosures',
-      'Interior room doors',
-      'Shop fronts',
-      'Hotel and restaurant entrances',
-    ],
-    images: ['/images/services/glass-doors-1.jpg'],
-    pricing: {
-      type: 'range',
-      min: 500,
-      max: 1500,
-      unit: 'per door',
-    },
-    options: [
-      {
-        id: 'glass-door-frameless',
-        name: 'Frameless Glass Door',
-        price: 1200,
-        rating: 4.9,
-        reviewCount: 58,
-        estimatedTime: '2-3 days',
-        image: '/images/services/glass-doors-1.jpg',
-      },
-      {
-        id: 'glass-door-framed',
-        name: 'Framed Glass Door',
-        price: 850,
-        rating: 4.7,
-        reviewCount: 47,
-        estimatedTime: '2 days',
-      },
-      {
-        id: 'glass-door-sliding',
-        name: 'Sliding Glass Door',
-        price: 1400,
-        rating: 4.8,
-        reviewCount: 38,
-        estimatedTime: '3 days',
-      },
-    ],
-    priceIncludes: [
-      '10mm or 12mm toughened glass',
-      'Premium door hardware',
-      'Hinges or sliding mechanism',
-      'Door closer (if required)',
-      'Professional installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'Toughened safety glass',
-      'Stainless steel hardware',
-      'Patch fittings',
-      'Door closer mechanism',
-      'Floor spring (if required)',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Requirement Analysis',
-        description: 'Understand door type, size, and usage requirements.',
-      },
-      {
-        step: 2,
-        title: 'Measurement',
-        description: 'Precise measurement of door opening and clearances.',
-      },
-      {
-        step: 3,
-        title: 'Glass Selection',
-        description: 'Choose glass type, thickness, and finish.',
-      },
-      {
-        step: 4,
-        title: 'Fabrication',
-        description: 'Custom cutting and toughening of glass.',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Professional installation with proper alignment.',
-      },
-      {
-        step: 6,
-        title: 'Testing & Handover',
-        description: 'Operation testing and maintenance instructions.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'What thickness of glass is used?',
-        answer:
-          'We typically use 10mm or 12mm toughened glass for doors, depending on the size and application.',
-      },
-      {
-        question: 'Can doors be customized?',
-        answer:
-          'Yes, we offer complete customization including size, glass type, and hardware.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Toughened Glass' },
-      { icon: '✓', text: 'Premium Hardware' },
-      { icon: '✓', text: 'Custom Sizes' },
-      { icon: '✓', text: 'Expert Fitting' },
-    ],
-    relatedServices: ['glass-partitions', 'shower-enclosures'],
-  },
-  {
-    id: 'shower-enclosures',
-    slug: 'shower-enclosures',
-    category: 'glass',
-    title: 'Shower Enclosures',
-    shortDescription:
-      'Custom frameless and semi-framed shower enclosures with toughened glass for modern bathrooms.',
-    fullDescription:
-      'Transform your bathroom with our premium shower enclosures. Available in frameless, semi-framed, and framed designs, our enclosures use high-quality toughened glass and corrosion-resistant hardware. Custom-made to fit your bathroom perfectly.',
-    rating: 4.9,
-    reviewCount: 167,
-    duration: '1-2 days',
-    benefits: [
-      'Custom-fit to your bathroom',
-      'Toughened safety glass',
-      'Water-tight sealing',
-      'Easy to clean',
-      'Corrosion-resistant hardware',
-      'Modern and elegant appearance',
-    ],
-    useCases: [
-      'Residential bathrooms',
-      'Hotel bathrooms',
-      'Gym and spa facilities',
-      'Premium apartments',
-    ],
-    images: ['/images/services/shower-enclosures-1.jpg'],
-    pricing: {
-      type: 'range',
-      min: 8000,
-      max: 25000,
-      unit: 'per enclosure',
-    },
-    options: [
-      {
-        id: 'shower-frameless',
-        name: 'Frameless Shower Enclosure',
-        price: 18000,
-        rating: 4.9,
-        reviewCount: 78,
-        estimatedTime: '1-2 days',
-        image: '/images/services/shower-enclosures-1.jpg',
-      },
-      {
-        id: 'shower-semi-framed',
-        name: 'Semi-Framed Enclosure',
-        price: 14000,
-        rating: 4.8,
-        reviewCount: 62,
-        estimatedTime: '1 day',
-      },
-      {
-        id: 'shower-framed',
-        name: 'Framed Enclosure',
-        price: 10000,
-        rating: 4.7,
-        reviewCount: 54,
-        estimatedTime: '1 day',
-      },
-    ],
-    priceIncludes: [
-      '8mm or 10mm toughened glass',
-      'Stainless steel hardware',
-      'Water-tight sealing',
-      'Door handle',
-      'Professional installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'Toughened safety glass',
-      'SS 304 hardware',
-      'Silicone sealant',
-      'Wall channels',
-      'Door hinges',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Bathroom Assessment',
-        description: 'Visit bathroom to assess space and plumbing layout.',
-      },
-      {
-        step: 2,
-        title: 'Design & Measurement',
-        description: 'Create custom design and take precise measurements.',
-      },
-      {
-        step: 3,
-        title: 'Glass Fabrication',
-        description: 'Custom cutting and toughening of glass panels.',
-      },
-      {
-        step: 4,
-        title: 'Hardware Preparation',
-        description: 'Prepare all fittings and hardware components.',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Expert installation with water-tight sealing.',
-      },
-      {
-        step: 6,
-        title: 'Water Testing',
-        description: 'Test for leaks and ensure proper drainage.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'How long does installation take?',
-        answer:
-          'Typically 1-2 days depending on the complexity of the design.',
-      },
-      {
-        question: 'Is the glass easy to clean?',
-        answer:
-          'Yes, we can apply protective coating that makes cleaning easier and prevents water stains.',
-      },
-      {
-        question: 'Will it leak?',
-        answer:
-          'No, we use high-quality silicone sealant and test thoroughly for water-tightness.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Water-Tight Seal' },
-      { icon: '✓', text: 'Custom Fit' },
-      { icon: '✓', text: 'Easy Clean Glass' },
-      { icon: '✓', text: 'SS Hardware' },
-    ],
-    relatedServices: ['glass-doors', 'glass-partitions'],
-  },
-  {
-    id: 'glass-railings',
-    slug: 'glass-railings',
-    category: 'glass',
-    title: 'Glass Railings',
-    shortDescription:
-      'Stylish and safe glass railing systems for balconies, staircases, and terraces with unobstructed views.',
-    fullDescription:
-      'Our glass railing systems provide safety without compromising views. Using toughened or laminated glass with stainless steel or aluminium channels, these railings are perfect for balconies, staircases, and pool areas. Compliant with safety standards.',
-    rating: 4.8,
-    reviewCount: 94,
-    duration: '2-3 days',
-    benefits: [
-      'Unobstructed views',
-      'Modern and elegant design',
-      'High safety standards',
-      'Weather-resistant',
-      'Low maintenance',
-      'Increases property value',
-    ],
-    useCases: [
-      'Balcony railings',
-      'Staircase railings',
-      'Terrace and rooftop areas',
-      'Pool deck railings',
-      'Mezzanine floors',
-    ],
-    images: ['/images/services/glass-railings-1.jpg'],
-    pricing: {
-      type: 'range',
-      min: 600,
-      max: 1200,
-      unit: 'per running ft',
-    },
-    options: [
-      {
-        id: 'glass-rail-frameless',
-        name: 'Frameless Glass Railing',
-        price: 950,
-        rating: 4.9,
-        reviewCount: 52,
-        estimatedTime: '2-3 days',
-        image: '/images/services/glass-railings-1.jpg',
-      },
-      {
-        id: 'glass-rail-channel',
-        name: 'Channel Mounted Railing',
-        price: 750,
-        rating: 4.7,
-        reviewCount: 38,
-        estimatedTime: '2 days',
-      },
-      {
-        id: 'glass-rail-post',
-        name: 'Post Mounted Railing',
-        price: 680,
-        rating: 4.6,
-        reviewCount: 32,
-        estimatedTime: '2 days',
-      },
-    ],
-    priceIncludes: [
-      '12mm toughened or laminated glass',
-      'Stainless steel channels/posts',
-      'Mounting hardware',
-      'Handrail (if required)',
-      'Professional installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'Toughened/laminated glass',
-      'SS 304 channels',
-      'Mounting brackets',
-      'Handrail profiles',
-      'Anchoring bolts',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Site Inspection',
-        description: 'Assess railing area and structural requirements.',
-      },
-      {
-        step: 2,
-        title: 'Design & Measurement',
-        description: 'Create railing design and take precise measurements.',
-      },
-      {
-        step: 3,
-        title: 'Glass Processing',
-        description: 'Custom cutting and toughening/laminating of glass.',
-      },
-      {
-        step: 4,
-        title: 'Channel Fabrication',
-        description: 'Fabricate channels and mounting system.',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Secure installation with proper anchoring.',
-      },
-      {
-        step: 6,
-        title: 'Safety Testing',
-        description: 'Load testing and safety compliance check.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Is glass railing safe for children?',
-        answer:
-          'Yes, we use toughened or laminated glass that meets safety standards and can withstand significant impact.',
-      },
-      {
-        question: 'What is the difference between toughened and laminated glass?',
-        answer:
-          'Toughened glass is stronger and shatters into small pieces. Laminated glass has a film that holds pieces together if broken.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Safety Certified' },
-      { icon: '✓', text: 'Unobstructed Views' },
-      { icon: '✓', text: 'Weather Proof' },
-      { icon: '✓', text: 'Premium Glass' },
-    ],
-    relatedServices: ['glass-partitions', 'aluminium-railings'],
-  },
-  {
-    id: 'glass-canopies',
-    slug: 'glass-canopies',
-    category: 'glass',
-    title: 'Glass Canopies',
-    shortDescription:
-      'Modern glass canopy systems for entrances, walkways, and outdoor areas with weather protection.',
-    fullDescription:
-      'Enhance your property with our elegant glass canopy systems. Perfect for entrance areas, walkways, and outdoor spaces, these canopies provide weather protection while maintaining a modern aesthetic. Made with toughened or laminated glass and sturdy support structures.',
-    rating: 4.7,
-    reviewCount: 73,
-    duration: '3-5 days',
-    benefits: [
-      'Weather protection',
-      'Modern architectural appeal',
-      'Natural light transmission',
-      'Durable construction',
-      'Low maintenance',
-      'Custom designs available',
-    ],
-    useCases: [
-      'Building entrances',
-      'Walkway covering',
-      'Car parking areas',
-      'Outdoor seating areas',
-      'Commercial facades',
-    ],
-    images: ['/images/services/glass-category.jpg'],
-    pricing: {
-      type: 'range',
-      min: 800,
-      max: 1500,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'glass-canopy-standard',
-        name: 'Standard Glass Canopy',
-        price: 950,
-        rating: 4.6,
-        reviewCount: 38,
-        estimatedTime: '3-4 days',
-      },
-      {
-        id: 'glass-canopy-designer',
-        name: 'Designer Canopy',
-        price: 1350,
-        rating: 4.8,
-        reviewCount: 28,
-        estimatedTime: '4-5 days',
-      },
-      {
-        id: 'glass-canopy-large',
-        name: 'Large Area Canopy',
-        price: 1150,
-        rating: 4.7,
-        reviewCount: 22,
-        estimatedTime: '5-7 days',
-      },
-    ],
-    priceIncludes: [
-      'Toughened or laminated glass',
-      'Stainless steel support structure',
-      'Mounting brackets',
-      'Water drainage system',
-      'Professional installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'Toughened/laminated glass',
-      'SS support beams',
-      'Mounting hardware',
-      'Drainage channels',
-      'Sealants',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Site Survey',
-        description: 'Assess location and structural support requirements.',
-      },
-      {
-        step: 2,
-        title: 'Design Development',
-        description: 'Create custom canopy design with engineering calculations.',
-      },
-      {
-        step: 3,
-        title: 'Structural Fabrication',
-        description: 'Fabricate support structure and mounting system.',
-      },
-      {
-        step: 4,
-        title: 'Glass Processing',
-        description: 'Custom cutting and processing of glass panels.',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Install structure and mount glass panels securely.',
-      },
-      {
-        step: 6,
-        title: 'Water Testing',
-        description: 'Test drainage system and weather sealing.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Can canopies withstand heavy rain?',
-        answer:
-          'Yes, our canopies are designed with proper drainage and can handle heavy rainfall.',
-      },
-      {
-        question: 'What type of glass is used?',
-        answer:
-          'We use toughened or laminated glass depending on the size and application.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Weather Resistant' },
-      { icon: '✓', text: 'Custom Design' },
-      { icon: '✓', text: 'Structural Safety' },
-      { icon: '✓', text: 'Professional Install' },
-    ],
-    relatedServices: ['glass-railings', 'glass-partitions'],
-  },
+
 
   // NETTING SERVICES
-  {
-    id: 'safety-nets',
-    slug: 'safety-nets',
-    category: 'netting',
-    title: 'Safety Nets',
-    shortDescription:
-      'High-quality safety nets for balconies, windows, and terraces to protect children and pets.',
-    fullDescription:
-      'Our safety nets provide peace of mind for families with children and pets. Made from high-strength, UV-resistant materials, these nets are virtually invisible from a distance while providing robust protection. Professional installation ensures secure fitting.',
-    rating: 4.8,
-    reviewCount: 234,
-    duration: '2-4 hours',
-    benefits: [
-      'Child and pet safety',
-      'UV-resistant and weatherproof',
-      'Nearly invisible from distance',
-      'High tensile strength',
-      'Easy maintenance',
-      'Does not obstruct views',
-    ],
-    useCases: [
-      'Balcony safety',
-      'Window protection',
-      'Terrace enclosures',
-      'Staircase safety',
-      'Duct area covering',
-    ],
-    images: ['/images/services/safety-nets-1.jpg'],
-    pricing: {
-      type: 'range',
-      min: 25,
-      max: 50,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'safety-net-standard',
-        name: 'Standard Safety Net',
-        price: 28,
-        rating: 4.7,
-        reviewCount: 124,
-        estimatedTime: '2-3 hours',
-        image: '/images/services/safety-nets-1.jpg',
-      },
-      {
-        id: 'safety-net-premium',
-        name: 'Premium Safety Net',
-        price: 38,
-        rating: 4.9,
-        reviewCount: 87,
-        estimatedTime: '2-3 hours',
-      },
-      {
-        id: 'safety-net-heavy-duty',
-        name: 'Heavy Duty Net',
-        price: 45,
-        rating: 4.8,
-        reviewCount: 65,
-        estimatedTime: '3-4 hours',
-      },
-    ],
-    priceIncludes: [
-      'High-quality nylon net',
-      'UV-resistant material',
-      'Stainless steel hooks',
-      'Installation hardware',
-      'Professional installation',
-      '2-year warranty',
-    ],
-    materials: [
-      'UV-resistant nylon',
-      'Stainless steel hooks',
-      'Nylon rope',
-      'Mounting brackets',
-      'Cable ties',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Area Assessment',
-        description: 'Visit site to measure area and assess installation points.',
-      },
-      {
-        step: 2,
-        title: 'Net Selection',
-        description: 'Choose appropriate net type based on requirements.',
-      },
-      {
-        step: 3,
-        title: 'Preparation',
-        description: 'Prepare mounting points and installation hardware.',
-      },
-      {
-        step: 4,
-        title: 'Net Installation',
-        description: 'Install net with proper tension and secure fixing.',
-      },
-      {
-        step: 5,
-        title: 'Tension Adjustment',
-        description: 'Adjust net tension for optimal safety and appearance.',
-      },
-      {
-        step: 6,
-        title: 'Safety Check',
-        description: 'Final inspection and safety testing.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'How long do safety nets last?',
-        answer:
-          'Our UV-resistant nets typically last 5-7 years with proper maintenance.',
-      },
-      {
-        question: 'Are the nets visible?',
-        answer:
-          'The nets are designed to be nearly invisible from a distance while providing strong protection.',
-      },
-      {
-        question: 'Can nets be removed and reinstalled?',
-        answer:
-          'Yes, nets can be removed for cleaning or relocation if needed.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'UV Resistant' },
-      { icon: '✓', text: 'Child Safe' },
-      { icon: '✓', text: '5-7 Year Life' },
-      { icon: '✓', text: 'Nearly Invisible' },
-    ],
-    relatedServices: ['bird-netting', 'anti-monkey-nets'],
-  },
-  {
-    id: 'bird-netting',
-    slug: 'bird-netting',
-    category: 'netting',
-    title: 'Bird Protection Nets',
-    shortDescription:
-      'Effective bird netting solutions to prevent pigeons and other birds from nesting in your property.',
-    fullDescription:
-      'Keep your property clean and bird-free with our specialized bird protection nets. These nets prevent pigeons and other birds from entering balconies, AC ducts, and other areas without harming them. Made from durable, weather-resistant materials.',
-    rating: 4.7,
-    reviewCount: 198,
-    duration: '2-3 hours',
-    benefits: [
-      'Prevents bird nesting and droppings',
-      'Humane bird control solution',
-      'Weather and UV resistant',
-      'Long-lasting durability',
-      'Maintains property cleanliness',
-      'Reduces health hazards',
-    ],
-    useCases: [
-      'Balcony bird protection',
-      'AC duct covering',
-      'Terrace areas',
-      'Building facades',
-      'Warehouse openings',
-    ],
-    images: ['/images/services/bird-netting-1.jpg'],
-    pricing: {
-      type: 'range',
-      min: 20,
-      max: 40,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'bird-net-standard',
-        name: 'Standard Bird Net',
-        price: 24,
-        rating: 4.6,
-        reviewCount: 102,
-        estimatedTime: '2 hours',
-        image: '/images/services/bird-netting-1.jpg',
-      },
-      {
-        id: 'bird-net-premium',
-        name: 'Premium Bird Net',
-        price: 32,
-        rating: 4.8,
-        reviewCount: 78,
-        estimatedTime: '2-3 hours',
-      },
-      {
-        id: 'bird-net-transparent',
-        name: 'Transparent Bird Net',
-        price: 36,
-        rating: 4.7,
-        reviewCount: 54,
-        estimatedTime: '2-3 hours',
-      },
-    ],
-    priceIncludes: [
-      'Bird-proof nylon net',
-      'UV-resistant material',
-      'Stainless steel hooks',
-      'Installation accessories',
-      'Professional installation',
-      '2-year warranty',
-    ],
-    materials: [
-      'UV-resistant nylon',
-      'Stainless steel hooks',
-      'Nylon rope',
-      'Mounting clips',
-      'Cable ties',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Site Inspection',
-        description: 'Assess bird problem areas and measure coverage needed.',
-      },
-      {
-        step: 2,
-        title: 'Net Type Selection',
-        description: 'Choose appropriate mesh size and net type.',
-      },
-      {
-        step: 3,
-        title: 'Mounting Preparation',
-        description: 'Prepare mounting points without damaging structure.',
-      },
-      {
-        step: 4,
-        title: 'Net Installation',
-        description: 'Install net ensuring complete coverage of entry points.',
-      },
-      {
-        step: 5,
-        title: 'Sealing',
-        description: 'Seal all gaps to prevent bird entry.',
-      },
-      {
-        step: 6,
-        title: 'Final Inspection',
-        description: 'Check for any gaps and ensure proper installation.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Will the nets harm birds?',
-        answer:
-          'No, our nets are designed to humanely prevent birds from entering without causing harm.',
-      },
-      {
-        question: 'What areas can be covered?',
-        answer:
-          'We can cover balconies, terraces, AC ducts, and any open areas where birds nest.',
-      },
-      {
-        question: 'How effective are bird nets?',
-        answer:
-          'Very effective. Our nets prevent 99% of bird entry when properly installed.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Humane Solution' },
-      { icon: '✓', text: 'UV Resistant' },
-      { icon: '✓', text: '99% Effective' },
-      { icon: '✓', text: 'Quick Install' },
-    ],
-    relatedServices: ['safety-nets', 'anti-monkey-nets'],
-  },
-  {
-    id: 'anti-monkey-nets',
-    slug: 'anti-monkey-nets',
-    category: 'netting',
-    title: 'Anti-Monkey Nets',
-    shortDescription:
-      'Strong and durable nets to prevent monkey intrusion in residential and commercial properties.',
-    fullDescription:
-      'Protect your property from monkey intrusion with our heavy-duty anti-monkey nets. These extra-strong nets are specifically designed to withstand the strength and intelligence of monkeys while maintaining visibility and airflow.',
-    rating: 4.8,
-    reviewCount: 142,
-    duration: '3-4 hours',
-    benefits: [
-      'Extra-strong construction',
-      'Prevents monkey entry',
-      'Weather-resistant',
-      'Maintains ventilation',
-      'Long-lasting durability',
-      'Professional installation',
-    ],
-    useCases: [
-      'Residential balconies',
-      'Terrace areas',
-      'Garden enclosures',
-      'Building perimeters',
-      'Agricultural areas',
-    ],
-    images: ['/images/services/anti-monkey-nets-1.jpg'],
-    pricing: {
-      type: 'range',
-      min: 35,
-      max: 60,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'monkey-net-standard',
-        name: 'Standard Anti-Monkey Net',
-        price: 42,
-        rating: 4.7,
-        reviewCount: 76,
-        estimatedTime: '3 hours',
-        image: '/images/services/anti-monkey-nets-1.jpg',
-      },
-      {
-        id: 'monkey-net-heavy-duty',
-        name: 'Heavy Duty Net',
-        price: 55,
-        rating: 4.9,
-        reviewCount: 58,
-        estimatedTime: '3-4 hours',
-      },
-      {
-        id: 'monkey-net-reinforced',
-        name: 'Reinforced Net',
-        price: 58,
-        rating: 4.8,
-        reviewCount: 42,
-        estimatedTime: '4 hours',
-      },
-    ],
-    priceIncludes: [
-      'Heavy-duty nylon net',
-      'Reinforced edges',
-      'Stainless steel hooks',
-      'Extra-strong mounting',
-      'Professional installation',
-      '3-year warranty',
-    ],
-    materials: [
-      'Heavy-duty nylon',
-      'Reinforced edges',
-      'SS hooks and brackets',
-      'Steel wire rope',
-      'Heavy-duty cable ties',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Problem Assessment',
-        description: 'Assess monkey entry points and coverage requirements.',
-      },
-      {
-        step: 2,
-        title: 'Net Selection',
-        description: 'Choose appropriate strength and mesh size.',
-      },
-      {
-        step: 3,
-        title: 'Reinforced Mounting',
-        description: 'Install extra-strong mounting points.',
-      },
-      {
-        step: 4,
-        title: 'Net Installation',
-        description: 'Install net with reinforced edges and proper tension.',
-      },
-      {
-        step: 5,
-        title: 'Strength Testing',
-        description: 'Test net strength and mounting security.',
-      },
-      {
-        step: 6,
-        title: 'Final Check',
-        description: 'Ensure complete coverage with no weak points.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'How strong are these nets?',
-        answer:
-          'Our anti-monkey nets are made from high-tensile materials that can withstand significant force.',
-      },
-      {
-        question: 'Will monkeys be able to tear the net?',
-        answer:
-          'No, our heavy-duty nets are specifically designed to resist tearing and cutting.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Extra Strong' },
-      { icon: '✓', text: 'Tear Resistant' },
-      { icon: '✓', text: '3-Year Warranty' },
-      { icon: '✓', text: 'Proven Effective' },
-    ],
-    relatedServices: ['safety-nets', 'bird-netting'],
-  },
-  {
-    id: 'sports-nets',
-    slug: 'sports-nets',
-    category: 'netting',
-    title: 'Sports & Cricket Nets',
-    shortDescription:
-      'Professional-grade sports nets for cricket practice, football, and other sports facilities.',
-    fullDescription:
-      'Set up your own practice area with our professional sports nets. Ideal for cricket practice, football, and other sports, these nets are made from high-quality materials that can withstand repeated impact. Available in various sizes and configurations.',
-    rating: 4.7,
-    reviewCount: 86,
-    duration: '4-6 hours',
-    benefits: [
-      'Professional-grade quality',
-      'Impact-resistant',
-      'UV and weather resistant',
-      'Custom sizes available',
-      'Easy installation',
-      'Durable construction',
-    ],
-    useCases: [
-      'Cricket practice nets',
-      'Football goal nets',
-      'Terrace sports areas',
-      'School sports facilities',
-      'Community sports grounds',
-    ],
-    images: ['/images/services/sports-nets-1.jpg'],
-    pricing: {
-      type: 'quote',
-    },
-    options: [
-      {
-        id: 'sports-net-cricket',
-        name: 'Cricket Practice Net',
-        price: 15000,
-        rating: 4.8,
-        reviewCount: 48,
-        estimatedTime: '4-5 hours',
-        image: '/images/services/sports-nets-1.jpg',
-      },
-      {
-        id: 'sports-net-football',
-        name: 'Football Goal Net',
-        price: 8000,
-        rating: 4.6,
-        reviewCount: 32,
-        estimatedTime: '2-3 hours',
-      },
-      {
-        id: 'sports-net-multi',
-        name: 'Multi-Sport Net',
-        price: 12000,
-        rating: 4.7,
-        reviewCount: 24,
-        estimatedTime: '3-4 hours',
-      },
-    ],
-    priceIncludes: [
-      'Professional-grade net',
-      'Support poles (if required)',
-      'Mounting hardware',
-      'Ground anchors',
-      'Professional installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'High-strength nylon',
-      'Steel support poles',
-      'Ground anchors',
-      'Mounting brackets',
-      'Tensioning ropes',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Area Survey',
-        description: 'Assess practice area and determine net configuration.',
-      },
-      {
-        step: 2,
-        title: 'Custom Design',
-        description: 'Design net system based on sport and space available.',
-      },
-      {
-        step: 3,
-        title: 'Support Installation',
-        description: 'Install support poles and mounting structure.',
-      },
-      {
-        step: 4,
-        title: 'Net Mounting',
-        description: 'Mount net with proper tension and alignment.',
-      },
-      {
-        step: 5,
-        title: 'Tensioning',
-        description: 'Adjust net tension for optimal performance.',
-      },
-      {
-        step: 6,
-        title: 'Safety Check',
-        description: 'Test stability and safety of installation.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Can nets be customized for specific sports?',
-        answer:
-          'Yes, we can customize net size, mesh size, and configuration for different sports.',
-      },
-      {
-        question: 'How durable are sports nets?',
-        answer:
-          'Our professional-grade nets are designed to withstand thousands of impacts.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Professional Grade' },
-      { icon: '✓', text: 'Impact Resistant' },
-      { icon: '✓', text: 'Custom Sizes' },
-      { icon: '✓', text: 'Weather Proof' },
-    ],
-    relatedServices: ['safety-nets'],
-  },
-  {
-    id: 'construction-nets',
-    slug: 'construction-nets',
-    category: 'netting',
-    title: 'Construction Safety Nets',
-    shortDescription:
-      'Heavy-duty construction safety nets for building sites and high-rise construction projects.',
-    fullDescription:
-      'Ensure worker safety at construction sites with our heavy-duty construction safety nets. Designed to meet safety standards, these nets provide fall protection for workers and prevent debris from falling. Available in various sizes and load capacities.',
-    rating: 4.9,
-    reviewCount: 67,
-    duration: '1-2 days',
-    benefits: [
-      'Worker fall protection',
-      'Debris containment',
-      'Meets safety standards',
-      'High load capacity',
-      'Weather-resistant',
-      'Reusable and durable',
-    ],
-    useCases: [
-      'High-rise construction',
-      'Building renovation',
-      'Bridge construction',
-      'Industrial projects',
-      'Scaffolding safety',
-    ],
-    images: ['/images/services/netting-category.jpg'],
-    pricing: {
-      type: 'range',
-      min: 45,
-      max: 80,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'const-net-standard',
-        name: 'Standard Construction Net',
-        price: 52,
-        rating: 4.8,
-        reviewCount: 38,
-        estimatedTime: '1 day',
-      },
-      {
-        id: 'const-net-heavy-duty',
-        name: 'Heavy Duty Net',
-        price: 68,
-        rating: 4.9,
-        reviewCount: 28,
-        estimatedTime: '1-2 days',
-      },
-      {
-        id: 'const-net-debris',
-        name: 'Debris Containment Net',
-        price: 58,
-        rating: 4.8,
-        reviewCount: 22,
-        estimatedTime: '1 day',
-      },
-    ],
-    priceIncludes: [
-      'Heavy-duty safety net',
-      'Reinforced edges',
-      'Mounting hardware',
-      'Safety certification',
-      'Professional installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'High-tensile nylon',
-      'Reinforced borders',
-      'Steel mounting brackets',
-      'Safety hooks',
-      'Tensioning cables',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Site Safety Assessment',
-        description: 'Evaluate construction site and safety requirements.',
-      },
-      {
-        step: 2,
-        title: 'Net Specification',
-        description: 'Determine appropriate net type and load capacity.',
-      },
-      {
-        step: 3,
-        title: 'Mounting System',
-        description: 'Install secure mounting points on structure.',
-      },
-      {
-        step: 4,
-        title: 'Net Installation',
-        description: 'Install net with proper overlap and tensioning.',
-      },
-      {
-        step: 5,
-        title: 'Load Testing',
-        description: 'Test net load capacity and mounting security.',
-      },
-      {
-        step: 6,
-        title: 'Safety Certification',
-        description: 'Provide safety certification and documentation.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Do construction nets meet safety standards?',
-        answer:
-          'Yes, our nets meet all relevant safety standards and come with certification.',
-      },
-      {
-        question: 'What load capacity do the nets have?',
-        answer:
-          'Our nets can handle loads from 50kg to 200kg per square meter depending on the type.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Safety Certified' },
-      { icon: '✓', text: 'High Load Capacity' },
-      { icon: '✓', text: 'Meets Standards' },
-      { icon: '✓', text: 'Professional Install' },
-    ],
-    relatedServices: ['safety-nets', 'sports-nets'],
-  },
-  {
-    id: 'garden-nets',
-    slug: 'garden-nets',
-    category: 'netting',
-    title: 'Garden & Agricultural Nets',
-    shortDescription:
-      'Protective netting solutions for gardens, farms, and agricultural applications.',
-    fullDescription:
-      'Protect your crops and gardens with our specialized agricultural nets. These nets provide protection from birds, insects, and harsh weather while allowing sunlight and air circulation. Available in various mesh sizes for different applications.',
-    rating: 4.6,
-    reviewCount: 54,
-    duration: '3-5 hours',
-    benefits: [
-      'Crop protection',
-      'Bird and insect barrier',
-      'UV-resistant material',
-      'Allows air circulation',
-      'Weather protection',
-      'Increases yield',
-    ],
-    useCases: [
-      'Vegetable gardens',
-      'Fruit orchards',
-      'Nurseries',
-      'Terrace gardens',
-      'Agricultural farms',
-    ],
-    images: ['/images/services/netting-category.jpg'],
-    pricing: {
-      type: 'range',
-      min: 18,
-      max: 35,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'garden-net-bird',
-        name: 'Bird Protection Net',
-        price: 22,
-        rating: 4.5,
-        reviewCount: 28,
-        estimatedTime: '3 hours',
-      },
-      {
-        id: 'garden-net-insect',
-        name: 'Insect Protection Net',
-        price: 26,
-        rating: 4.7,
-        reviewCount: 22,
-        estimatedTime: '3-4 hours',
-      },
-      {
-        id: 'garden-net-shade',
-        name: 'Shade Net',
-        price: 20,
-        rating: 4.6,
-        reviewCount: 18,
-        estimatedTime: '3 hours',
-      },
-    ],
-    priceIncludes: [
-      'Agricultural-grade net',
-      'UV-resistant material',
-      'Support structure',
-      'Mounting accessories',
-      'Installation',
-      '1-year warranty',
-    ],
-    materials: [
-      'UV-resistant nylon',
-      'Support poles',
-      'Mounting clips',
-      'Tensioning ropes',
-      'Ground anchors',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Garden Assessment',
-        description: 'Evaluate garden area and protection requirements.',
-      },
-      {
-        step: 2,
-        title: 'Net Type Selection',
-        description: 'Choose appropriate mesh size and net type.',
-      },
-      {
-        step: 3,
-        title: 'Support Installation',
-        description: 'Install support structure for net.',
-      },
-      {
-        step: 4,
-        title: 'Net Mounting',
-        description: 'Mount net ensuring complete coverage.',
-      },
-      {
-        step: 5,
-        title: 'Adjustment',
-        description: 'Adjust for proper tension and coverage.',
-      },
-      {
-        step: 6,
-        title: 'Maintenance Guide',
-        description: 'Provide maintenance instructions for longevity.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Will the net block sunlight?',
-        answer:
-          'No, our nets allow sufficient sunlight while providing protection.',
-      },
-      {
-        question: 'Can nets be used for terrace gardens?',
-        answer:
-          'Yes, our nets are perfect for terrace and balcony gardens.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'UV Resistant' },
-      { icon: '✓', text: 'Crop Protection' },
-      { icon: '✓', text: 'Air Circulation' },
-      { icon: '✓', text: 'Easy Maintenance' },
-    ],
-    relatedServices: ['bird-netting', 'safety-nets'],
-  },
-  
+
   // NEW ALUMINIUM SERVICES
   {
     id: 'aluminium-window-sliding',
@@ -2158,8 +454,8 @@ export const services: Service[] = [
       'Hospitals and clinics',
     ],
     images: [
-      '/images/services/aluminium-windows-1.jpg',
-      '/images/services/aluminium-windows-2.jpg',
+      '/Aluminium Category Images/2-Track-sliding-Window.webp',
+      '/Aluminium Category Images/3-Track-sliding-Window..webp',
     ],
     pricing: {
       type: 'range',
@@ -2193,14 +489,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 380,
         estimatedTime: '3 days',
-      },
-      {
-        id: 'alu-slide-mesh',
-        name: 'Sliding Window with Mesh',
-        price: 450,
-        rating: 4.9,
-        reviewCount: 290,
-        estimatedTime: '2-3 days',
+        image: '/Aluminium Category Images/4-Track-Window.webp',
       },
       {
         id: 'alu-slide-soundproof',
@@ -2209,6 +498,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 160,
         estimatedTime: '3-4 days',
+        image: '/Aluminium Category Images/Soundoroof-Window.webp',
       },
     ],
     priceIncludes: [
@@ -2266,8 +556,8 @@ export const services: Service[] = [
       'Terrace doors',
     ],
     images: [
-      '/images/services/aluminium-doors-1.jpg',
-      '/images/services/aluminium-doors-2.jpg',
+      '/Aluminium Category Images/Office-Cabin-Sliding.webp',
+      '/Aluminium Category Images/Partitions-sliding-Door.webp',
     ],
     pricing: {
       type: 'range',
@@ -2277,20 +567,13 @@ export const services: Service[] = [
     },
     options: [
       {
-        id: 'alu-door-balcony',
-        name: 'Balcony Sliding Door',
-        price: 550,
-        rating: 4.8,
-        reviewCount: 680,
-        estimatedTime: '3 days',
-      },
-      {
         id: 'alu-door-cabin',
         name: 'Office Cabin Sliding Door',
         price: 650,
         rating: 4.9,
         reviewCount: 520,
         estimatedTime: '3-4 days',
+        image: '/Aluminium Category Images/Office-Cabin-Sliding.webp',
       },
       {
         id: 'alu-door-partition',
@@ -2299,6 +582,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 450,
         estimatedTime: '2-3 days',
+        image: '/Aluminium Category Images/Partitions-sliding-Door.webp',
       },
       {
         id: 'alu-door-toughened',
@@ -2307,6 +591,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 250,
         estimatedTime: '4 days',
+        image: '/Aluminium Category Images/Profile door.webp',
       },
     ],
     priceIncludes: [
@@ -2364,8 +649,8 @@ export const services: Service[] = [
       'Co-working spaces',
     ],
     images: [
-      '/images/services/aluminium-partitions-1.jpg',
-      '/images/services/aluminium-partitions-2.jpg',
+      '/Aluminium Category Images/Profile partition.webp',
+      '/Aluminium Category Images/Solid panel partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -2381,6 +666,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '4 days',
+        image: '/Aluminium Category Images/Profile partition.webp',
       },
       {
         id: 'alu-part-shop',
@@ -2389,6 +675,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 560,
         estimatedTime: '3-4 days',
+        image: '/Aluminium Category Images/Profile partition.webp',
       },
       {
         id: 'alu-part-frosted',
@@ -2397,6 +684,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 420,
         estimatedTime: '4-5 days',
+        image: '/Aluminium Category Images/Profile partition.webp',
       },
       {
         id: 'alu-part-acrylic',
@@ -2405,6 +693,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 330,
         estimatedTime: '3 days',
+        image: '/Aluminium Category Images/Solid panel partitions.webp',
       },
     ],
     priceIncludes: [
@@ -2432,105 +721,7 @@ export const services: Service[] = [
       { icon: '✓', text: 'Professional Finish' },
       { icon: '✓', text: 'Easy Reconfiguration' },
     ],
-    relatedServices: ['aluminium-door-sliding', 'aluminium-fabrication'],
-  },
-  {
-    id: 'aluminium-fabrication',
-    slug: 'aluminium-fabrication',
-    category: 'aluminium',
-    title: 'Aluminium Fabrication Work',
-    shortDescription:
-      'Balcony covering, safety grill + aluminium combo, custom frames, ACP cladding with aluminium frame.',
-    fullDescription:
-      'Complete aluminium fabrication services including balcony covering, safety grill combinations, custom-size frames, and ACP cladding. Perfect for both residential and commercial applications requiring custom aluminium solutions.',
-    rating: 4.7,
-    reviewCount: 1340,
-    duration: '5-7 days',
-    benefits: [
-      'Balcony covering solutions',
-      'Safety grill + aluminium combination',
-      'Custom size frames',
-      'ACP cladding + aluminium frame',
-      'Weather-resistant',
-      'Durable construction',
-    ],
-    useCases: [
-      'Balcony covering',
-      'Building facades',
-      'Safety installations',
-      'Custom projects',
-      'Commercial cladding',
-    ],
-    images: [
-      '/images/services/aluminium-fabrication-1.jpg',
-      '/images/services/aluminium-fabrication-2.jpg',
-    ],
-    pricing: {
-      type: 'range',
-      min: 320,
-      max: 750,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'alu-fab-balcony',
-        name: 'Balcony Covering',
-        price: 450,
-        rating: 4.8,
-        reviewCount: 380,
-        estimatedTime: '5 days',
-      },
-      {
-        id: 'alu-fab-grill',
-        name: 'Safety Grill + Aluminium',
-        price: 520,
-        rating: 4.7,
-        reviewCount: 290,
-        estimatedTime: '6 days',
-      },
-      {
-        id: 'alu-fab-custom',
-        name: 'Custom Size Frames',
-        price: 380,
-        rating: 4.6,
-        reviewCount: 420,
-        estimatedTime: '4-5 days',
-      },
-      {
-        id: 'alu-fab-acp',
-        name: 'ACP Cladding + Frame',
-        price: 650,
-        rating: 4.8,
-        reviewCount: 250,
-        estimatedTime: '7 days',
-      },
-    ],
-    priceIncludes: [
-      'Custom aluminium fabrication',
-      'Materials as per design',
-      'Safety features',
-      'Professional installation',
-      'Finishing work',
-      '1-year warranty',
-    ],
-    materials: ['Aluminium profiles', 'ACP sheets', 'Safety grills', 'Hardware', 'Fasteners'],
-    processSteps: [
-      { step: 1, title: 'Consultation', description: 'Understand requirements' },
-      { step: 2, title: 'Design', description: 'Custom design creation' },
-      { step: 3, title: 'Fabrication', description: 'Workshop fabrication' },
-      { step: 4, title: 'Installation', description: 'On-site installation' },
-    ],
-    faqs: [
-      { question: 'What is ACP cladding?', answer: 'Aluminium Composite Panel cladding for building facades.' },
-      { question: 'Can you do custom designs?', answer: 'Yes, we specialize in custom aluminium fabrication.' },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Custom Solutions' },
-      { icon: '✓', text: 'Safety Certified' },
-      { icon: '✓', text: 'Weather Resistant' },
-      { icon: '✓', text: 'Professional Team' },
-    ],
-    relatedServices: ['aluminium-partition-work', 'aluminium-window-sliding'],
+    relatedServices: ['aluminium-door-sliding', 'aluminium-window-sliding'],
   },
   {
     id: 'aluminium-kitchen-wardrobe',
@@ -2560,8 +751,8 @@ export const services: Service[] = [
       'Dressing rooms',
     ],
     images: [
-      '/images/services/aluminium-kitchen-1.jpg',
-      '/images/services/aluminium-wardrobe-1.jpg',
+      '/Aluminium Category Images/Profile cabinet.webp',
+      '/Aluminium Category Images/Profile door.webp',
     ],
     pricing: {
       type: 'range',
@@ -2577,6 +768,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 890,
         estimatedTime: '2-3 days',
+        image: '/Aluminium Category Images/Profile cabinet.webp',
       },
       {
         id: 'alu-wardrobe-sliding',
@@ -2585,6 +777,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1120,
         estimatedTime: '3 days',
+        image: '/Aluminium Category Images/Profile door.webp',
       },
       {
         id: 'alu-slim-profile',
@@ -2593,6 +786,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 440,
         estimatedTime: '3-4 days',
+        image: '/Aluminium Category Images/Profile door.webp',
       },
     ],
     priceIncludes: [
@@ -2650,8 +844,8 @@ export const services: Service[] = [
       'Hotels and resorts',
     ],
     images: [
-      '/images/services/aluminium-commercial-1.jpg',
-      '/images/services/aluminium-commercial-2.jpg',
+      '/Aluminium Category Images/Showroom front.webp',
+      '/Aluminium Category Images/Thermal break.webp',
     ],
     pricing: {
       type: 'range',
@@ -2667,6 +861,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 280,
         estimatedTime: '8 days',
+        image: '/Aluminium Category Images/Showroom front.webp',
       },
       {
         id: 'alu-industrial',
@@ -2675,6 +870,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 190,
         estimatedTime: '7 days',
+        image: '/Aluminium Category Images/Showroom front.webp',
       },
       {
         id: 'alu-facade',
@@ -2683,6 +879,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 250,
         estimatedTime: '10 days',
+        image: '/Aluminium Category Images/Showroom front.webp',
       },
       {
         id: 'alu-thermal-break',
@@ -2691,6 +888,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 170,
         estimatedTime: '10-12 days',
+        image: '/Aluminium Category Images/Thermal break.webp',
       },
     ],
     priceIncludes: [
@@ -2718,143 +916,29 @@ export const services: Service[] = [
       { icon: '✓', text: 'Energy Efficient' },
       { icon: '✓', text: '2-Year Warranty' },
     ],
-    relatedServices: ['aluminium-fabrication', 'aluminium-partition-work'],
+    relatedServices: ['aluminium-partition-work', 'aluminium-window-sliding'],
   },
   
   // NEW NETTING SERVICES
-  {
-    id: 'safety-netting',
-    slug: 'safety-netting',
-    category: 'netting',
-    title: 'Safety Netting',
-    shortDescription:
-      'Balcony, window, staircase, children, construction, and monkey safety nets for complete protection.',
-    fullDescription:
-      'Comprehensive safety netting solutions for residential and commercial spaces. Protect your family with high-quality safety nets for balconies, windows, staircases, and construction sites. Special monkey safety nets to prevent monkey entry. UV-protected and weather-resistant materials.',
-    rating: 4.9,
-    reviewCount: 3200,
-    duration: '1-2 days',
-    benefits: [
-      'Balcony safety net',
-      'Window safety net',
-      'Staircase safety net',
-      'Children safety protection',
-      'Construction safety net',
-      'Monkey safety net (anti-monkey)',
-    ],
-    useCases: [
-      'Residential apartments',
-      'High-rise buildings',
-      'Construction sites',
-      'Schools and playgrounds',
-      'Areas with monkey problems',
-    ],
-    images: [
-      '/images/services/safety-net-1.jpg',
-      '/images/services/safety-net-2.jpg',
-    ],
-    pricing: {
-      type: 'range',
-      min: 15,
-      max: 45,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'safety-balcony',
-        name: 'Balcony Safety Net',
-        price: 25,
-        rating: 4.9,
-        reviewCount: 1200,
-        estimatedTime: '1 day',
-      },
-      {
-        id: 'safety-window',
-        name: 'Window Safety Net',
-        price: 22,
-        rating: 4.8,
-        reviewCount: 890,
-        estimatedTime: '1 day',
-      },
-      {
-        id: 'safety-staircase',
-        name: 'Staircase Safety Net',
-        price: 28,
-        rating: 4.9,
-        reviewCount: 450,
-        estimatedTime: '1-2 days',
-      },
-      {
-        id: 'safety-children',
-        name: 'Children Safety Net',
-        price: 24,
-        rating: 4.9,
-        reviewCount: 680,
-        estimatedTime: '1 day',
-      },
-      {
-        id: 'safety-construction',
-        name: 'Construction Safety Net',
-        price: 35,
-        rating: 4.8,
-        reviewCount: 520,
-        estimatedTime: '2 days',
-      },
-      {
-        id: 'safety-monkey',
-        name: 'Monkey Safety Net',
-        price: 30,
-        rating: 4.9,
-        reviewCount: 460,
-        estimatedTime: '1-2 days',
-      },
-    ],
-    priceIncludes: [
-      'High-quality HDPE net',
-      'UV-protected material',
-      'Installation hardware',
-      'Professional installation',
-      'Safety certification',
-      '2-year warranty',
-    ],
-    materials: ['HDPE netting', 'UV-protected', 'Nylon rope', 'Stainless steel hooks', 'Weather-resistant'],
-    processSteps: [
-      { step: 1, title: 'Site Inspection', description: 'Safety assessment' },
-      { step: 2, title: 'Measurement', description: 'Accurate measurements' },
-      { step: 3, title: 'Net Selection', description: 'Choose appropriate net type' },
-      { step: 4, title: 'Installation', description: 'Professional fitting' },
-    ],
-    faqs: [
-      { question: 'Is it safe for children?', answer: 'Yes, our nets are specifically designed for child safety with small mesh size.' },
-      { question: 'Does it block sunlight?', answer: 'No, our nets allow 90% light and air passage.' },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Child Safe' },
-      { icon: '✓', text: 'UV Protected' },
-      { icon: '✓', text: 'Weather Resistant' },
-      { icon: '✓', text: '2-Year Warranty' },
-    ],
-    relatedServices: ['bird-control-netting', 'pest-control-netting'],
-  },
   {
     id: 'bird-control-netting',
     slug: 'bird-control-netting',
     category: 'netting',
     title: 'Bird Control Netting',
     shortDescription:
-      'Pigeon netting, anti-bird net, bird spike installation, transparent bird net for complete bird protection.',
+      'Pigeon netting, bird spike installation, and transparent bird net for complete bird protection.',
     fullDescription:
-      'Professional bird control solutions to keep pigeons and other birds away from your property. Includes pigeon netting (highest demand), anti-bird nets, bird spike installation, and transparent bird nets. Humane and effective bird deterrent systems.',
+      'Professional bird control solutions to keep pigeons and other birds away from your property. Includes pigeon netting (highest demand), bird spike installation, and transparent bird nets. Humane and effective bird deterrent systems.',
     rating: 4.8,
     reviewCount: 2800,
     duration: '1-2 days',
     benefits: [
       'Pigeon netting (most popular)',
-      'Anti-bird net',
       'Bird spike installation',
       'Transparent bird net',
       'Humane bird control',
       'Long-lasting protection',
+      'UV-resistant materials',
     ],
     useCases: [
       'Balconies and terraces',
@@ -2864,8 +948,8 @@ export const services: Service[] = [
       'Solar panels',
     ],
     images: [
-      '/images/services/bird-net-1.jpg',
-      '/images/services/bird-net-2.jpg',
+      '/Netting Category/Pigeon netting.webp',
+      '/Netting Category/Transparent bird net.webp',
     ],
     pricing: {
       type: 'range',
@@ -2881,14 +965,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1500,
         estimatedTime: '1 day',
-      },
-      {
-        id: 'bird-anti',
-        name: 'Anti-Bird Net',
-        price: 20,
-        rating: 4.8,
-        reviewCount: 780,
-        estimatedTime: '1 day',
+        image: '/Netting Category/Pigeon netting.webp',
       },
       {
         id: 'bird-spike',
@@ -2897,6 +974,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 320,
         estimatedTime: '1 day',
+        image: '/Netting Category/Bird-spike-installation.webp',
       },
       {
         id: 'bird-transparent',
@@ -2905,6 +983,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 200,
         estimatedTime: '1-2 days',
+        image: '/Netting Category/Transparent bird net.webp',
       },
     ],
     priceIncludes: [
@@ -2931,152 +1010,39 @@ export const services: Service[] = [
       { icon: '✓', text: 'Long Lasting' },
       { icon: '✓', text: 'Effective Protection' },
     ],
-    relatedServices: ['safety-netting', 'pest-control-netting'],
+    relatedServices: ['pest-control-netting', 'industrial-netting'],
   },
-  {
-    id: 'sports-netting',
-    slug: 'sports-netting',
-    category: 'netting',
-    title: 'Sports Netting',
-    shortDescription:
-      'Cricket, football, badminton, golf, tennis nets and multi-sports enclosure netting for sports facilities.',
-    fullDescription:
-      'Professional sports netting solutions for sports grounds, schools, clubs, and recreational facilities. Includes cricket nets, football nets, badminton nets, golf nets, tennis nets, and complete multi-sports enclosure netting. High-quality materials designed for sports use.',
-    rating: 4.7,
-    reviewCount: 1450,
-    duration: '2-4 days',
-    benefits: [
-      'Cricket net',
-      'Football net',
-      'Badminton net',
-      'Golf net',
-      'Tennis net',
-      'Multi-sports enclosure',
-    ],
-    useCases: [
-      'Sports grounds',
-      'Schools and colleges',
-      'Sports clubs',
-      'Residential complexes',
-      'Training academies',
-    ],
-    images: [
-      '/images/services/sports-net-1.jpg',
-      '/images/services/sports-net-2.jpg',
-    ],
-    pricing: {
-      type: 'range',
-      min: 25,
-      max: 85,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'sports-cricket',
-        name: 'Cricket Net',
-        price: 35,
-        rating: 4.8,
-        reviewCount: 520,
-        estimatedTime: '2-3 days',
-      },
-      {
-        id: 'sports-football',
-        name: 'Football Net',
-        price: 40,
-        rating: 4.7,
-        reviewCount: 280,
-        estimatedTime: '2 days',
-      },
-      {
-        id: 'sports-badminton',
-        name: 'Badminton Net',
-        price: 30,
-        rating: 4.8,
-        reviewCount: 190,
-        estimatedTime: '1-2 days',
-      },
-      {
-        id: 'sports-golf',
-        name: 'Golf Net',
-        price: 45,
-        rating: 4.7,
-        reviewCount: 150,
-        estimatedTime: '2-3 days',
-      },
-      {
-        id: 'sports-tennis',
-        name: 'Tennis Net',
-        price: 38,
-        rating: 4.8,
-        reviewCount: 160,
-        estimatedTime: '2 days',
-      },
-      {
-        id: 'sports-enclosure',
-        name: 'Multi-Sports Enclosure',
-        price: 65,
-        rating: 4.9,
-        reviewCount: 150,
-        estimatedTime: '4 days',
-      },
-    ],
-    priceIncludes: [
-      'Sports-grade netting',
-      'Support poles/frames',
-      'Installation hardware',
-      'Professional installation',
-      'Ground anchoring',
-      '1-year warranty',
-    ],
-    materials: ['HDPE sports net', 'Nylon rope', 'Steel poles', 'Ground anchors', 'UV-protected'],
-    processSteps: [
-      { step: 1, title: 'Ground Survey', description: 'Measure sports area' },
-      { step: 2, title: 'Design', description: 'Plan net configuration' },
-      { step: 3, title: 'Installation', description: 'Install poles and nets' },
-      { step: 4, title: 'Testing', description: 'Test for sports use' },
-    ],
-    faqs: [
-      { question: 'Is it suitable for professional use?', answer: 'Yes, our sports nets meet professional standards.' },
-      { question: 'Can it withstand weather?', answer: 'Yes, UV-protected and weather-resistant materials.' },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Professional Grade' },
-      { icon: '✓', text: 'Multiple Sports' },
-      { icon: '✓', text: 'Durable Material' },
-      { icon: '✓', text: 'Weather Resistant' },
-    ],
-    relatedServices: ['safety-netting', 'industrial-netting'],
-  },
+
   {
     id: 'industrial-netting',
     slug: 'industrial-netting',
     category: 'netting',
     title: 'Industrial Netting',
     shortDescription:
-      'Industrial safety net, cargo net, loading-unloading safety net, machine area protection net.',
+      'Industrial safety net and cargo net for factories, warehouses, and industrial facilities.',
     fullDescription:
-      'Heavy-duty industrial netting solutions for factories, warehouses, and industrial facilities. Includes industrial safety nets, cargo nets, loading-unloading safety nets, and machine area protection nets. Designed for high-stress industrial environments.',
+      'Heavy-duty industrial netting solutions for factories, warehouses, and industrial facilities. Includes industrial safety nets and cargo nets designed for high-stress industrial environments with safety compliance.',
     rating: 4.8,
     reviewCount: 980,
     duration: '3-5 days',
     benefits: [
       'Industrial safety net',
       'Cargo net',
-      'Loading-unloading safety',
-      'Machine area protection',
       'Heavy-duty construction',
       'Safety compliance',
+      'Fire-retardant options',
+      'Long-lasting durability',
     ],
     useCases: [
       'Factories and warehouses',
-      'Loading docks',
       'Industrial facilities',
-      'Machine shops',
       'Cargo handling areas',
+      'Manufacturing plants',
+      'Storage facilities',
     ],
     images: [
-      '/images/services/industrial-net-1.jpg',
-      '/images/services/industrial-net-2.jpg',
+      '/Netting Category/Industrial safety net.webp',
+      '/Netting Category/Cargo Net.webp',
     ],
     pricing: {
       type: 'range',
@@ -3092,6 +1058,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 380,
         estimatedTime: '3-4 days',
+        image: '/Netting Category/Industrial safety net.webp',
       },
       {
         id: 'industrial-cargo',
@@ -3100,22 +1067,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 220,
         estimatedTime: '2-3 days',
-      },
-      {
-        id: 'industrial-loading',
-        name: 'Loading-Unloading Safety Net',
-        price: 60,
-        rating: 4.8,
-        reviewCount: 190,
-        estimatedTime: '3 days',
-      },
-      {
-        id: 'industrial-machine',
-        name: 'Machine Area Protection Net',
-        price: 50,
-        rating: 4.9,
-        reviewCount: 190,
-        estimatedTime: '2-3 days',
+        image: '/Netting Category/Cargo Net.webp',
       },
     ],
     priceIncludes: [
@@ -3143,27 +1095,27 @@ export const services: Service[] = [
       { icon: '✓', text: 'Fire-Retardant' },
       { icon: '✓', text: 'Industrial Grade' },
     ],
-    relatedServices: ['safety-netting', 'sports-netting'],
+    relatedServices: ['bird-control-netting', 'pest-control-netting'],
   },
   {
     id: 'pest-control-netting',
     slug: 'pest-control-netting',
     category: 'netting',
-    title: 'Pest Control Netting',
+    title: 'Mosquito Netting',
     shortDescription:
-      'Mosquito net (window/sliding frame), insect mesh, pleated net (premium), roller type mosquito net.',
+      'Window mosquito nets, sliding frame nets, and premium pleated nets for insect-free living.',
     fullDescription:
-      'Effective pest control netting solutions to keep mosquitoes and insects out. Includes window mosquito nets, sliding frame mosquito nets, insect mesh, premium pleated nets, and roller type mosquito nets. Enjoy fresh air without pests.',
+      'Premium mosquito netting solutions to keep insects out while allowing fresh air circulation. Includes window mosquito nets, sliding frame mosquito nets, and premium pleated nets. Enjoy fresh air without mosquitoes and insects.',
     rating: 4.9,
     reviewCount: 3500,
     duration: '1 day',
     benefits: [
       'Mosquito net (window/sliding)',
-      'Insect mesh',
       'Pleated net (premium)',
-      'Roller type mosquito net',
       'Fresh air circulation',
       'Easy to use',
+      'Durable materials',
+      'Easy maintenance',
     ],
     useCases: [
       'Residential windows',
@@ -3173,8 +1125,8 @@ export const services: Service[] = [
       'Bedroom windows',
     ],
     images: [
-      '/images/services/mosquito-net-1.jpg',
-      '/images/services/mosquito-net-2.jpg',
+      '/Netting Category/Window mosquito net.webp',
+      '/Netting Category/Sliding Frame Mosquito Net.webp',
     ],
     pricing: {
       type: 'range',
@@ -3190,6 +1142,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1800,
         estimatedTime: '1 day',
+        image: '/Netting Category/Window mosquito net.webp',
       },
       {
         id: 'pest-sliding',
@@ -3198,14 +1151,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 980,
         estimatedTime: '1 day',
-      },
-      {
-        id: 'pest-insect',
-        name: 'Insect Mesh',
-        price: 100,
-        rating: 4.8,
-        reviewCount: 450,
-        estimatedTime: '1 day',
+        image: '/Netting Category/Sliding Frame Mosquito Net.webp',
       },
       {
         id: 'pest-pleated',
@@ -3214,14 +1160,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 180,
         estimatedTime: '1 day',
-      },
-      {
-        id: 'pest-roller',
-        name: 'Roller Type Mosquito Net',
-        price: 250,
-        rating: 4.9,
-        reviewCount: 90,
-        estimatedTime: '1 day',
+        image: '/Netting Category/Pleated net.webp',
       },
     ],
     priceIncludes: [
@@ -3249,98 +1188,9 @@ export const services: Service[] = [
       { icon: '✓', text: 'Premium Options' },
       { icon: '✓', text: 'Quick Installation' },
     ],
-    relatedServices: ['safety-netting', 'bird-control-netting'],
+    relatedServices: ['bird-control-netting', 'industrial-netting'],
   },
-  {
-    id: 'decorative-custom-netting',
-    slug: 'decorative-custom-netting',
-    category: 'netting',
-    title: 'Decorative / Custom Netting',
-    shortDescription:
-      'Designer partition net, nylon rope decorative net, artificial grass netting for balcony interiors.',
-    fullDescription:
-      'Creative decorative and custom netting solutions for interior design. Includes designer partition nets, nylon rope decorative nets, and artificial grass netting for balconies. Perfect for adding aesthetic appeal while maintaining functionality.',
-    rating: 4.7,
-    reviewCount: 680,
-    duration: '2-3 days',
-    benefits: [
-      'Designer partition net',
-      'Nylon rope decorative net',
-      'Artificial grass netting',
-      'Custom designs available',
-      'Interior decoration',
-      'Unique aesthetics',
-    ],
-    useCases: [
-      'Interior partitions',
-      'Balcony decoration',
-      'Cafes and restaurants',
-      'Home decor',
-      'Event spaces',
-    ],
-    images: [
-      '/images/services/decorative-net-1.jpg',
-      '/images/services/decorative-net-2.jpg',
-    ],
-    pricing: {
-      type: 'range',
-      min: 45,
-      max: 150,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'deco-partition',
-        name: 'Designer Partition Net',
-        price: 85,
-        rating: 4.8,
-        reviewCount: 280,
-        estimatedTime: '2-3 days',
-      },
-      {
-        id: 'deco-rope',
-        name: 'Nylon Rope Decorative Net',
-        price: 65,
-        rating: 4.7,
-        reviewCount: 190,
-        estimatedTime: '2 days',
-      },
-      {
-        id: 'deco-grass',
-        name: 'Artificial Grass Netting',
-        price: 120,
-        rating: 4.8,
-        reviewCount: 210,
-        estimatedTime: '2-3 days',
-      },
-    ],
-    priceIncludes: [
-      'Decorative netting material',
-      'Custom design consultation',
-      'Installation accessories',
-      'Professional installation',
-      'Design warranty',
-    ],
-    materials: ['Nylon rope', 'Decorative mesh', 'Artificial grass', 'Mounting hardware', 'Color options'],
-    processSteps: [
-      { step: 1, title: 'Design Consultation', description: 'Discuss design ideas' },
-      { step: 2, title: 'Material Selection', description: 'Choose materials and colors' },
-      { step: 3, title: 'Fabrication', description: 'Custom fabrication' },
-      { step: 4, title: 'Installation', description: 'Professional installation' },
-    ],
-    faqs: [
-      { question: 'Can I customize the design?', answer: 'Yes, we offer fully customized decorative netting designs.' },
-      { question: 'Is artificial grass weather-resistant?', answer: 'Yes, our artificial grass is UV-protected and weather-resistant.' },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Custom Designs' },
-      { icon: '✓', text: 'Aesthetic Appeal' },
-      { icon: '✓', text: 'Quality Materials' },
-      { icon: '✓', text: 'Professional Installation' },
-    ],
-    relatedServices: ['safety-netting', 'pest-control-netting'],
-  },
-  
+
   // NEW GLASS SERVICES
   {
     id: 'toughened-glass-work',
@@ -3370,8 +1220,8 @@ export const services: Service[] = [
       'Staircases',
     ],
     images: [
-      '/images/services/toughened-glass-1.jpg',
-      '/images/services/toughened-glass-2.jpg',
+      '/Glass Category Images/Toughened glass.webp',
+      '/Glass Category Images/Full glass partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -3387,6 +1237,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 680,
         estimatedTime: '3 days',
+        image: '/Glass Category Images/Toughened glass.webp',
       },
       {
         id: 'tough-balcony',
@@ -3395,6 +1246,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 520,
         estimatedTime: '4 days',
+        image: '/Glass Category Images/Toughened glass.webp',
       },
       {
         id: 'tough-office',
@@ -3403,6 +1255,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 450,
         estimatedTime: '4-5 days',
+        image: '/Glass Category Images/Full glass partitions.webp',
       },
       {
         id: 'tough-shopfront',
@@ -3411,6 +1264,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 280,
         estimatedTime: '5 days',
+        image: '/Glass Category Images/Showroom front.webp',
       },
       {
         id: 'tough-staircase',
@@ -3419,6 +1273,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 170,
         estimatedTime: '4 days',
+        image: '/Glass Category Images/Toughened glass.webp',
       },
     ],
     priceIncludes: [
@@ -3476,8 +1331,8 @@ export const services: Service[] = [
       'Luxury apartments',
     ],
     images: [
-      '/images/services/shower-partition-1.jpg',
-      '/images/services/shower-partition-2.jpg',
+      '/Glass Category Images/Toughened glass.webp',
+      '/Glass Category Images/Full glass partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -3493,6 +1348,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '3 days',
+        image: '/Glass Category Images/Toughened glass.webp',
       },
       {
         id: 'shower-semi-frameless',
@@ -3501,6 +1357,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 560,
         estimatedTime: '2-3 days',
+        image: '/Glass Category Images/Toughened glass.webp',
       },
       {
         id: 'shower-framed',
@@ -3509,6 +1366,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 400,
         estimatedTime: '2 days',
+        image: '/Glass Category Images/Toughened glass.webp',
       },
     ],
     priceIncludes: [
@@ -3538,96 +1396,7 @@ export const services: Service[] = [
     ],
     relatedServices: ['toughened-glass-work', 'glass-door-sliding'],
   },
-  {
-    id: 'glass-railing',
-    slug: 'glass-railing',
-    category: 'glass',
-    title: 'Glass Railing (Balcony + Staircase)',
-    shortDescription:
-      'Premium glass railing for balconies and staircases in new buildings, row houses, bungalows, and villas.',
-    fullDescription:
-      'Elegant glass railing solutions for balconies and staircases. Perfect for new buildings, row houses, bungalows, and villas. Made with toughened glass for safety and durability. Provides unobstructed views while ensuring safety.',
-    rating: 4.8,
-    reviewCount: 1650,
-    duration: '4-6 days',
-    benefits: [
-      'Balcony glass railing',
-      'Staircase glass railing',
-      'Unobstructed views',
-      'Modern aesthetics',
-      'Safety certified',
-      'Weather-resistant',
-    ],
-    useCases: [
-      'New buildings',
-      'Row houses',
-      'Bungalows',
-      'Villas',
-      'Luxury apartments',
-    ],
-    images: [
-      '/images/services/glass-railing-1.jpg',
-      '/images/services/glass-railing-2.jpg',
-    ],
-    pricing: {
-      type: 'range',
-      min: 320,
-      max: 550,
-      unit: 'per running ft',
-    },
-    options: [
-      {
-        id: 'railing-balcony',
-        name: 'Balcony Glass Railing',
-        price: 420,
-        rating: 4.9,
-        reviewCount: 890,
-        estimatedTime: '5 days',
-      },
-      {
-        id: 'railing-staircase',
-        name: 'Staircase Glass Railing',
-        price: 450,
-        rating: 4.8,
-        reviewCount: 560,
-        estimatedTime: '5-6 days',
-      },
-      {
-        id: 'railing-frameless',
-        name: 'Frameless Glass Railing',
-        price: 520,
-        rating: 4.9,
-        reviewCount: 200,
-        estimatedTime: '6 days',
-      },
-    ],
-    priceIncludes: [
-      'Toughened glass 12mm',
-      'SS channels/clamps',
-      'Handrail (if required)',
-      'Safety certification',
-      'Installation',
-      '2-year warranty',
-    ],
-    materials: ['Toughened glass 12mm', 'SS 304 hardware', 'Channels', 'Clamps', 'Handrail'],
-    processSteps: [
-      { step: 1, title: 'Site Survey', description: 'Measure balcony/staircase' },
-      { step: 2, title: 'Design', description: 'Plan railing layout' },
-      { step: 3, title: 'Fabrication', description: 'Custom glass cutting' },
-      { step: 4, title: 'Installation', description: 'Professional installation' },
-    ],
-    faqs: [
-      { question: 'Is glass railing safe?', answer: 'Yes, we use 12mm toughened glass which is safety certified.' },
-      { question: 'Can it withstand weather?', answer: 'Yes, toughened glass and SS hardware are weather-resistant.' },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Safety Certified' },
-      { icon: '✓', text: 'Unobstructed Views' },
-      { icon: '✓', text: 'Weather Resistant' },
-      { icon: '✓', text: 'Premium Quality' },
-    ],
-    relatedServices: ['toughened-glass-work', 'glass-door-sliding'],
-  },
+
   {
     id: 'office-glass-partition',
     slug: 'office-glass-partition',
@@ -3656,8 +1425,8 @@ export const services: Service[] = [
       'Executive cabins',
     ],
     images: [
-      '/images/services/office-partition-1.jpg',
-      '/images/services/office-partition-2.jpg',
+      '/Glass Category Images/Full glass partitions.webp',
+      '/Glass Category Images/Half glass partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -3673,6 +1442,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1100,
         estimatedTime: '5 days',
+        image: '/Glass Category Images/Full glass partitions.webp',
       },
       {
         id: 'office-frosted',
@@ -3681,6 +1451,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '5-6 days',
+        image: '/Glass Category Images/Half glass partitions.webp',
       },
       {
         id: 'office-cabin',
@@ -3689,6 +1460,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 460,
         estimatedTime: '6-7 days',
+        image: '/Glass Category Images/Full glass partitions.webp',
       },
     ],
     priceIncludes: [
@@ -3746,8 +1518,8 @@ export const services: Service[] = [
       'Conference rooms',
     ],
     images: [
-      '/images/services/glass-door-1.jpg',
-      '/images/services/glass-door-2.jpg',
+      '/Glass Category Images/Glass facade sliding.webp',
+      '/Glass Category Images/Toughened glass.webp',
     ],
     pricing: {
       type: 'range',
@@ -3763,6 +1535,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 780,
         estimatedTime: '3 days',
+        image: '/Glass Category Images/Toughened glass.webp',
       },
       {
         id: 'door-patch',
@@ -3771,6 +1544,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 620,
         estimatedTime: '3-4 days',
+        image: '/Glass Category Images/Toughened glass.webp',
       },
       {
         id: 'door-sliding',
@@ -3779,6 +1553,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 520,
         estimatedTime: '4 days',
+        image: '/Glass Category Images/Glass facade sliding.webp',
       },
     ],
     priceIncludes: [
@@ -3808,96 +1583,7 @@ export const services: Service[] = [
     ],
     relatedServices: ['toughened-glass-work', 'office-glass-partition'],
   },
-  {
-    id: 'backpainted-glass-acrylic',
-    slug: 'backpainted-glass-acrylic',
-    category: 'glass',
-    title: 'Backpainted Glass / Acrylic Glass',
-    shortDescription:
-      'Kitchen backsplash, wardrobe shutter, TV unit background - trending in modern interiors.',
-    fullDescription:
-      'Trendy backpainted glass and acrylic glass solutions for modern interiors. Perfect for kitchen backsplash, wardrobe shutters, TV unit backgrounds, and decorative panels. Available in wide range of colors and finishes. Easy to clean and maintain.',
-    rating: 4.9,
-    reviewCount: 2650,
-    duration: '2-3 days',
-    benefits: [
-      'Kitchen backsplash',
-      'Wardrobe shutter',
-      'TV unit background',
-      'Trending design',
-      'Easy to clean',
-      'Wide color range',
-    ],
-    useCases: [
-      'Modular kitchens',
-      'Bedroom wardrobes',
-      'Living room TV units',
-      'Interior decoration',
-      'Modern homes',
-    ],
-    images: [
-      '/images/services/backpainted-glass-1.jpg',
-      '/images/services/backpainted-glass-2.jpg',
-    ],
-    pricing: {
-      type: 'range',
-      min: 120,
-      max: 280,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'back-kitchen',
-        name: 'Kitchen Backsplash',
-        price: 180,
-        rating: 4.9,
-        reviewCount: 1200,
-        estimatedTime: '2 days',
-      },
-      {
-        id: 'back-wardrobe',
-        name: 'Wardrobe Shutter',
-        price: 220,
-        rating: 4.9,
-        reviewCount: 890,
-        estimatedTime: '2-3 days',
-      },
-      {
-        id: 'back-tv',
-        name: 'TV Unit Background',
-        price: 160,
-        rating: 4.8,
-        reviewCount: 560,
-        estimatedTime: '2 days',
-      },
-    ],
-    priceIncludes: [
-      'Backpainted glass/acrylic',
-      'Custom color selection',
-      'Cutting and edging',
-      'Mounting hardware',
-      'Installation',
-      '1-year warranty',
-    ],
-    materials: ['Backpainted glass', 'Acrylic sheets', 'Mounting brackets', 'Adhesives', 'Edge finishing'],
-    processSteps: [
-      { step: 1, title: 'Measurement', description: 'Area measurements' },
-      { step: 2, title: 'Color Selection', description: 'Choose color and finish' },
-      { step: 3, title: 'Fabrication', description: 'Cutting and painting' },
-      { step: 4, title: 'Installation', description: 'Professional installation' },
-    ],
-    faqs: [
-      { question: 'What colors are available?', answer: 'We offer 100+ colors including metallic and glossy finishes.' },
-      { question: 'Is it easy to clean?', answer: 'Yes, just wipe with damp cloth. Very low maintenance.' },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Trending Design' },
-      { icon: '✓', text: '100+ Colors' },
-      { icon: '✓', text: 'Easy Maintenance' },
-      { icon: '✓', text: 'Modern Look' },
-    ],
-    relatedServices: ['glass-door-sliding', 'mirror-work'],
-  },
+
   {
     id: 'mirror-work',
     slug: 'mirror-work',
@@ -3926,8 +1612,8 @@ export const services: Service[] = [
       'Retail showrooms',
     ],
     images: [
-      '/images/services/mirror-1.jpg',
-      '/images/services/mirror-2.jpg',
+      '/Glass Category Images/Toughened glass.webp',
+      '/Glass Category Images/Full glass partitions.webp',
     ],
     pricing: {
       type: 'range',

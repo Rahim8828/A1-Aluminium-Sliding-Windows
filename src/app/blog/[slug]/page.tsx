@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import BlogPost from '@/components/blog/BlogPost';
 import RelatedPosts from '@/components/blog/RelatedPosts';
-import { blogPosts, getPostBySlug, getRelatedPosts } from '@/data/blog-posts';
+import { blogPosts, getPostBySlug } from '@/data/blog-posts';
 
 interface BlogPostPageProps {
   params: {
@@ -107,13 +108,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="bg-white border-b border-gray-200">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center gap-2 text-sm text-gray-600">
-              <a href="/" className="hover:text-orange-600">
+              <Link href="/" className="hover:text-orange-600">
                 Home
-              </a>
+              </Link>
               <span>/</span>
-              <a href="/blog" className="hover:text-orange-600">
+              <Link href="/blog" className="hover:text-orange-600">
                 Blog
-              </a>
+              </Link>
               <span>/</span>
               <span className="text-gray-900">{post.title}</span>
             </nav>

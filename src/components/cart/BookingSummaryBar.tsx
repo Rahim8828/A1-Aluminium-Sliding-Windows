@@ -27,6 +27,7 @@ export default function BookingSummaryBar() {
     if (shouldBeVisible !== isVisible) {
       if (shouldBeVisible) {
         // Show with animation
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsVisible(true);
         setTimeout(() => setIsAnimating(true), 10);
       } else {
@@ -64,7 +65,7 @@ export default function BookingSummaryBar() {
 
   return (
     <div
-      className={`fixed bottom-16 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-lg transition-all duration-300 md:bottom-0 ${
+      className={`fixed bottom-16 left-0 right-0 z-45 bg-white border-t border-gray-200 shadow-lg transition-all duration-300 md:bottom-0 ${
         isAnimating ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}

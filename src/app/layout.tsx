@@ -16,10 +16,9 @@ const Footer = dynamic(() => import("@/components/layout/Footer"));
 
 // Client-side only components for better performance
 const MobileNav = dynamic(() => import("@/components/layout/MobileNav"));
-
-const EmergencyBanner = dynamic(() => import("@/components/layout/EmergencyBanner"));
-
 const Analytics = dynamic(() => import("@/components/analytics/Analytics"));
+const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp").then(mod => ({ default: mod.FloatingWhatsApp })));
+const LiveActivityFeed = dynamic(() => import("@/components/conversion/LiveActivityFeed").then(mod => ({ default: mod.LiveActivityFeed })));
 
 const BookingSummaryBar = dynamic(() => import("@/components/cart/BookingSummaryBar"));
 
@@ -111,7 +110,7 @@ export default function RootLayout({
       <head>
         <StructuredData data={localBusinessSchema} />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased overflow-x-hidden">
         <CartProvider>
           {/* Skip to main content link for keyboard navigation */}
           <a href="#main-content" className="skip-to-content">
@@ -143,6 +142,7 @@ export default function RootLayout({
           )}
           
           <Analytics />
+          <LiveActivityFeed />
           <Header />
           <main id="main-content" className="min-h-screen pt-16 md:pt-20 pb-20 md:pb-0">
             {children}
@@ -150,6 +150,8 @@ export default function RootLayout({
           <Footer />
           <BookingSummaryBar />
           <MobileNav />
+          <FloatingWhatsApp />
+          {/* FloatingCartButton is now hidden when BookingSummaryBar is visible */}
         </CartProvider>
       </body>
     </html>

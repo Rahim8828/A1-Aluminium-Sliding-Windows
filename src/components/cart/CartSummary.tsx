@@ -83,7 +83,7 @@ export default function CartSummary({ onBookNow }: CartSummaryProps) {
 
       {/* Info Text */}
       <p className="text-xs text-gray-500 text-center mt-4">
-        You'll be redirected to WhatsApp to confirm your booking
+        You&apos;ll be redirected to WhatsApp to confirm your booking
       </p>
     </div>
   );

@@ -8,7 +8,7 @@
 
 import Image from 'next/image';
 import { Service } from '@/types';
-import { Star, TrendingUp } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 interface ServiceGridProps {
   services: Service[];
@@ -26,7 +26,8 @@ const getCategoryBadge = (category: string) => {
   return badges[category as keyof typeof badges] || { label: category, color: 'bg-gray-100 text-gray-700' };
 };
 
-// Get price range from service options
+// Get price range from service options (kept for future use)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const getPriceRange = (service: Service) => {
   if (!service.options || service.options.length === 0) return null;
   
@@ -99,7 +100,7 @@ export default function ServiceGrid({
           No Services Found
         </h3>
         <p className="text-gray-600 text-center max-w-md mb-6">
-          We couldn't find any services matching your criteria. Try adjusting your filters or browse all services.
+          We couldn&apos;t find any services matching your criteria. Try adjusting your filters or browse all services.
         </p>
         <button
           onClick={() => window.location.reload()}

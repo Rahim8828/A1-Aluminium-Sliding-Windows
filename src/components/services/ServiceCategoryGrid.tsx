@@ -51,24 +51,14 @@ const formatCategoryName = (category: string): string => {
   return names[category] || category.charAt(0).toUpperCase() + category.slice(1);
 };
 
-// Get category icon/emoji
-const getCategoryIcon = (category: string): string => {
-  const icons: Record<string, string> = {
-    aluminium: '🪟',
-    glass: '🔷',
-    netting: '🕸️',
+// Get category image path
+const getCategoryImage = (category: string): string => {
+  const images: Record<string, string> = {
+    aluminium: '/Aluminium Category Images/Showroom front.webp',
+    glass: '/Glass Category Images/Full glass partitions.webp',
+    netting: '/Netting Category/Pigeon netting.webp',
   };
-  return icons[category] || '📦';
-};
-
-// Get category color
-const getCategoryColor = (category: string): string => {
-  const colors: Record<string, string> = {
-    aluminium: 'from-blue-500 to-blue-600',
-    glass: 'from-purple-500 to-purple-600',
-    netting: 'from-green-500 to-green-600',
-  };
-  return colors[category] || 'from-gray-500 to-gray-600';
+  return images[category] || '/images/placeholder-service.jpg';
 };
 
 export default function ServiceCategoryGrid({
@@ -106,9 +96,17 @@ export default function ServiceCategoryGrid({
                 className="group flex-shrink-0 w-28 md:w-32 bg-white border-2 border-gray-200 rounded-xl p-3 hover:border-orange-400 hover:shadow-lg transition-all active:scale-95 touch-manipulation"
                 aria-label={`View ${formatCategoryName(category.name)} services`}
               >
-                {/* Category Icon with Gradient */}
-                <div className={`w-full aspect-square rounded-lg bg-gradient-to-br ${getCategoryColor(category.name)} flex items-center justify-center text-3xl md:text-4xl mb-2 shadow-md`}>
-                  {getCategoryIcon(category.name)}
+                {/* Category Image - Clean without icon overlay */}
+                <div className="relative w-full aspect-square rounded-lg overflow-hidden mb-2 shadow-md bg-gray-100">
+                  <Image
+                    src={getCategoryImage(category.name)}
+                    alt={formatCategoryName(category.name)}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="128px"
+                  />
+                  {/* Subtle dark overlay at bottom for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
                 
                 {/* Category Info */}

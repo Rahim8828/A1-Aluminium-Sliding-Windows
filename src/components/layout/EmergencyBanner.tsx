@@ -22,6 +22,7 @@ export default function EmergencyBanner({
     // Check if banner was previously dismissed
     const isDismissed = sessionStorage.getItem('emergencyBannerDismissed');
     if (!isDismissed) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsVisible(true);
     }
   }, []);

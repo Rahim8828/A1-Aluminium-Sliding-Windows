@@ -31,7 +31,7 @@ export function HeroSection({
   };
 
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         {backgroundImage ? (
@@ -52,43 +52,68 @@ export function HeroSection({
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-        <div className="max-w-4xl">
+      {/* Content - Compact */}
+      <div className="relative z-10 container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-3xl">
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
+          <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 leading-tight">
             {headline}
           </h1>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-6 md:mb-10 max-w-3xl leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-200 mb-5 md:mb-8 max-w-2xl leading-relaxed">
             {subheadline}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button
               variant="primary"
               size="lg"
               onClick={handleCallClick}
-              className="group"
+              className="group text-sm md:text-base"
             >
-              <Phone className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+              <Phone className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:animate-pulse" />
               Call Now
             </Button>
             <Button
               variant="secondary"
               size="lg"
               onClick={handleWhatsAppClick}
-              className="group"
+              className="group text-sm md:text-base"
             >
-              <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              <MessageCircle className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:scale-110 transition-transform" />
               WhatsApp Us
             </Button>
           </div>
 
+          {/* Social Proof Stats - Compact */}
+          <div className="mt-6 md:mt-8 flex flex-wrap gap-4 md:gap-6 text-white">
+            <div className="flex items-center gap-1.5">
+              <span className="text-base md:text-lg">⭐</span>
+              <div>
+                <div className="font-bold text-sm md:text-base">4.9/5</div>
+                <div className="text-[10px] md:text-xs text-gray-300">2,500+ Reviews</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-base md:text-lg">✓</span>
+              <div>
+                <div className="font-bold text-lg">15+ Years</div>
+                <div className="text-xs text-gray-300">Experience</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">📍</span>
+              <div>
+                <div className="font-bold text-lg">25+ Areas</div>
+                <div className="text-xs text-gray-300">Across Mumbai</div>
+              </div>
+            </div>
+          </div>
+
           {/* Trust Indicators */}
-          <div className="mt-12 flex flex-wrap gap-6 md:gap-8 text-white">
+          <div className="mt-6 flex flex-wrap gap-6 md:gap-8 text-white">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               <span className="text-sm md:text-base">Available 24/7</span>

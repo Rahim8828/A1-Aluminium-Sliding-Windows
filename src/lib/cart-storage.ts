@@ -50,6 +50,7 @@ export const loadCart = (): Cart | null => {
     }
 
     // Return cart without timestamp
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { timestamp, ...cart } = cartData;
     return cart;
   } catch (error) {
@@ -79,7 +80,7 @@ export const hasStoredCart = (): boolean => {
 
   try {
     return localStorage.getItem(CART_STORAGE_KEY) !== null;
-  } catch (error) {
+  } catch {
     return false;
   }
 };

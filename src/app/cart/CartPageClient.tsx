@@ -17,7 +17,7 @@ import { openWhatsAppBooking, validateCartForBooking } from '@/lib/whatsapp-book
 import { trackCartView } from '@/lib/analytics';
 
 export default function CartPageClient() {
-  const { cart, updateQuantity, removeItem, getTotal, getSubtotal, getDiscount, getItemCount } = useCart();
+  const { cart, updateQuantity, removeItem, getTotal, getItemCount } = useCart();
 
   const isEmpty = cart.items.length === 0;
 
@@ -92,7 +92,7 @@ export default function CartPageClient() {
                 Your cart is empty
               </h2>
               <p className="text-sm md:text-base text-gray-600 mb-6">
-                Looks like you haven't added any services yet. Browse our services and add them to your cart.
+                Looks like you haven&apos;t added any services yet. Browse our services and add them to your cart.
               </p>
               <Link
                 href="/services"
@@ -149,9 +149,9 @@ export default function CartPageClient() {
               📱 What happens next?
             </h3>
             <ul className="text-xs md:text-sm text-blue-800 space-y-1.5 md:space-y-2">
-              <li>• Click "Book Now via WhatsApp" to send your booking request</li>
+              <li>• Click &quot;Book Now via WhatsApp&quot; to send your booking request</li>
               <li>• Our team will confirm availability and finalize details</li>
-              <li>• We'll schedule your service at your preferred time</li>
+              <li>• We&apos;ll schedule your service at your preferred time</li>
               <li>• Payment can be made after service completion</li>
             </ul>
           </div>

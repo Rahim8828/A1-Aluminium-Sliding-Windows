@@ -89,6 +89,7 @@ export default function QuantitySelector({
         onChange={handleInputChange}
         min={min}
         max={max}
+        role="spinbutton"
         className={`${inputSizes[size]} h-11 text-center border-2 border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all`}
         aria-label="Quantity"
         aria-valuemin={min}

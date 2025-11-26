@@ -160,7 +160,7 @@ export default function CouponSection() {
               Coupon Applied: {cart.appliedCoupon.code}
             </p>
             <p className="text-xs text-green-700 mt-1">
-              You're saving{' '}
+              You&apos;re saving{' '}
               {cart.appliedCoupon.type === 'percentage'
                 ? `${cart.appliedCoupon.discount}%`
                 : `₹${cart.appliedCoupon.discount}`}

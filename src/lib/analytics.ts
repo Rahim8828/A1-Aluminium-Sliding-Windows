@@ -320,8 +320,8 @@ declare global {
     gtag?: (
       command: string,
       targetId: string,
-      config?: Record<string, any>
+      config?: Record<string, unknown>
     ) => void;
-    dataLayer?: any[];
+    dataLayer?: unknown[];
   }
 }
