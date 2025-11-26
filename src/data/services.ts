@@ -333,7 +333,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 58,
         estimatedTime: '2 days',
-        image: '/website-images/services/aluminium-sliding-1.jpg',
+        image: '/aluminium-category/2-Track-sliding-Window.webp',
       },
       {
         id: 'alu-slide-3track',

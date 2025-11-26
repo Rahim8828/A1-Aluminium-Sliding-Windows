@@ -35,7 +35,7 @@ const DEFAULT_PHOTOS: CustomerPhoto[] = [
   },
   {
     id: '2',
-    image: '/website-images/placeholder-service.jpg',
+    image: '/glass-category/Full glass partitions.webp',
     customerName: 'Priya S.',
     location: 'Bandra',
     service: 'Office Glass Partition',
@@ -51,7 +51,7 @@ const DEFAULT_PHOTOS: CustomerPhoto[] = [
   },
   {
     id: '4',
-    image: '/website-images/services/aluminium-doors-1.jpg',
+    image: '/aluminium-category/Hinged door.webp',
     customerName: 'Sneha P.',
     location: 'Powai',
     service: 'Aluminium Doors',
@@ -59,7 +59,7 @@ const DEFAULT_PHOTOS: CustomerPhoto[] = [
   },
   {
     id: '5',
-    image: '/website-images/placeholder-service.jpg',
+    image: '/glass-category/Toughened glass.webp',
     customerName: 'Vikram R.',
     location: 'Jogeshwari',
     service: 'Toughened Glass Work',
@@ -67,7 +67,7 @@ const DEFAULT_PHOTOS: CustomerPhoto[] = [
   },
   {
     id: '6',
-    image: '/website-images/services/aluminium-sliding-1.jpg',
+    image: '/aluminium-category/Single sliding door.webp',
     customerName: 'Meera D.',
     location: 'Andheri East',
     service: 'Sliding Windows',
