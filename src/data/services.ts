@@ -1612,8 +1612,10 @@ export const services: Service[] = [
       'Retail showrooms',
     ],
     images: [
-      '/glass-category/Toughened glass.webp',
-      '/glass-category/Full glass partitions.webp',
+      '/glass-category/Dressing-Mirror.webp',
+      '/glass-category/Full-wall-mirror.webp',
+      '/glass-category/Gym-mirror.webp',
+      '/glass-category/Dance-studio-mirror.webp',
     ],
     pricing: {
       type: 'range',
@@ -1629,6 +1631,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 680,
         estimatedTime: '1 day',
+        image: '/glass-category/Dressing-Mirror.webp',
       },
       {
         id: 'mirror-wall',
@@ -1637,6 +1640,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 520,
         estimatedTime: '2 days',
+        image: '/glass-category/Full-wall-mirror.webp',
       },
       {
         id: 'mirror-gym',
@@ -1645,6 +1649,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 280,
         estimatedTime: '1-2 days',
+        image: '/glass-category/Gym-mirror.webp',
       },
       {
         id: 'mirror-dance',
@@ -1653,6 +1658,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 100,
         estimatedTime: '2 days',
+        image: '/glass-category/Dance-studio-mirror.webp',
       },
     ],
     priceIncludes: [
