@@ -27,9 +27,9 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <img 
-                src="/A1-Logo.png" 
+                src="/website-images/A1_favicon.svg" 
                 alt="A1 Aluminium Logo" 
-                className="h-20 w-20 object-contain"
+                className="h-16 w-16 object-contain"
               />
             </div>
             <p className="text-sm mb-4 leading-relaxed">{BUSINESS_INFO.description}</p>
