@@ -188,9 +188,9 @@ export default function ServicesPageClient({
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-24 md:pb-0">
       {/* Services Grid Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-8 md:py-16">
         <div className="container mx-auto px-4">
           {/* Service Category Grid - Top Overview */}
           <ServiceCategoryGrid
@@ -207,7 +207,7 @@ export default function ServicesPageClient({
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-orange-600 to-orange-700">
+      <section className="py-8 md:py-16 bg-gradient-to-r from-orange-600 to-orange-700">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center text-white px-4">
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3">
@@ -239,7 +239,7 @@ export default function ServicesPageClient({
       </section>
 
       {/* Service Areas Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-3 md:mb-4">

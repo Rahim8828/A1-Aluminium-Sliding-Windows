@@ -8,12 +8,13 @@ export const BUSINESS_INFO = {
   
   // Contact Information
   phone: {
-    primary: '+918828663585',
+    primary: '+919082877332',
     secondary: '+919920389656',
-    display: '+91 8828663585',
+    display: '+91 9082877332',
+    displaySecondary: '+91 9920389656',
   },
   
-  whatsapp: '918828663585',
+  whatsapp: '919082877332',
   
   email: {
     primary: 'a1asgsolution@gmail.com',
@@ -22,20 +23,23 @@ export const BUSINESS_INFO = {
   
   // Physical Address
   address: {
-    street: '123 Industrial Estate, Andheri East',
+    street: 'Shop No 6, New Link Rd, below Oshiwara Metro Station, opp. Raigad Military School, Adarsh Nagar',
+    area: 'Jogeshwari West',
     city: 'Mumbai',
     state: 'Maharashtra',
-    postalCode: '400069',
+    postalCode: '400102',
     country: 'India',
-    full: '123 Industrial Estate, Andheri East, Mumbai, Maharashtra 400069',
+    full: 'Shop No 6, New Link Rd, below Oshiwara Metro Station, opp. Raigad Military School, Adarsh Nagar, Jogeshwari West, Mumbai, Maharashtra 400102',
+    landmark: 'Below Oshiwara Metro Station, opposite Raigad Military School',
   },
   
   // Business Hours
   hours: {
-    weekdays: '24/7',
-    saturday: '24/7',
-    sunday: '24/7',
-    emergency: '24/7 Service Available',
+    weekdays: '10:00 AM - 10:00 PM',
+    saturday: '10:00 AM - 10:00 PM',
+    sunday: '10:00 AM - 10:00 PM',
+    display: 'Monday - Sunday: 10:00 AM - 10:00 PM',
+    emergency: 'Emergency Service Available',
   },
   
   // Social Media Links

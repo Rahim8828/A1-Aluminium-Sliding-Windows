@@ -144,7 +144,7 @@ export default function RootLayout({
           <Analytics />
           <LiveActivityFeed />
           <Header />
-          <main id="main-content" className="min-h-screen pt-16 md:pt-20 pb-20 md:pb-0">
+          <main id="main-content" className="min-h-screen pt-16 md:pt-20 pb-24 md:pb-0">
             {children}
           </main>
           <Footer />

@@ -158,7 +158,9 @@ export function MobileHeroSection({ onServiceClick }: MobileHeroSectionProps) {
                     alt={category.name}
                     fill
                     className="object-contain p-2"
-                    sizes="112px"
+                    sizes="(max-width: 768px) 112px, 160px"
+                    priority={true}
+                    unoptimized={true}
                   />
                 </div>
                 <div className="text-center">

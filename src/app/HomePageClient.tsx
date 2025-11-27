@@ -78,7 +78,7 @@ export default function HomePageClient() {
 
   return (
     <>
-      <div className="min-h-screen">
+      <div className="min-h-screen pb-32 md:pb-0">
         {/* Hero Section - Same for Mobile & Desktop */}
         <MobileHeroSection onServiceClick={handleServiceClick} />
 

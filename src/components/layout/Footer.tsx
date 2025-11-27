@@ -160,9 +160,9 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <div className="text-sm">
-                  <p>Mon-Fri: {BUSINESS_INFO.hours.weekdays}</p>
-                  <p>Sat: {BUSINESS_INFO.hours.saturday}</p>
-                  <p>Sun: {BUSINESS_INFO.hours.sunday}</p>
+                  <p className="font-semibold mb-1">Business Hours:</p>
+                  <p>{BUSINESS_INFO.hours.display}</p>
+                  <p className="text-xs text-gray-400 mt-1">{BUSINESS_INFO.hours.emergency}</p>
                 </div>
               </li>
             </ul>

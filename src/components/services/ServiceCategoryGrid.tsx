@@ -54,9 +54,9 @@ const formatCategoryName = (category: string): string => {
 // Get category image path
 const getCategoryImage = (category: string): string => {
   const images: Record<string, string> = {
-    aluminium: '/aluminium-category/Showroom front.webp',
+    aluminium: '/aluminium-category/Showroom-front.webp',
     glass: '/glass-category/Full-glass-partitions.webp',
-    netting: '/netting-category/Pigeon netting.webp',
+    netting: '/netting-category/Pigeon-netting.webp',
   };
   return images[category] || '/website-images/placeholder-service.jpg';
 };
@@ -103,7 +103,9 @@ export default function ServiceCategoryGrid({
                     alt={formatCategoryName(category.name)}
                     fill
                     className="object-contain p-2 group-hover:scale-110 transition-transform duration-500"
-                    sizes="128px"
+                    sizes="(max-width: 768px) 112px, 128px"
+                    priority={true}
+                    unoptimized={true}
                   />
                   {/* Subtle dark overlay at bottom for text readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
