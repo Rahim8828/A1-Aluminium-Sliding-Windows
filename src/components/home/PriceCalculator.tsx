@@ -80,7 +80,7 @@ export function PriceCalculator() {
   const estimate = calculatePrice();
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-orange-50 via-amber-50 to-blue-50 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-br from-orange-50 via-amber-50 to-blue-50 relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-96 h-96 bg-orange-500 rounded-full blur-3xl animate-pulse" />
@@ -88,7 +88,23 @@ export function PriceCalculator() {
       </div>
 
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        {/* Mobile Header */}
+        <div className="lg:hidden mb-6">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
+              <Calculator className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-gray-900">
+                Price Calculator
+              </h2>
+              <p className="text-xs text-gray-600">Get instant estimate</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Header */}
+        <div className="hidden lg:block text-center mb-12 md:mb-16">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full mb-6 shadow-2xl animate-bounce">
             <Calculator className="w-10 h-10 text-white" />
           </div>
@@ -105,11 +121,11 @@ export function PriceCalculator() {
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-10 border-2 border-orange-100">
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+        <div className="bg-white rounded-2xl lg:rounded-3xl shadow-2xl p-4 lg:p-10 border-2 border-orange-100">
+          <div className="space-y-4 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6 mb-4 lg:mb-6">
             {/* Service Selection */}
             <div>
-              <label htmlFor="calc-service" className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="calc-service" className="block text-xs lg:text-sm font-semibold text-gray-700 mb-2">
                 Select Service *
               </label>
               <select
@@ -119,7 +135,7 @@ export function PriceCalculator() {
                   setService(e.target.value);
                   setShowEstimate(false);
                 }}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="w-full px-3 lg:px-4 py-3 text-sm lg:text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
               >
                 <option value="">Choose a service...</option>
                 {Object.keys(servicePricing).map((s) => (
@@ -132,7 +148,7 @@ export function PriceCalculator() {
 
             {/* Area Input */}
             <div>
-              <label htmlFor="calc-area" className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="calc-area" className="block text-xs lg:text-sm font-semibold text-gray-700 mb-2">
                 Area (sq ft) *
               </label>
               <input
@@ -144,32 +160,32 @@ export function PriceCalculator() {
                   setShowEstimate(false);
                 }}
                 placeholder="e.g., 100"
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="w-full px-3 lg:px-4 py-3 text-sm lg:text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                 min="1"
               />
             </div>
           </div>
 
           {/* Quality Selection */}
-          <div className="mb-6">
-            <label className="block text-sm font-semibold text-gray-700 mb-3">
+          <div className="mb-4 lg:mb-6">
+            <label className="block text-xs lg:text-sm font-semibold text-gray-700 mb-2 lg:mb-3">
               Quality Level *
             </label>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 lg:gap-4">
               <button
                 type="button"
                 onClick={() => {
                   setQuality('standard');
                   setShowEstimate(false);
                 }}
-                className={`p-4 rounded-lg border-2 transition-all ${
+                className={`p-3 lg:p-4 rounded-lg border-2 transition-all ${
                   quality === 'standard'
                     ? 'border-orange-600 bg-orange-50 text-orange-900'
                     : 'border-gray-300 hover:border-gray-400'
                 }`}
               >
-                <div className="font-semibold mb-1">Standard</div>
-                <div className="text-sm text-gray-600">Good quality, budget-friendly</div>
+                <div className="font-semibold text-sm lg:text-base mb-1">Standard</div>
+                <div className="text-xs lg:text-sm text-gray-600">Good quality</div>
               </button>
               <button
                 type="button"
@@ -177,14 +193,14 @@ export function PriceCalculator() {
                   setQuality('premium');
                   setShowEstimate(false);
                 }}
-                className={`p-4 rounded-lg border-2 transition-all ${
+                className={`p-3 lg:p-4 rounded-lg border-2 transition-all ${
                   quality === 'premium'
                     ? 'border-orange-600 bg-orange-50 text-orange-900'
                     : 'border-gray-300 hover:border-gray-400'
                 }`}
               >
-                <div className="font-semibold mb-1">Premium</div>
-                <div className="text-sm text-gray-600">Best quality, long-lasting</div>
+                <div className="font-semibold text-sm lg:text-base mb-1">Premium</div>
+                <div className="text-xs lg:text-sm text-gray-600">Best quality</div>
               </button>
             </div>
           </div>
@@ -193,7 +209,7 @@ export function PriceCalculator() {
           <button
             onClick={handleCalculate}
             disabled={!service || !area}
-            className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-4 px-6 rounded-lg transition-all mb-6"
+            className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3 lg:py-4 px-6 rounded-lg transition-all mb-4 lg:mb-6 text-sm lg:text-base"
           >
             Calculate Estimate
           </button>

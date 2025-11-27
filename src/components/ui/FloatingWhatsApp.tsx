@@ -34,15 +34,15 @@ export function FloatingWhatsApp() {
       <button
         onClick={handleWhatsAppClick}
         onMouseEnter={() => setShowTooltip(true)}
-        className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-50 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 active:bg-green-800 text-white rounded-full p-4 md:p-5 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group touch-manipulation"
+        className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-50 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 active:bg-green-800 text-white rounded-full p-3 md:p-5 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group touch-manipulation"
         aria-label="Chat on WhatsApp"
         style={{ 
           WebkitTapHighlightColor: 'transparent',
-          minWidth: '64px',
-          minHeight: '64px'
+          minWidth: '56px',
+          minHeight: '56px'
         }}
       >
-        <MessageCircle className="w-8 h-8 md:w-9 md:h-9" strokeWidth={2.5} />
+        <MessageCircle className="w-7 h-7 md:w-9 md:h-9" strokeWidth={2.5} />
         
         {/* Pulse Effect - Multiple Rings */}
         <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75 pointer-events-none" />

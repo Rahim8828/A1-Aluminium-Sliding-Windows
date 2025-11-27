@@ -70,7 +70,7 @@ export function ProjectsGallery() {
     : projects.filter(p => p.category === filter);
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
@@ -78,7 +78,23 @@ export function ProjectsGallery() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        {/* Mobile Header */}
+        <div className="lg:hidden mb-6">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-xl font-bold text-gray-900">
+              Recent Projects
+            </h2>
+            <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-semibold">
+              📸 {filteredProjects.length}
+            </span>
+          </div>
+          <p className="text-sm text-gray-600">
+            Real work from satisfied customers
+          </p>
+        </div>
+
+        {/* Desktop Header */}
+        <div className="hidden lg:block text-center mb-12 md:mb-16">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold">
               📸 Our Work
@@ -92,8 +108,27 @@ export function ProjectsGallery() {
           </p>
         </div>
 
-        {/* Filter Buttons - Enhanced */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {/* Filter Buttons - Mobile Horizontal Scroll */}
+        <div className="lg:hidden overflow-x-auto pb-4 mb-6 -mx-4 px-4 scrollbar-hide">
+          <div className="flex gap-2 min-w-max">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setFilter(category)}
+                className={`px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all ${
+                  filter === category
+                    ? 'bg-orange-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 border border-gray-300'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Filter Buttons - Desktop */}
+        <div className="hidden lg:flex flex-wrap justify-center gap-3 mb-10">
           {categories.map((category) => (
             <button
               key={category}
@@ -109,18 +144,18 @@ export function ProjectsGallery() {
           ))}
         </div>
 
-        {/* Projects Grid - Enhanced */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Projects Grid - Mobile Optimized */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-8">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2 border-2 border-transparent hover:border-orange-200"
+              className="group relative bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2 border border-gray-100 lg:border-2 lg:border-transparent hover:border-orange-200"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
               }}
             >
-              <div className="relative h-72 bg-gray-200 overflow-hidden">
+              <div className="relative h-40 lg:h-72 bg-gray-200 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -142,20 +177,20 @@ export function ProjectsGallery() {
                 </div>
 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg">
+                <div className="absolute top-2 left-2 lg:top-4 lg:left-4">
+                  <span className="inline-block px-2 py-1 lg:px-4 lg:py-2 bg-gradient-to-r from-orange-600 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg">
                     {project.category}
                   </span>
                 </div>
               </div>
               
-              <div className="p-5 bg-gradient-to-br from-white to-gray-50 group-hover:from-orange-50 group-hover:to-white transition-all duration-500">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+              <div className="p-3 lg:p-5 bg-gradient-to-br from-white to-gray-50 group-hover:from-orange-50 group-hover:to-white transition-all duration-500">
+                <h3 className="text-sm lg:text-xl font-bold text-gray-900 mb-1 lg:mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">
                   {project.title}
                 </h3>
                 <div className="flex items-center text-gray-600 group-hover:text-orange-600 transition-colors">
-                  <span className="text-lg mr-2">📍</span>
-                  <p className="text-sm font-medium">{project.location}</p>
+                  <span className="text-sm lg:text-lg mr-1 lg:mr-2">📍</span>
+                  <p className="text-xs lg:text-sm font-medium truncate">{project.location}</p>
                 </div>
               </div>
             </div>

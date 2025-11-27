@@ -49,7 +49,7 @@ export function LiveActivityFeed() {
 
   return (
     <div
-      className={`fixed bottom-28 left-4 md:bottom-8 md:left-4 md:right-auto z-40 max-w-[calc(100vw-120px)] md:max-w-sm transition-all duration-500 ${
+      className={`fixed bottom-24 left-4 md:bottom-8 md:left-4 md:right-auto z-40 max-w-[calc(100vw-180px)] md:max-w-sm transition-all duration-500 ${
         isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
       }`}
     >
