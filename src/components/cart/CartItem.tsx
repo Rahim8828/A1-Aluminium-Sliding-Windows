@@ -40,17 +40,17 @@ export default function CartItem({ item, onQuantityChange, onRemove }: CartItemP
   const itemTotal = item.price * item.quantity;
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow">
-      <div className="flex gap-4">
+    <div className="bg-white rounded-lg border border-gray-200 p-3 md:p-4 hover:shadow-md transition-shadow">
+      <div className="flex gap-3 md:gap-4">
         {/* Item Image */}
         <div className="flex-shrink-0">
-          <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden bg-gray-100">
+          <div className="relative w-16 h-16 md:w-24 md:h-24 rounded-lg overflow-hidden bg-gray-100">
             <Image
               src={item.image}
               alt={item.serviceName}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 80px, 96px"
+              sizes="(max-width: 768px) 64px, 96px"
             />
           </div>
         </div>
@@ -59,13 +59,13 @@ export default function CartItem({ item, onQuantityChange, onRemove }: CartItemP
         <div className="flex-1 min-w-0">
           <div className="flex justify-between items-start gap-2">
             <div className="flex-1 min-w-0">
-              <h3 className="font-semibold text-gray-900 text-sm md:text-base truncate">
+              <h3 className="font-semibold text-gray-900 text-xs md:text-base line-clamp-1">
                 {item.serviceName}
               </h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-[11px] md:text-sm text-gray-600 mt-0.5 md:mt-1 line-clamp-1">
                 {item.optionName}
               </p>
-              <p className="text-sm font-medium text-orange-600 mt-1">
+              <p className="text-xs md:text-sm font-medium text-orange-600 mt-1">
                 ₹{item.price.toLocaleString()} each
               </p>
             </div>
@@ -73,23 +73,23 @@ export default function CartItem({ item, onQuantityChange, onRemove }: CartItemP
             {/* Remove Button */}
             <button
               onClick={handleRemoveClick}
-              className="flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors touch-manipulation"
+              className="flex-shrink-0 min-h-[40px] min-w-[40px] md:min-h-[44px] md:min-w-[44px] flex items-center justify-center text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors touch-manipulation"
               aria-label="Remove item from cart"
             >
-              <Trash2 className="w-5 h-5" />
+              <Trash2 className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
 
           {/* Quantity Selector and Total */}
-          <div className="flex items-center justify-between mt-4">
+          <div className="flex items-center justify-between mt-3 md:mt-4">
             <QuantitySelector
               quantity={item.quantity}
               onQuantityChange={handleQuantityChange}
-              size="md"
+              size="sm"
             />
             <div className="text-right">
-              <p className="text-xs text-gray-500">Total</p>
-              <p className="text-base md:text-lg font-bold text-gray-900">
+              <p className="text-[10px] md:text-xs text-gray-500">Total</p>
+              <p className="text-sm md:text-lg font-bold text-gray-900">
                 ₹{itemTotal.toLocaleString()}
               </p>
             </div>
@@ -97,22 +97,22 @@ export default function CartItem({ item, onQuantityChange, onRemove }: CartItemP
         </div>
       </div>
 
-      {/* Confirmation Dialog */}
+      {/* Confirmation Dialog - Mobile Optimized */}
       {showConfirmation && (
-        <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-sm text-red-800 mb-3">
-            Are you sure you want to remove this item from your cart?
+        <div className="mt-3 md:mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+          <p className="text-xs md:text-sm text-red-800 mb-2 md:mb-3">
+            Remove this item from cart?
           </p>
           <div className="flex gap-2">
             <button
               onClick={handleConfirmRemove}
-              className="flex-1 px-4 py-2.5 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors min-h-[44px] touch-manipulation"
+              className="flex-1 px-3 md:px-4 py-2.5 bg-red-600 text-white text-xs md:text-sm font-medium rounded-lg hover:bg-red-700 active:bg-red-800 transition-colors min-h-[44px] touch-manipulation"
             >
               Yes, Remove
             </button>
             <button
               onClick={handleCancelRemove}
-              className="flex-1 px-4 py-2.5 bg-white text-gray-700 text-sm font-medium rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors min-h-[44px] touch-manipulation"
+              className="flex-1 px-3 md:px-4 py-2.5 bg-white text-gray-700 text-xs md:text-sm font-medium rounded-lg border border-gray-300 hover:bg-gray-50 active:bg-gray-100 transition-colors min-h-[44px] touch-manipulation"
             >
               Cancel
             </button>

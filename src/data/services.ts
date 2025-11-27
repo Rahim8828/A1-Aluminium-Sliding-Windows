@@ -30,8 +30,8 @@ export const services: Service[] = [
       'Shop fronts and commercial entrances',
     ],
     images: [
-      '/aluminium-category/Single sliding door.webp',
-      '/aluminium-category/Double sliding door.webp',
+      '/aluminium-category/Single-sliding-door.webp',
+      '/aluminium-category/Double-sliding-door.webp',
     ],
     pricing: {
       type: 'range',
@@ -47,7 +47,7 @@ export const services: Service[] = [
         rating: 4.6,
         reviewCount: 56,
         estimatedTime: '3 days',
-        image: '/aluminium-category/Single sliding door.webp',
+        image: '/aluminium-category/Single-sliding-door.webp',
       },
       {
         id: 'alu-door-sliding-double',
@@ -56,7 +56,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 42,
         estimatedTime: '3-4 days',
-        image: '/aluminium-category/Double sliding door.webp',
+        image: '/aluminium-category/Double-sliding-door.webp',
       },
       {
         id: 'alu-door-hinged',
@@ -65,7 +65,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 38,
         estimatedTime: '3 days',
-        image: '/aluminium-category/Hinged door.webp',
+        image: '/aluminium-category/Hinged-door.webp',
       },
       {
         id: 'alu-door-folding',
@@ -145,277 +145,6 @@ export const services: Service[] = [
       { icon: '✓', text: 'Custom Designs' },
       { icon: '✓', text: 'Expert Installation' },
       { icon: '✓', text: 'Lifetime Support' },
-    ],
-    relatedServices: ['aluminium-window-sliding', 'aluminium-sliding-systems'],
-  },
-  {
-    id: 'aluminium-partitions',
-    slug: 'aluminium-partitions',
-    category: 'aluminium',
-    title: 'Aluminium Partitions',
-    shortDescription:
-      'Modern aluminium partition systems for offices and homes, creating functional spaces with elegant designs.',
-    fullDescription:
-      'Transform your space with our versatile aluminium partition systems. Perfect for creating separate work areas, meeting rooms, or dividing large spaces, our partitions offer flexibility, sound insulation, and a professional appearance. Available with glass, solid panels, or combination designs.',
-    rating: 4.6,
-    reviewCount: 98,
-    duration: '2-4 days',
-    benefits: [
-      'Quick and clean installation',
-      'Flexible and reconfigurable layouts',
-      'Sound insulation for privacy',
-      'Professional and modern appearance',
-      'Maximizes natural light with glass options',
-      'Cost-effective space management',
-    ],
-    useCases: [
-      'Office cabins and workstations',
-      'Conference and meeting rooms',
-      'Retail store sections',
-      'Hospital and clinic divisions',
-      'Home office spaces',
-    ],
-    images: ['/aluminium-category/Profile partition.webp'],
-    pricing: {
-      type: 'range',
-      min: 300,
-      max: 700,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'alu-part-glass-full',
-        name: 'Full Glass Partition',
-        price: 550,
-        rating: 4.7,
-        reviewCount: 45,
-        estimatedTime: '3-4 days',
-        image: '/aluminium-category/Profile partition.webp',
-      },
-      {
-        id: 'alu-part-glass-half',
-        name: 'Half Glass Partition',
-        price: 450,
-        rating: 4.6,
-        reviewCount: 38,
-        estimatedTime: '2-3 days',
-        image: '/aluminium-category/Profile partition.webp',
-      },
-      {
-        id: 'alu-part-solid',
-        name: 'Solid Panel Partition',
-        price: 350,
-        rating: 4.5,
-        reviewCount: 32,
-        estimatedTime: '2 days',
-        image: '/aluminium-category/Solid panel partitions.webp',
-      },
-      {
-        id: 'alu-part-combo',
-        name: 'Combination Partition',
-        price: 480,
-        rating: 4.7,
-        reviewCount: 28,
-        estimatedTime: '3 days',
-      },
-    ],
-    priceIncludes: [
-      'Aluminium frame system',
-      'Glass or solid panels',
-      'Door with lock (if required)',
-      'Installation hardware',
-      'Professional installation',
-      '6-month warranty',
-    ],
-    materials: [
-      'Aluminium frame profiles',
-      'Toughened or laminated glass',
-      'Solid panel boards',
-      'Door hardware and locks',
-      'Acoustic seals (optional)',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Space Assessment',
-        description: 'Evaluate your space and discuss partition layout requirements.',
-      },
-      {
-        step: 2,
-        title: 'Layout Design',
-        description: 'Create a detailed layout plan with door positions and panel types.',
-      },
-      {
-        step: 3,
-        title: 'Material Selection',
-        description: 'Choose glass type, panel finish, and frame color.',
-      },
-      {
-        step: 4,
-        title: 'Fabrication',
-        description: 'Custom fabrication of frames and panels to exact dimensions.',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Clean and efficient installation with minimal disruption.',
-      },
-      {
-        step: 6,
-        title: 'Finishing & Cleanup',
-        description: 'Final adjustments, cleaning, and site cleanup.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Can partitions be relocated?',
-        answer:
-          'Yes, our aluminium partition systems are designed to be demountable and can be relocated as your needs change.',
-      },
-      {
-        question: 'What glass options are available?',
-        answer:
-          'We offer clear, frosted, tinted, and decorative glass options for partitions.',
-      },
-      {
-        question: 'Do partitions provide sound insulation?',
-        answer:
-          'Yes, especially with acoustic seals and double-glazed glass options.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Modular Design' },
-      { icon: '✓', text: 'Quick Installation' },
-      { icon: '✓', text: 'Relocatable' },
-      { icon: '✓', text: 'Sound Insulation' },
-    ],
-    relatedServices: ['aluminium-doors', 'aluminium-partitions'],
-  },
-  {
-    id: 'aluminium-sliding-systems',
-    slug: 'aluminium-sliding-systems',
-    category: 'aluminium',
-    title: 'Aluminium Sliding Systems',
-    shortDescription:
-      'Space-saving sliding window and door systems with smooth operation and contemporary design.',
-    fullDescription:
-      'Our premium sliding systems offer effortless operation and space optimization. Featuring high-quality rollers and tracks, these systems provide years of smooth, quiet performance. Ideal for balconies, terraces, and areas where space is at a premium.',
-    rating: 4.8,
-    reviewCount: 112,
-    duration: '2-3 days',
-    benefits: [
-      'Space-saving design',
-      'Smooth and quiet operation',
-      'Large glass areas for maximum light',
-      'Easy to clean and maintain',
-      'Weather-sealed for protection',
-      'Available in 2, 3, or 4 track configurations',
-    ],
-    useCases: [
-      'Balcony enclosures',
-      'Terrace access',
-      'Patio doors',
-      'Room dividers',
-      'Wardrobe doors',
-    ],
-    images: ['/aluminium-category/2-Track-sliding-Window.webp'],
-    pricing: {
-      type: 'range',
-      min: 380,
-      max: 900,
-      unit: 'per sq ft',
-    },
-    options: [
-      {
-        id: 'alu-slide-2track',
-        name: '2-Track Sliding System',
-        price: 420,
-        rating: 4.7,
-        reviewCount: 58,
-        estimatedTime: '2 days',
-        image: '/aluminium-category/2-Track-sliding-Window.webp',
-      },
-      {
-        id: 'alu-slide-3track',
-        name: '3-Track Sliding System',
-        price: 580,
-        rating: 4.8,
-        reviewCount: 47,
-        estimatedTime: '2-3 days',
-      },
-      {
-        id: 'alu-slide-4track',
-        name: '4-Track Sliding System',
-        price: 750,
-        rating: 4.9,
-        reviewCount: 35,
-        estimatedTime: '3 days',
-      },
-    ],
-    priceIncludes: [
-      'Premium aluminium tracks',
-      'High-quality rollers',
-      'Toughened glass panels',
-      'Weather-proof seals',
-      'Locks and handles',
-      'Professional installation',
-    ],
-    materials: [
-      'Aluminium track profiles',
-      'Stainless steel rollers',
-      'Toughened glass',
-      'EPDM weather seals',
-      'Zinc alloy locks',
-    ],
-    processSteps: [
-      {
-        step: 1,
-        title: 'Site Survey',
-        description: 'Measure opening and assess installation requirements.',
-      },
-      {
-        step: 2,
-        title: 'Track Configuration',
-        description: 'Determine number of tracks and panel arrangement.',
-      },
-      {
-        step: 3,
-        title: 'Customization',
-        description: 'Select colors, glass type, and hardware finishes.',
-      },
-      {
-        step: 4,
-        title: 'Manufacturing',
-        description: 'Precision fabrication of tracks and panels.',
-      },
-      {
-        step: 5,
-        title: 'Installation',
-        description: 'Expert installation with proper alignment and adjustment.',
-      },
-      {
-        step: 6,
-        title: 'Operation Demo',
-        description: 'Demonstration of smooth operation and maintenance tips.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'How many tracks can be installed?',
-        answer:
-          'We offer 2-track, 3-track, and 4-track sliding systems depending on your space and requirements.',
-      },
-      {
-        question: 'Are the rollers durable?',
-        answer:
-          'Yes, we use premium stainless steel rollers designed for years of smooth operation.',
-      },
-    ],
-    trustBadges: [
-      { icon: '✓', text: 'Smooth Operation' },
-      { icon: '✓', text: 'Premium Rollers' },
-      { icon: '✓', text: 'Weather Sealed' },
-      { icon: '✓', text: 'Space Saving' },
     ],
     relatedServices: ['aluminium-window-sliding', 'aluminium-doors'],
   },
@@ -591,7 +320,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 250,
         estimatedTime: '4 days',
-        image: '/aluminium-category/Profile door.webp',
+        image: '/aluminium-category/Profile-door.webp',
       },
     ],
     priceIncludes: [
@@ -649,8 +378,8 @@ export const services: Service[] = [
       'Co-working spaces',
     ],
     images: [
-      '/aluminium-category/Profile partition.webp',
-      '/aluminium-category/Solid panel partitions.webp',
+      '/aluminium-category/Office-partitions.webp',
+      '/aluminium-category/Solid-panel-partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -660,31 +389,40 @@ export const services: Service[] = [
     },
     options: [
       {
+        id: 'alu-part-glass-full',
+        name: 'Full Glass Partition',
+        price: 550,
+        rating: 4.7,
+        reviewCount: 45,
+        estimatedTime: '3-4 days',
+        image: '/aluminium-category/Profile-partition.webp',
+      },
+      {
+        id: 'alu-part-glass-half',
+        name: 'Half Glass Partition',
+        price: 450,
+        rating: 4.6,
+        reviewCount: 38,
+        estimatedTime: '2-3 days',
+        image: '/glass-category/Half-glass-partitions.webp',
+      },
+      {
         id: 'alu-part-office',
         name: 'Office Partition',
         price: 380,
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '4 days',
-        image: '/aluminium-category/Profile partition.webp',
+        image: '/aluminium-category/Office-partitions.webp',
       },
       {
-        id: 'alu-part-shop',
-        name: 'Shop Partition',
+        id: 'alu-part-solid',
+        name: 'Solid Panel Partition',
         price: 350,
-        rating: 4.8,
-        reviewCount: 560,
-        estimatedTime: '3-4 days',
-        image: '/aluminium-category/Profile partition.webp',
-      },
-      {
-        id: 'alu-part-frosted',
-        name: 'Frosted Glass Partition',
-        price: 450,
-        rating: 4.9,
-        reviewCount: 420,
-        estimatedTime: '4-5 days',
-        image: '/aluminium-category/Profile partition.webp',
+        rating: 4.5,
+        reviewCount: 32,
+        estimatedTime: '2 days',
+        image: '/aluminium-category/Solid-panel-partitions.webp',
       },
       {
         id: 'alu-part-acrylic',
@@ -693,7 +431,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 330,
         estimatedTime: '3 days',
-        image: '/aluminium-category/Solid panel partitions.webp',
+        image: '/aluminium-category/Solid-panel-partitions.webp',
       },
     ],
     priceIncludes: [
@@ -727,7 +465,7 @@ export const services: Service[] = [
     id: 'aluminium-kitchen-wardrobe',
     slug: 'aluminium-kitchen-wardrobe',
     category: 'aluminium',
-    title: 'Aluminium Kitchen / Wardrobe Sliding',
+    title: 'Aluminium Kitchen Sliding',
     shortDescription:
       'Kitchen trolley shutters, wardrobe sliding doors with aluminium profile, slim profile doors (trending).',
     fullDescription:
@@ -751,8 +489,8 @@ export const services: Service[] = [
       'Dressing rooms',
     ],
     images: [
-      '/aluminium-category/Profile cabinet.webp',
-      '/aluminium-category/Profile door.webp',
+      '/aluminium-category/Kitchen-trolley.webp',
+      '/aluminium-category/Wardrobe-sliding.webp',
     ],
     pricing: {
       type: 'range',
@@ -768,7 +506,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 890,
         estimatedTime: '2-3 days',
-        image: '/aluminium-category/Profile cabinet.webp',
+        image: '/aluminium-category/Kitchen-trolley.webp',
       },
       {
         id: 'alu-wardrobe-sliding',
@@ -777,7 +515,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1120,
         estimatedTime: '3 days',
-        image: '/aluminium-category/Profile door.webp',
+        image: '/aluminium-category/Wardrobe-sliding.webp',
       },
       {
         id: 'alu-slim-profile',
@@ -786,7 +524,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 440,
         estimatedTime: '3-4 days',
-        image: '/aluminium-category/Profile door.webp',
+        image: '/aluminium-category/Profile-door.webp',
       },
     ],
     priceIncludes: [
@@ -820,7 +558,7 @@ export const services: Service[] = [
     id: 'aluminium-heavy-duty-commercial',
     slug: 'aluminium-heavy-duty-commercial',
     category: 'aluminium',
-    title: 'Heavy-Duty / Commercial Aluminium Sliding',
+    title: 'Commercial Aluminium Sliding',
     shortDescription:
       'Showroom fronts, industrial sections, big-size glass façade sliding, thermal break aluminium systems.',
     fullDescription:
@@ -844,8 +582,8 @@ export const services: Service[] = [
       'Hotels and resorts',
     ],
     images: [
-      '/aluminium-category/Showroom front.webp',
-      '/aluminium-category/Thermal break.webp',
+      '/aluminium-category/Showroom-front.webp',
+      '/aluminium-category/Thermal-break.webp',
     ],
     pricing: {
       type: 'range',
@@ -861,16 +599,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 280,
         estimatedTime: '8 days',
-        image: '/aluminium-category/Showroom front.webp',
-      },
-      {
-        id: 'alu-industrial',
-        name: 'Industrial Section Sliding',
-        price: 750,
-        rating: 4.7,
-        reviewCount: 190,
-        estimatedTime: '7 days',
-        image: '/aluminium-category/Showroom front.webp',
+        image: '/aluminium-category/Showroom-front.webp',
       },
       {
         id: 'alu-facade',
@@ -879,7 +608,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 250,
         estimatedTime: '10 days',
-        image: '/aluminium-category/Showroom front.webp',
+        image: '/glass-category/Glass-facade-sliding.webp',
       },
       {
         id: 'alu-thermal-break',
@@ -888,7 +617,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 170,
         estimatedTime: '10-12 days',
-        image: '/aluminium-category/Thermal break.webp',
+        image: '/aluminium-category/Thermal-break.webp',
       },
     ],
     priceIncludes: [
@@ -948,8 +677,8 @@ export const services: Service[] = [
       'Solar panels',
     ],
     images: [
-      '/netting-category/Pigeon netting.webp',
-      '/netting-category/Transparent bird net.webp',
+      '/netting-category/Pigeon-netting.webp',
+      '/netting-category/Transparent-bird-net.webp',
     ],
     pricing: {
       type: 'range',
@@ -965,7 +694,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1500,
         estimatedTime: '1 day',
-        image: '/netting-category/Pigeon netting.webp',
+        image: '/netting-category/Pigeon-netting.webp',
       },
       {
         id: 'bird-spike',
@@ -983,7 +712,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 200,
         estimatedTime: '1-2 days',
-        image: '/netting-category/Transparent bird net.webp',
+        image: '/netting-category/Transparent-bird-net.webp',
       },
     ],
     priceIncludes: [
@@ -1041,8 +770,8 @@ export const services: Service[] = [
       'Storage facilities',
     ],
     images: [
-      '/netting-category/Industrial safety net.webp',
-      '/netting-category/Cargo Net.webp',
+      '/netting-category/Industrial-safety-net.webp',
+      '/netting-category/Cargo-Net.webp',
     ],
     pricing: {
       type: 'range',
@@ -1058,7 +787,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 380,
         estimatedTime: '3-4 days',
-        image: '/netting-category/Industrial safety net.webp',
+        image: '/netting-category/Industrial-safety-net.webp',
       },
       {
         id: 'industrial-cargo',
@@ -1067,7 +796,7 @@ export const services: Service[] = [
         rating: 4.7,
         reviewCount: 220,
         estimatedTime: '2-3 days',
-        image: '/netting-category/Cargo Net.webp',
+        image: '/netting-category/Cargo-Net.webp',
       },
     ],
     priceIncludes: [
@@ -1125,8 +854,8 @@ export const services: Service[] = [
       'Bedroom windows',
     ],
     images: [
-      '/netting-category/Window mosquito net.webp',
-      '/netting-category/Sliding Frame Mosquito Net.webp',
+      '/netting-category/Window-mosquito-net.webp',
+      '/netting-category/Sliding-Frame-Mosquito-Net.webp',
     ],
     pricing: {
       type: 'range',
@@ -1142,7 +871,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1800,
         estimatedTime: '1 day',
-        image: '/netting-category/Window mosquito net.webp',
+        image: '/netting-category/Window-mosquito-net.webp',
       },
       {
         id: 'pest-sliding',
@@ -1151,7 +880,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 980,
         estimatedTime: '1 day',
-        image: '/netting-category/Sliding Frame Mosquito Net.webp',
+        image: '/netting-category/Sliding-Frame-Mosquito-Net.webp',
       },
       {
         id: 'pest-pleated',
@@ -1160,7 +889,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 180,
         estimatedTime: '1 day',
-        image: '/netting-category/Pleated net.webp',
+        image: '/netting-category/Pleated-net.webp',
       },
     ],
     priceIncludes: [
@@ -1220,8 +949,8 @@ export const services: Service[] = [
       'Staircases',
     ],
     images: [
-      '/glass-category/Toughened glass.webp',
-      '/glass-category/Full glass partitions.webp',
+      '/glass-category/Toughened-glass.webp',
+      '/glass-category/Full-glass-partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -1237,7 +966,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 680,
         estimatedTime: '3 days',
-        image: '/glass-category/Toughened glass.webp',
+        image: '/glass-category/Toughened-glass.webp',
       },
       {
         id: 'tough-balcony',
@@ -1246,7 +975,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 520,
         estimatedTime: '4 days',
-        image: '/glass-category/Toughened glass.webp',
+        image: '/glass-category/Balcony-railing-glass.webp',
       },
       {
         id: 'tough-office',
@@ -1255,7 +984,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 450,
         estimatedTime: '4-5 days',
-        image: '/glass-category/Full glass partitions.webp',
+        image: '/glass-category/Full-glass-partitions.webp',
       },
       {
         id: 'tough-shopfront',
@@ -1264,7 +993,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 280,
         estimatedTime: '5 days',
-        image: '/glass-category/Showroom front.webp',
+        image: '/glass-category/Showroom-front.webp',
       },
       {
         id: 'tough-staircase',
@@ -1273,7 +1002,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 170,
         estimatedTime: '4 days',
-        image: '/glass-category/Toughened glass.webp',
+        image: '/glass-category/Staircase-railing-glass.webp',
       },
     ],
     priceIncludes: [
@@ -1331,8 +1060,8 @@ export const services: Service[] = [
       'Luxury apartments',
     ],
     images: [
-      '/glass-category/Toughened glass.webp',
-      '/glass-category/Full glass partitions.webp',
+      '/glass-category/Framed-shower-partitions.webp',
+      '/glass-category/Frameless-shower-partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -1348,16 +1077,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '3 days',
-        image: '/glass-category/Toughened glass.webp',
-      },
-      {
-        id: 'shower-semi-frameless',
-        name: 'Semi-Frameless Partition',
-        price: 320,
-        rating: 4.9,
-        reviewCount: 560,
-        estimatedTime: '2-3 days',
-        image: '/glass-category/Toughened glass.webp',
+        image: '/glass-category/Frameless-shower-partitions.webp',
       },
       {
         id: 'shower-framed',
@@ -1366,7 +1086,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 400,
         estimatedTime: '2 days',
-        image: '/glass-category/Toughened glass.webp',
+        image: '/glass-category/Framed-shower-partitions.webp',
       },
     ],
     priceIncludes: [
@@ -1425,8 +1145,8 @@ export const services: Service[] = [
       'Executive cabins',
     ],
     images: [
-      '/glass-category/Full glass partitions.webp',
-      '/glass-category/Half glass partitions.webp',
+      '/glass-category/Full-glass-partitions.webp',
+      '/glass-category/Half-glass-partitions.webp',
     ],
     pricing: {
       type: 'range',
@@ -1442,7 +1162,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 1100,
         estimatedTime: '5 days',
-        image: '/glass-category/Full glass partitions.webp',
+        image: '/glass-category/Full-glass-partitions.webp',
       },
       {
         id: 'office-frosted',
@@ -1451,7 +1171,7 @@ export const services: Service[] = [
         rating: 4.9,
         reviewCount: 890,
         estimatedTime: '5-6 days',
-        image: '/glass-category/Half glass partitions.webp',
+        image: '/glass-category/Half-glass-partitions.webp',
       },
       {
         id: 'office-cabin',
@@ -1460,7 +1180,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 460,
         estimatedTime: '6-7 days',
-        image: '/glass-category/Full glass partitions.webp',
+        image: '/glass-category/Full-glass-partitions.webp',
       },
     ],
     priceIncludes: [
@@ -1518,8 +1238,8 @@ export const services: Service[] = [
       'Conference rooms',
     ],
     images: [
-      '/glass-category/Glass facade sliding.webp',
-      '/glass-category/Toughened glass.webp',
+      '/glass-category/Glass-facade-sliding.webp',
+      '/glass-category/Toughened-glass.webp',
     ],
     pricing: {
       type: 'range',
@@ -1535,16 +1255,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 780,
         estimatedTime: '3 days',
-        image: '/glass-category/Toughened glass.webp',
-      },
-      {
-        id: 'door-patch',
-        name: 'Patch Fitting Door',
-        price: 550,
-        rating: 4.9,
-        reviewCount: 620,
-        estimatedTime: '3-4 days',
-        image: '/glass-category/Toughened glass.webp',
+        image: '/glass-category/Toughened-glass.webp',
       },
       {
         id: 'door-sliding',
@@ -1553,7 +1264,7 @@ export const services: Service[] = [
         rating: 4.8,
         reviewCount: 520,
         estimatedTime: '4 days',
-        image: '/glass-category/Glass facade sliding.webp',
+        image: '/glass-category/Glass-facade-sliding.webp',
       },
     ],
     priceIncludes: [

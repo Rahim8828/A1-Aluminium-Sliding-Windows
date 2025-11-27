@@ -57,22 +57,22 @@ export default function CouponSection() {
   const hasAppliedCoupon = !!cart.appliedCoupon;
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4">
-      <div className="flex items-center gap-2 mb-3">
-        <Tag className="w-4 h-4 md:w-5 md:h-5 text-orange-600" />
-        <h3 className="text-sm md:text-base font-semibold text-gray-900">Apply Coupon</h3>
+    <div className="bg-white rounded-lg border border-gray-200 p-3 md:p-4">
+      <div className="flex items-center gap-2 mb-2 md:mb-3">
+        <Tag className="w-4 h-4 text-orange-600" />
+        <h3 className="text-xs md:text-base font-semibold text-gray-900">Apply Coupon</h3>
       </div>
 
       {/* Coupon Input */}
       {!hasAppliedCoupon && (
-        <div className="space-y-3">
+        <div className="space-y-2 md:space-y-3">
           <div className="flex gap-2">
             <input
               type="text"
               value={couponCode}
               onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
-              placeholder="Enter coupon code"
-              className="flex-1 px-3 md:px-4 py-2.5 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all min-h-[44px]"
+              placeholder="Enter code"
+              className="flex-1 px-3 py-2.5 text-xs md:text-base border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all min-h-[44px]"
               aria-label="Coupon code"
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
@@ -82,7 +82,7 @@ export default function CouponSection() {
             />
             <button
               onClick={handleApplyCoupon}
-              className="px-4 md:px-6 py-2.5 bg-orange-600 text-white text-sm md:text-base font-medium rounded-lg hover:bg-orange-700 transition-colors whitespace-nowrap min-h-[44px] touch-manipulation"
+              className="px-4 md:px-6 py-2.5 bg-orange-600 text-white text-xs md:text-base font-semibold rounded-lg hover:bg-orange-700 active:bg-orange-800 transition-colors whitespace-nowrap min-h-[44px] touch-manipulation"
               aria-label="Apply coupon"
             >
               Apply
@@ -111,26 +111,26 @@ export default function CouponSection() {
           {/* Available Coupons Toggle */}
           <button
             onClick={() => setShowAvailableCoupons(!showAvailableCoupons)}
-            className="text-xs md:text-sm text-orange-600 hover:text-orange-700 font-medium transition-colors min-h-[44px] inline-flex items-center touch-manipulation"
+            className="text-[11px] md:text-sm text-orange-600 hover:text-orange-700 font-medium transition-colors min-h-[40px] inline-flex items-center touch-manipulation"
           >
             {showAvailableCoupons ? 'Hide' : 'View'} available coupons
           </button>
 
           {/* Available Coupons List */}
           {showAvailableCoupons && (
-            <div className="space-y-2 mt-3 pt-3 border-t border-gray-200">
-              <p className="text-sm font-medium text-gray-700 mb-2">Available Coupons:</p>
+            <div className="space-y-2 mt-2 md:mt-3 pt-2 md:pt-3 border-t border-gray-200">
+              <p className="text-xs md:text-sm font-medium text-gray-700 mb-2">Available Coupons:</p>
               {AVAILABLE_COUPONS.map((coupon) => (
                 <div
                   key={coupon.code}
-                  className="flex items-center justify-between p-3 bg-orange-50 border border-orange-200 rounded-lg hover:bg-orange-100 transition-colors cursor-pointer"
+                  className="flex items-center justify-between p-2 md:p-3 bg-orange-50 border border-orange-200 rounded-lg hover:bg-orange-100 active:bg-orange-100 transition-colors cursor-pointer"
                   onClick={() => handleQuickApply(coupon.code)}
                 >
-                  <div className="flex-1">
-                    <p className="font-semibold text-orange-900 text-sm">
+                  <div className="flex-1 min-w-0 pr-2">
+                    <p className="font-semibold text-orange-900 text-xs md:text-sm">
                       {coupon.code}
                     </p>
-                    <p className="text-xs text-orange-700 mt-1">
+                    <p className="text-[10px] md:text-xs text-orange-700 mt-0.5 md:mt-1 line-clamp-1">
                       {coupon.description}
                     </p>
                   </div>
@@ -139,7 +139,7 @@ export default function CouponSection() {
                       e.stopPropagation();
                       handleQuickApply(coupon.code);
                     }}
-                    className="ml-2 px-3 py-1.5 bg-orange-600 text-white text-xs font-medium rounded hover:bg-orange-700 transition-colors min-h-[36px] touch-manipulation"
+                    className="flex-shrink-0 px-3 py-1.5 bg-orange-600 text-white text-[10px] md:text-xs font-semibold rounded hover:bg-orange-700 active:bg-orange-800 transition-colors min-h-[36px] touch-manipulation"
                     aria-label={`Apply ${coupon.code}`}
                   >
                     Apply

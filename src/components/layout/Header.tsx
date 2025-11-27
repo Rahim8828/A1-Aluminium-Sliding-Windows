@@ -160,19 +160,22 @@ export default function Header({ transparent = false }: HeaderProps) {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className={`md:hidden p-2 ${textClasses}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          {/* Mobile Cart & Menu Buttons */}
+          <div className="md:hidden flex items-center gap-2">
+            <CartIcon />
+            <button
+              className={`p-2 ${textClasses}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

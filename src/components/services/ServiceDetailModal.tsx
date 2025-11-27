@@ -58,6 +58,8 @@ export default function ServiceDetailModal({
   const handleAddToCart = () => {
     if (selectedOption) {
       onAddToCart(service.id, selectedOption, quantity);
+      // Close modal after adding to cart
+      onClose();
     }
   };
 

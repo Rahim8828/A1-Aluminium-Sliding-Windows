@@ -6,7 +6,7 @@
  * Integrates with cart context for adding items
  */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Service, CartItem } from '@/types';
 import ServiceGrid from '@/components/services/ServiceGrid';
 import ServiceCategoryGrid from '@/components/services/ServiceCategoryGrid';
@@ -35,6 +35,8 @@ export default function ServicesPageClient({
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all');
   const [searchQuery] = useState('');
   const [sortBy] = useState<SortOption>('popular');
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [addedItemName, setAddedItemName] = useState('');
   const { addItem } = useCart();
 
   // Combine all services
@@ -138,6 +140,15 @@ export default function ServicesPageClient({
     };
 
     addItem(cartItem);
+
+    // Show success toast
+    setAddedItemName(`${service.title} - ${option.name}`);
+    setShowSuccessToast(true);
+    
+    // Hide toast after 3 seconds
+    setTimeout(() => {
+      setShowSuccessToast(false);
+    }, 3000);
 
     // Track add to cart event
     trackEvent({
@@ -243,6 +254,29 @@ export default function ServicesPageClient({
           onClose={handleCloseModal}
           onAddToCart={handleAddToCart}
         />
+      )}
+
+      {/* Success Toast Notification - Mobile Optimized */}
+      {showSuccessToast && (
+        <div className="fixed bottom-[80px] md:bottom-6 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-[60] animate-in slide-in-from-bottom-5 duration-300">
+          <div className="bg-green-600 text-white px-4 py-3 md:px-6 md:py-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-md mx-auto">
+            <div className="flex-shrink-0 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-sm mb-0.5">Added to Cart!</p>
+              <p className="text-xs text-green-100 truncate">{addedItemName}</p>
+            </div>
+            <button
+              onClick={() => window.location.href = '/cart'}
+              className="flex-shrink-0 px-3 py-1.5 bg-white text-green-600 rounded-lg text-xs font-semibold hover:bg-green-50 active:bg-green-100 transition-colors touch-manipulation"
+            >
+              View Cart
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
