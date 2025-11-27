@@ -19,7 +19,7 @@ export function FinalCTA() {
   };
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden">
+    <section className="relative pt-8 pb-0 md:py-20 lg:py-28 overflow-hidden">
       {/* Background with Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900" />
       
@@ -36,18 +36,18 @@ export function FinalCTA() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 px-4">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-6">
             Ready to Transform Your Space?
           </h2>
           
           {/* Subheadling */}
-          <p className="text-sm md:text-base lg:text-lg text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto px-4">
+          <p className="text-sm md:text-base lg:text-lg text-gray-300 mb-6 md:mb-10 max-w-2xl mx-auto">
             Get expert consultation and a free quote for your aluminium, glass, or netting project. 
             Our team is ready to help you bring your vision to life.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12 px-4">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-12">
             <button
               onClick={handleCallClick}
               className="group inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-orange-600 text-white text-sm md:text-base font-semibold rounded-lg hover:bg-orange-700 transition-all hover:shadow-xl hover:scale-105 min-h-[48px] touch-manipulation"
@@ -74,25 +74,25 @@ export function FinalCTA() {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-8 text-white/90">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-white/90 mb-6 md:mb-8">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-sm md:text-base">Free Consultation</span>
+              <span className="text-xs md:text-base">Free Consultation</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-sm md:text-base">Quick Response</span>
+              <span className="text-xs md:text-base">Quick Response</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-sm md:text-base">No Obligation Quote</span>
+              <span className="text-xs md:text-base">No Obligation</span>
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/20 px-4">
-            <p className="text-sm md:text-base text-gray-400 mb-3 md:mb-4">Or reach us directly at</p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center text-white text-sm md:text-base">
+          <div className="pt-4 md:pt-8 border-t border-white/20">
+            <p className="text-xs md:text-base text-gray-400 mb-2 md:mb-4">Or reach us directly at</p>
+            <div className="flex flex-col sm:flex-row gap-2 md:gap-4 justify-center items-center text-white text-xs md:text-base">
               <a
                 href={`tel:${BUSINESS_INFO.phone.primary}`}
                 className="hover:text-orange-400 transition-colors font-medium"

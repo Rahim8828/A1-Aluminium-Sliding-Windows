@@ -1,40 +1,8 @@
 import { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-import { HeroSection } from '../components/home/HeroSection';
-import { ServicesOverview } from '../components/home/ServicesOverview';
-import { TrustBadges } from '../components/home/TrustBadges';
-import { MobileHeroSection } from '../components/home/MobileHeroSection';
-import { MobileServicesGrid } from '../components/home/MobileServicesGrid';
-import { MobileTrustSection } from '../components/home/MobileTrustSection';
-import { MobileBottomCTA } from '../components/home/MobileBottomCTA';
 import StructuredData from '@/components/seo/StructuredData';
 import { generateLocalBusinessSchema } from '@/lib/structured-data';
 import { BUSINESS_INFO, SEO_KEYWORDS } from '@/lib/constants';
-
-// Dynamic imports for below-the-fold components to improve initial load performance
-const WhyChooseUsWithStats = dynamic(() => import('../components/home/WhyChooseUsWithStats').then(mod => ({ default: mod.WhyChooseUsWithStats })), {
-  loading: () => <div className="h-96 animate-pulse bg-orange-600" />,
-});
-
-const ProjectsGallery = dynamic(() => import('../components/home/ProjectsGallery').then(mod => ({ default: mod.ProjectsGallery })), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-});
-
-const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => ({ default: mod.Testimonials })), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-});
-
-const FAQSection = dynamic(() => import('../components/home/FAQSection').then(mod => ({ default: mod.FAQSection })), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-});
-
-const PriceCalculator = dynamic(() => import('../components/home/PriceCalculator').then(mod => ({ default: mod.PriceCalculator })), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-});
-
-const FinalCTA = dynamic(() => import('../components/home/FinalCTA').then(mod => ({ default: mod.FinalCTA })), {
-  loading: () => <div className="h-64 animate-pulse bg-gray-100" />,
-});
+import HomePageClient from './HomePageClient';
 
 // SEO Metadata optimized for main keywords
 export const metadata: Metadata = {
@@ -102,53 +70,8 @@ export default function Home() {
       {/* Structured Data for SEO */}
       <StructuredData data={localBusinessSchema} />
 
-      {/* Main Content with proper heading hierarchy */}
-      <main className="min-h-screen pb-20 lg:pb-0">
-        {/* Mobile-First Hero - Urban Company Style */}
-        <MobileHeroSection />
-        
-        {/* Desktop Hero Section - H1 is inside this component */}
-        <div className="hidden lg:block">
-          <HeroSection />
-        </div>
-
-        {/* Mobile Services Grid */}
-        <MobileServicesGrid />
-
-        {/* Mobile Trust Section */}
-        <MobileTrustSection />
-
-        {/* Desktop Trust Badges Row */}
-        <div className="hidden lg:block">
-          <TrustBadges />
-        </div>
-
-        {/* Desktop Services Overview Section */}
-        <div className="hidden lg:block">
-          <ServicesOverview />
-        </div>
-
-        {/* Why Choose Us with Stats - Merged Section */}
-        <WhyChooseUsWithStats />
-
-        {/* Recent Projects Gallery */}
-        <ProjectsGallery />
-
-        {/* Price Calculator */}
-        <PriceCalculator />
-
-        {/* Testimonials Section */}
-        <Testimonials />
-
-        {/* FAQ Section */}
-        <FAQSection />
-
-        {/* Final CTA Section */}
-        <FinalCTA />
-
-        {/* Mobile Bottom Sticky CTA */}
-        <MobileBottomCTA />
-      </main>
+      {/* Client Component with Modal State */}
+      <HomePageClient />
     </>
   );
 }

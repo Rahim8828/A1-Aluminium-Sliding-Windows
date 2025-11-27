@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 pt-0 pb-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info with Logo */}
           <div>
@@ -170,8 +170,8 @@ export default function Footer() {
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-3 md:gap-6">
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-800">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-2 md:gap-6">
             {TRUST_BADGES.map((badge) => (
               <div
                 key={badge}
@@ -185,8 +185,8 @@ export default function Footer() {
         </div>
 
         {/* Service Areas */}
-        <div className="mt-8 pt-8 border-t border-gray-800">
-          <h4 className="text-white text-center text-base md:text-lg font-semibold mb-4">
+        <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-gray-800">
+          <h4 className="text-white text-center text-sm md:text-lg font-semibold mb-3 md:mb-4">
             📍 Service Areas in Mumbai
           </h4>
           <div className="flex flex-wrap justify-center gap-2 md:gap-3">
@@ -204,13 +204,13 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800 bg-gray-950">
-        <div className="container mx-auto px-4 py-6 pb-24 lg:pb-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="container mx-auto px-4 py-3 pb-16 lg:pb-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <p className="text-xs md:text-sm text-gray-400 text-center md:text-left">
               © {currentYear} {BUSINESS_INFO.name}. All rights reserved.
               <span className="hidden md:inline"> | Made with ❤️ in Mumbai</span>
             </p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            <div className="flex flex-wrap justify-center gap-3 md:gap-6">
               <Link
                 href="/privacy-policy"
                 className="text-xs md:text-sm text-gray-400 hover:text-orange-500 transition-colors"

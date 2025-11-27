@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: 'Glass Partition Office',
     category: 'Glass',
     location: 'Bandra',
-    image: '/glass-category/Full glass partitions.webp',
+    image: '/glass-category/Full-glass-partitions.webp',
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const projects: Project[] = [
     title: 'Sliding Aluminium Doors',
     category: 'Aluminium',
     location: 'Malad',
-    image: '/aluminium-category/Single sliding door.webp',
+    image: '/aluminium-category/Single-sliding-door.webp',
   },
   {
     id: 5,
@@ -109,7 +109,7 @@ export function ProjectsGallery() {
         </div>
 
         {/* Filter Buttons - Mobile Horizontal Scroll */}
-        <div className="lg:hidden overflow-x-auto pb-4 mb-6 -mx-4 px-4 scrollbar-hide">
+        <div className="lg:hidden overflow-x-auto pb-4 mb-6 -mx-4 px-4 scrollbar-hide overscroll-x-contain touch-pan-x">
           <div className="flex gap-2 min-w-max">
             {categories.map((category) => (
               <button

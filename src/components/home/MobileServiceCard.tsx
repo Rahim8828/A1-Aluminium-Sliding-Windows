@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { Star, Clock, ArrowRight } from 'lucide-react';
 
 interface MobileServiceCardProps {
@@ -11,7 +10,9 @@ interface MobileServiceCardProps {
   reviews: number;
   startingPrice: string;
   duration: string;
-  href: string;
+  serviceId: string;
+  category: string;
+  onServiceClick?: (serviceId: string) => void;
 }
 
 export function MobileServiceCard({
@@ -21,12 +22,14 @@ export function MobileServiceCard({
   reviews,
   startingPrice,
   duration,
-  href,
+  serviceId,
+  category,
+  onServiceClick,
 }: MobileServiceCardProps) {
   return (
-    <Link
-      href={href}
-      className="block bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+    <a
+      href={`/services?category=${category}`}
+      className="block w-full text-left bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
     >
       <div className="flex gap-3 p-3">
         {/* Image */}
@@ -35,8 +38,10 @@ export function MobileServiceCard({
             src={image}
             alt={title}
             fill
-            className="object-cover"
+            className="object-contain p-2"
             sizes="96px"
+            priority={false}
+            loading="lazy"
           />
         </div>
 
@@ -73,6 +78,6 @@ export function MobileServiceCard({
           <ArrowRight className="w-5 h-5 text-gray-400" />
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

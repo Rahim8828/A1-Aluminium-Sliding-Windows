@@ -35,7 +35,7 @@ const serviceCategories: ServiceCategory[] = [
       'Elegant glass partitions, doors, shower enclosures, and railings. Transform your space with sophisticated glass installations.',
     icon: <Sparkles className="w-12 h-12" strokeWidth={2} />,
     href: '/services/glass',
-    image: '/glass-category/Full glass partitions.webp',
+    image: '/glass-category/Full-glass-partitions.webp',
     startingPrice: '₹12,000',
   },
   {
@@ -95,7 +95,7 @@ export function ServicesOverview() {
                         src={service.image}
                         alt={`${service.title} - Professional services in Mumbai`}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="object-contain p-4 group-hover:scale-110 transition-transform duration-700"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         quality={85}
                       />

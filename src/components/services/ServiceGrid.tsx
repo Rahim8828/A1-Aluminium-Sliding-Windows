@@ -208,7 +208,7 @@ export default function ServiceGrid({
                               alt={service.title}
                               fill
                               sizes="80px"
-                              className="object-cover"
+                              className="object-contain p-1"
                             />
                           </div>
 

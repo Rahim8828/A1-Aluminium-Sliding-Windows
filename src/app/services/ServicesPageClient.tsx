@@ -6,7 +6,8 @@
  * Integrates with cart context for adding items
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Service, CartItem } from '@/types';
 import ServiceGrid from '@/components/services/ServiceGrid';
 import ServiceCategoryGrid from '@/components/services/ServiceCategoryGrid';
@@ -31,8 +32,23 @@ export default function ServicesPageClient({
   glassServices,
   nettingServices,
 }: ServicesPageClientProps) {
+  const searchParams = useSearchParams();
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all');
+
+  // Check URL for service parameter and open modal, or category parameter and filter
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    const categoryParam = searchParams.get('category');
+    
+    if (serviceParam) {
+      setSelectedServiceId(serviceParam);
+    }
+    
+    if (categoryParam && (categoryParam === 'aluminium' || categoryParam === 'glass' || categoryParam === 'netting')) {
+      setCategoryFilter(categoryParam as CategoryFilter);
+    }
+  }, [searchParams]);
   const [searchQuery] = useState('');
   const [sortBy] = useState<SortOption>('popular');
   const [showSuccessToast, setShowSuccessToast] = useState(false);

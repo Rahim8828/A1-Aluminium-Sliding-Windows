@@ -49,7 +49,7 @@ export default function ServiceOptionCard({
               alt={option.name}
               fill
               sizes="96px"
-              className="object-cover"
+              className="object-contain p-1"
             />
           </div>
         )}

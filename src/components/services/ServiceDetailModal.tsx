@@ -157,7 +157,7 @@ export default function ServiceDetailModal({
                             src={option.image}
                             alt={option.name}
                             fill
-                            className="object-cover"
+                            className="object-contain p-2"
                             sizes="(max-width: 768px) 50vw, 25vw"
                           />
                         ) : (
