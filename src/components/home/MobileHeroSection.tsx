@@ -15,7 +15,7 @@ export function MobileHeroSection() {
   ];
 
   return (
-    <div className="lg:hidden bg-gradient-to-br from-orange-500 to-orange-600 text-white">
+    <div className="lg:hidden bg-gradient-to-br from-orange-600 via-orange-500 to-orange-700 text-white">
       {/* Top Bar with Location & Contact */}
       <div className="px-4 py-3 flex items-center justify-between border-b border-orange-400/30">
         <div className="flex items-center gap-2">
@@ -24,14 +24,14 @@ export function MobileHeroSection() {
         </div>
         <div className="flex gap-2">
           <a
-            href="tel:+919876543210"
+            href="tel:+918828663585"
             className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors"
             aria-label="Call us"
           >
             <Phone className="w-4 h-4" />
           </a>
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/918828663585"
             className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors"
             aria-label="WhatsApp us"
           >
@@ -76,23 +76,6 @@ export function MobileHeroSection() {
         </div>
       </div>
 
-      {/* Trust Indicators */}
-      <div className="px-4 pb-4 flex items-center justify-around text-center">
-        <div>
-          <div className="text-xl font-bold">15+</div>
-          <div className="text-xs text-orange-100">Years</div>
-        </div>
-        <div className="w-px h-8 bg-orange-400/30" />
-        <div>
-          <div className="text-xl font-bold">5000+</div>
-          <div className="text-xs text-orange-100">Projects</div>
-        </div>
-        <div className="w-px h-8 bg-orange-400/30" />
-        <div>
-          <div className="text-xl font-bold">4.8★</div>
-          <div className="text-xs text-orange-100">Rating</div>
-        </div>
-      </div>
     </div>
   );
 }

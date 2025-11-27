@@ -8,16 +8,16 @@ export const BUSINESS_INFO = {
   
   // Contact Information
   phone: {
-    primary: '+91 98765 43210',
-    secondary: '+91 98765 43211',
-    display: '+91 98765 43210',
+    primary: '+918828663585',
+    secondary: '+919920389656',
+    display: '+91 8828663585',
   },
   
-  whatsapp: '+919876543210',
+  whatsapp: '918828663585',
   
   email: {
-    primary: 'info@a1aluminium.com',
-    support: 'support@a1aluminium.com',
+    primary: 'a1asgsolution@gmail.com',
+    support: 'a1asgsolution@gmail.com',
   },
   
   // Physical Address
@@ -32,10 +32,10 @@ export const BUSINESS_INFO = {
   
   // Business Hours
   hours: {
-    weekdays: '9:00 AM - 7:00 PM',
-    saturday: '9:00 AM - 5:00 PM',
-    sunday: 'Closed',
-    emergency: '24/7 Emergency Service Available',
+    weekdays: '24/7',
+    saturday: '24/7',
+    sunday: '24/7',
+    emergency: '24/7 Service Available',
   },
   
   // Social Media Links

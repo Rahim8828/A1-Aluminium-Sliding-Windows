@@ -49,56 +49,45 @@ export function LiveActivityFeed() {
 
   return (
     <div
-      className={`fixed bottom-24 left-4 md:bottom-8 md:left-4 md:right-auto z-40 max-w-[calc(100vw-180px)] md:max-w-sm transition-all duration-500 ${
+      className={`fixed bottom-24 left-4 right-20 md:bottom-8 md:left-4 md:right-auto md:max-w-md z-40 transition-all duration-500 ${
         isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
       }`}
     >
-      <div className="bg-white rounded-2xl shadow-2xl border-2 border-gray-100 p-4 md:p-5 flex items-start gap-3 backdrop-blur-sm bg-white/95">
-        {/* Icon with animated background */}
-        <div className={`flex-shrink-0 relative ${currentActivity.type === 'booking' ? 'text-green-600' : 'text-orange-600'}`}>
-          <div className={`absolute inset-0 rounded-full ${currentActivity.type === 'booking' ? 'bg-green-100' : 'bg-orange-100'} animate-pulse`} />
-          <div className={`relative p-2 rounded-full ${currentActivity.type === 'booking' ? 'bg-green-100' : 'bg-orange-100'}`}>
+      <div className="bg-white rounded-full shadow-2xl border border-gray-200 px-4 py-2.5 flex items-center gap-3 backdrop-blur-sm bg-white/95">
+        {/* Icon - Compact */}
+        <div className={`flex-shrink-0 ${currentActivity.type === 'booking' ? 'text-green-600' : 'text-orange-600'}`}>
+          <div className={`p-1.5 rounded-full ${currentActivity.type === 'booking' ? 'bg-green-100' : 'bg-orange-100'}`}>
             {currentActivity.type === 'booking' ? (
-              <CheckCircle className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
+              <CheckCircle className="w-4 h-4" strokeWidth={2.5} />
             ) : (
-              <Clock className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
+              <Clock className="w-4 h-4" strokeWidth={2.5} />
             )}
           </div>
         </div>
         
-        <div className="flex-1 min-w-0">
-          {/* Name and Location */}
-          <p className="text-sm md:text-base font-bold text-gray-900 truncate">
-            {currentActivity.name}
-          </p>
-          <p className="text-xs text-gray-500 flex items-center gap-1 mt-0.5">
-            <span>📍</span>
-            <span className="truncate">{currentActivity.location}</span>
-          </p>
-          
-          {/* Action */}
-          <p className="text-xs md:text-sm text-gray-700 mt-2">
-            <span className={`font-semibold ${currentActivity.type === 'booking' ? 'text-green-600' : 'text-orange-600'}`}>
-              {currentActivity.type === 'booking' ? '✓ Booked' : '💬 Requested quote'}
+        {/* Content - Single Line */}
+        <div className="flex-1 min-w-0 flex items-center gap-2">
+          <div className="flex items-center gap-1.5 min-w-0">
+            <span className="text-xs font-semibold text-gray-900 truncate">
+              {currentActivity.name}
             </span>
-            {' '}
-            <span className="font-medium text-gray-900">{currentActivity.service}</span>
-          </p>
-          
-          {/* Time */}
-          <p className="text-xs text-gray-400 mt-1 flex items-center gap-1">
-            <Clock className="w-3 h-3" />
-            {currentActivity.timeAgo}
-          </p>
+            <span className="text-xs text-gray-500 flex-shrink-0">from</span>
+            <span className="text-xs text-gray-600 truncate">
+              {currentActivity.location}
+            </span>
+          </div>
+          <span className={`text-xs font-medium flex-shrink-0 ${currentActivity.type === 'booking' ? 'text-green-600' : 'text-orange-600'}`}>
+            {currentActivity.type === 'booking' ? 'booked' : 'requested'}
+          </span>
         </div>
 
-        {/* Close Button */}
+        {/* Close Button - Compact */}
         <button
           onClick={() => setIsVisible(false)}
-          className="flex-shrink-0 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full p-1.5 transition-colors min-h-[32px] min-w-[32px] flex items-center justify-center"
+          className="flex-shrink-0 text-gray-400 hover:text-gray-600 rounded-full p-1 transition-colors"
           aria-label="Dismiss notification"
         >
-          <span className="text-lg">✕</span>
+          <span className="text-sm">✕</span>
         </button>
       </div>
     </div>
