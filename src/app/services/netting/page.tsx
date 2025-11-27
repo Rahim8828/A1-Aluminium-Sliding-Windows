@@ -93,17 +93,17 @@ export default function NettingServicesPage() {
       />
 
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-12 md:py-16">
+        {/* Hero Section - Mobile Optimized */}
+        <section className="bg-gradient-to-br from-orange-600 via-orange-500 to-orange-700 text-white py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl">
-              <div className="inline-block bg-orange-500 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block bg-white/20 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
                 Netting Solutions
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-6 leading-tight">
                 Safety Netting Services
               </h1>
-              <p className="text-xl md:text-2xl text-orange-100">
+              <p className="text-base md:text-xl lg:text-2xl text-orange-50 leading-relaxed">
                 High-quality safety nets, bird protection nets, and sports nets to protect your family, property, and create safe play areas across Mumbai
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function NettingServicesPage() {
 
         {/* Main Service Detail */}
         {mainService && (
-          <section className="py-12 md:py-16">
+          <section className="py-8 md:py-16">
             <div className="container mx-auto px-4">
               <ServiceDetail service={mainService} />
             </div>
@@ -120,10 +120,10 @@ export default function NettingServicesPage() {
         )}
 
         {/* All Netting Services */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-8 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
                 Our Netting Services
               </h2>
               <p className="text-lg text-gray-600">
@@ -139,14 +139,14 @@ export default function NettingServicesPage() {
         </section>
 
         {/* Why Choose Our Nets Section */}
-        <section className="py-12 md:py-16">
+        <section className="py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
                 Why Choose Our Safety Nets?
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Child & Pet Safety
                   </h3>
@@ -154,7 +154,7 @@ export default function NettingServicesPage() {
                     Protect your children and pets from falls with our high-strength safety nets designed specifically for balconies and windows.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     UV-Resistant Materials
                   </h3>
@@ -162,7 +162,7 @@ export default function NettingServicesPage() {
                     Our nets are made from UV-resistant materials that withstand harsh sunlight and weather conditions for years.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Nearly Invisible
                   </h3>
@@ -170,7 +170,7 @@ export default function NettingServicesPage() {
                     Designed to be nearly invisible from a distance, our nets provide protection without obstructing your views.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     High Tensile Strength
                   </h3>
@@ -178,7 +178,7 @@ export default function NettingServicesPage() {
                     Made from high-quality materials with excellent tensile strength to withstand significant force and impact.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Professional Installation
                   </h3>
@@ -186,7 +186,7 @@ export default function NettingServicesPage() {
                     Our experienced team ensures secure, professional installation with proper tensioning and fixing for maximum safety.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Humane Bird Control
                   </h3>
@@ -200,13 +200,13 @@ export default function NettingServicesPage() {
         </section>
 
         {/* Common Applications Section */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-8 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
                 Common Applications
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 <div className="text-center p-6 bg-orange-50 rounded-lg">
                   <div className="text-4xl mb-3">🏢</div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -249,10 +249,10 @@ export default function NettingServicesPage() {
         </section>
 
         {/* Safety Tips Section */}
-        <section className="py-12 md:py-16">
+        <section className="py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
                 Safety Net Maintenance Tips
               </h2>
               <div className="bg-white p-8 rounded-lg shadow-md">
@@ -297,7 +297,7 @@ export default function NettingServicesPage() {
         <CustomerPhotos title="Real Netting Projects from Happy Customers" />
 
         {/* FAQ Section */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-8 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <ServiceFAQ 

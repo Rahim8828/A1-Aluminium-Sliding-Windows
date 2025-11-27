@@ -93,17 +93,17 @@ export default function GlassServicesPage() {
       />
 
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-12 md:py-16">
+        {/* Hero Section - Mobile Optimized */}
+        <section className="bg-gradient-to-br from-orange-600 via-orange-500 to-orange-700 text-white py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl">
-              <div className="inline-block bg-orange-500 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block bg-white/20 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
                 Glass Solutions
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-6 leading-tight">
                 Premium Glass Services
               </h1>
-              <p className="text-xl md:text-2xl text-orange-100">
+              <p className="text-base md:text-xl lg:text-2xl text-orange-50 leading-relaxed">
                 Elegant glass partitions, doors, shower enclosures, and railings using toughened safety glass for modern spaces across Mumbai
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function GlassServicesPage() {
 
         {/* Main Service Detail */}
         {mainService && (
-          <section className="py-12 md:py-16">
+          <section className="py-8 md:py-16">
             <div className="container mx-auto px-4">
               <ServiceDetail service={mainService} />
             </div>
@@ -120,10 +120,10 @@ export default function GlassServicesPage() {
         )}
 
         {/* All Glass Services */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-8 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
                 Our Glass Services
               </h2>
               <p className="text-lg text-gray-600">
@@ -139,14 +139,14 @@ export default function GlassServicesPage() {
         </section>
 
         {/* Why Choose Glass Section */}
-        <section className="py-12 md:py-16">
+        <section className="py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
                 Why Choose Glass Solutions?
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Maximizes Natural Light
                   </h3>
@@ -154,7 +154,7 @@ export default function GlassServicesPage() {
                     Glass partitions and doors allow natural light to flow throughout your space, creating a bright and open atmosphere.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Modern & Elegant Design
                   </h3>
@@ -162,7 +162,7 @@ export default function GlassServicesPage() {
                     Frameless and semi-framed glass solutions provide a contemporary, sophisticated look that enhances any space.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Safety & Durability
                   </h3>
@@ -170,7 +170,7 @@ export default function GlassServicesPage() {
                     We use toughened safety glass that is 4-5 times stronger than regular glass, ensuring safety and longevity.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Easy Maintenance
                   </h3>
@@ -178,7 +178,7 @@ export default function GlassServicesPage() {
                     Glass surfaces are easy to clean and maintain, with optional protective coatings to prevent water stains.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Space Enhancement
                   </h3>
@@ -186,7 +186,7 @@ export default function GlassServicesPage() {
                     Glass creates an illusion of larger spaces, making rooms feel more open and spacious without physical barriers.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     Customizable Options
                   </h3>
@@ -200,13 +200,13 @@ export default function GlassServicesPage() {
         </section>
 
         {/* Glass Types Section */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-8 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
                 Glass Types We Offer
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 <div className="text-center p-6 bg-gray-50 rounded-lg">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     Toughened Glass
@@ -240,7 +240,7 @@ export default function GlassServicesPage() {
         <CustomerPhotos title="Real Glass Projects from Happy Customers" />
 
         {/* FAQ Section */}
-        <section className="py-12 md:py-16">
+        <section className="py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <ServiceFAQ 

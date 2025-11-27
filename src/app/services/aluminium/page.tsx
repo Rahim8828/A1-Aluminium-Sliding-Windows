@@ -93,17 +93,17 @@ export default function AluminiumServicesPage() {
       />
 
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-12 md:py-16">
+        {/* Hero Section - Mobile Optimized */}
+        <section className="bg-gradient-to-br from-orange-600 via-orange-500 to-orange-700 text-white py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl">
-              <div className="inline-block bg-orange-500 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block bg-white/20 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
                 Aluminium Solutions
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-6 leading-tight">
                 Premium Aluminium Services
               </h1>
-              <p className="text-xl md:text-2xl text-orange-100">
+              <p className="text-base md:text-xl lg:text-2xl text-orange-50 leading-relaxed">
                 High-quality aluminium windows, doors, partitions, and sliding systems for residential and commercial spaces across Mumbai
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function AluminiumServicesPage() {
 
         {/* Main Service Detail */}
         {mainService && (
-          <section className="py-12 md:py-16">
+          <section className="py-8 md:py-16">
             <div className="container mx-auto px-4">
               <ServiceDetail service={mainService} />
             </div>
@@ -120,17 +120,17 @@ export default function AluminiumServicesPage() {
         )}
 
         {/* All Aluminium Services */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-8 md:py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="max-w-3xl mb-6 md:mb-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
                 Our Aluminium Services
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-sm md:text-lg text-gray-600">
                 Explore our complete range of aluminium fabrication services designed for durability, style, and functionality.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {aluminiumServices.map((service) => (
                 <ServiceCard key={service.id} service={service} />
               ))}
@@ -139,42 +139,42 @@ export default function AluminiumServicesPage() {
         </section>
 
         {/* Why Choose Aluminium Section */}
-        <section className="py-12 md:py-16">
+        <section className="py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-8 text-center">
                 Why Choose Aluminium?
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">
                     Durability & Longevity
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-sm md:text-base text-gray-600">
                     Aluminium is highly resistant to corrosion and weathering, ensuring your installations last for decades with minimal maintenance.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">
                     Modern Aesthetics
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-sm md:text-base text-gray-600">
                     Sleek, contemporary designs with powder-coated finishes in various colors to match any architectural style.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">
                     Energy Efficiency
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-sm md:text-base text-gray-600">
                     Thermal break technology provides excellent insulation, reducing energy costs and improving comfort.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">
                     Low Maintenance
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-sm md:text-base text-gray-600">
                     Unlike wood or steel, aluminium requires minimal upkeep and retains its appearance for years.
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function AluminiumServicesPage() {
         <CustomerPhotos title="Real Aluminium Projects from Happy Customers" />
 
         {/* FAQ Section */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-8 md:py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <ServiceFAQ 
