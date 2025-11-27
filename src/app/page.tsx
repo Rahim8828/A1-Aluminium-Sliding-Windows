@@ -3,6 +3,10 @@ import dynamic from 'next/dynamic';
 import { HeroSection } from '../components/home/HeroSection';
 import { ServicesOverview } from '../components/home/ServicesOverview';
 import { TrustBadges } from '../components/home/TrustBadges';
+import { MobileHeroSection } from '../components/home/MobileHeroSection';
+import { MobileServicesGrid } from '../components/home/MobileServicesGrid';
+import { MobileTrustSection } from '../components/home/MobileTrustSection';
+import { MobileBottomCTA } from '../components/home/MobileBottomCTA';
 import StructuredData from '@/components/seo/StructuredData';
 import { generateLocalBusinessSchema } from '@/lib/structured-data';
 import { BUSINESS_INFO, SEO_KEYWORDS } from '@/lib/constants';
@@ -99,15 +103,30 @@ export default function Home() {
       <StructuredData data={localBusinessSchema} />
 
       {/* Main Content with proper heading hierarchy */}
-      <main className="min-h-screen">
-        {/* Hero Section - H1 is inside this component */}
-        <HeroSection />
+      <main className="min-h-screen pb-20 lg:pb-0">
+        {/* Mobile-First Hero - Urban Company Style */}
+        <MobileHeroSection />
+        
+        {/* Desktop Hero Section - H1 is inside this component */}
+        <div className="hidden lg:block">
+          <HeroSection />
+        </div>
 
-        {/* Trust Badges Row */}
-        <TrustBadges />
+        {/* Mobile Services Grid */}
+        <MobileServicesGrid />
 
-        {/* Services Overview Section */}
-        <ServicesOverview />
+        {/* Mobile Trust Section */}
+        <MobileTrustSection />
+
+        {/* Desktop Trust Badges Row */}
+        <div className="hidden lg:block">
+          <TrustBadges />
+        </div>
+
+        {/* Desktop Services Overview Section */}
+        <div className="hidden lg:block">
+          <ServicesOverview />
+        </div>
 
         {/* Why Choose Us with Stats - Merged Section */}
         <WhyChooseUsWithStats />
@@ -126,6 +145,9 @@ export default function Home() {
 
         {/* Final CTA Section */}
         <FinalCTA />
+
+        {/* Mobile Bottom Sticky CTA */}
+        <MobileBottomCTA />
       </main>
     </>
   );
