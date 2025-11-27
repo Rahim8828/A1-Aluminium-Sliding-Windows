@@ -22,62 +22,62 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 pt-0 pb-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Company Info with Logo */}
           <div>
-            <div className="mb-4">
+            <div className="mb-3 md:mb-4 pt-4 md:pt-0">
               <img 
                 src="/website-images/A1_favicon.svg" 
                 alt="A1 Aluminium Logo" 
-                className="h-16 w-16 object-contain"
+                className="h-12 w-12 md:h-16 md:w-16 object-contain"
               />
             </div>
-            <p className="text-sm mb-4 leading-relaxed">{BUSINESS_INFO.description}</p>
-            <div className="flex gap-3" role="list" aria-label="Social media links">
+            <p className="text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">{BUSINESS_INFO.description}</p>
+            <div className="flex gap-2 md:gap-3" role="list" aria-label="Social media links">
               <a
                 href={BUSINESS_INFO.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-orange-500 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-gray-800 hover:bg-orange-500 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 aria-label="Visit our Facebook page"
               >
-                <Facebook className="w-5 h-5" aria-hidden="true" />
+                <Facebook className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
               </a>
               <a
                 href={BUSINESS_INFO.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-pink-500"
+                className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-gray-800 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-pink-500"
                 aria-label="Visit our Instagram page"
               >
-                <Instagram className="w-5 h-5" aria-hidden="true" />
+                <Instagram className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
               </a>
               <a
                 href={BUSINESS_INFO.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-blue-400 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-gray-800 hover:bg-blue-400 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 aria-label="Visit our Twitter page"
               >
-                <Twitter className="w-5 h-5" aria-hidden="true" />
+                <Twitter className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
               </a>
               <a
                 href={BUSINESS_INFO.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-blue-600 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-gray-800 hover:bg-blue-600 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-600"
                 aria-label="Visit our LinkedIn page"
               >
-                <Linkedin className="w-5 h-5" aria-hidden="true" />
+                <Linkedin className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
               </a>
               <a
                 href={BUSINESS_INFO.social.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-red-600 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-600"
+                className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-gray-800 hover:bg-red-600 rounded-full transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-600"
                 aria-label="Visit our YouTube channel"
               >
-                <Youtube className="w-5 h-5" aria-hidden="true" />
+                <Youtube className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
               </a>
             </div>
           </div>

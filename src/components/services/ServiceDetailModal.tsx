@@ -25,7 +25,7 @@ export default function ServiceDetailModal({
   onAddToCart,
 }: ServiceDetailModalProps) {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
-  const [selectedOption, setSelectedOption] = useState<string>(service.options[0]?.id || '');
+  const [selectedOption, setSelectedOption] = useState<string>(''); // No default selection
   const quantity = 1; // Fixed quantity for now
 
   // Handle escape key and body scroll
@@ -119,7 +119,7 @@ export default function ServiceDetailModal({
         </div>
 
         {/* Content - Scrollable - All sections vertically */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto pb-24 md:pb-0">
           <div className="px-4 md:px-6 py-6 space-y-8">
             {/* Options Section - Enhanced Mobile Design */}
             <section>
@@ -373,30 +373,41 @@ export default function ServiceDetailModal({
         </div>
 
         {/* Sticky Footer - Enhanced Mobile Design */}
-        {selectedOption && (
-          <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-white/95 border-t-2 border-orange-200 px-3 md:px-6 py-3 shadow-2xl backdrop-blur-sm">
-            <div className="flex items-center gap-3">
-              <div className="flex-1 min-w-0">
-                <div className="text-[10px] text-gray-500 uppercase tracking-wide">Total Price</div>
-                <div className="text-xl md:text-2xl font-bold text-orange-600 leading-tight">
-                  ₹{totalPrice.toLocaleString()}
+        <div className="fixed md:sticky bottom-0 left-0 right-0 md:left-auto md:right-auto bg-gradient-to-t from-white via-white to-white/95 border-t-2 border-orange-200 px-3 md:px-6 py-3 shadow-2xl backdrop-blur-sm z-20">
+          <div className="flex items-center gap-3">
+            {selectedOption ? (
+              <>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wide">Total Price</div>
+                  <div className="text-xl md:text-2xl font-bold text-orange-600 leading-tight">
+                    ₹{totalPrice.toLocaleString()}
+                  </div>
+                  <div className="text-[10px] text-gray-500">
+                    {quantity} × ₹{selectedOptionData?.price.toLocaleString()}
+                  </div>
                 </div>
-                <div className="text-[10px] text-gray-500">
-                  {quantity} × ₹{selectedOptionData?.price.toLocaleString()}
-                </div>
+                <button
+                  onClick={handleAddToCart}
+                  className="px-6 md:px-8 py-3 md:py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm md:text-base font-bold rounded-xl transition-all shadow-lg hover:shadow-xl active:scale-95 min-h-[52px] touch-manipulation flex items-center gap-2"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </>
+            ) : (
+              <div className="flex-1 text-center py-2">
+                <p className="text-sm font-semibold text-gray-700 mb-1">
+                  👆 Please select a service option above
+                </p>
+                <p className="text-xs text-gray-500">
+                  Choose from {service.options.length} available options
+                </p>
               </div>
-              <button
-                onClick={handleAddToCart}
-                className="px-6 md:px-8 py-3 md:py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm md:text-base font-bold rounded-xl transition-all shadow-lg hover:shadow-xl active:scale-95 min-h-[52px] touch-manipulation flex items-center gap-2"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-                <span>Add to Cart</span>
-              </button>
-            </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ export default function ServicesPageClient({
 }: ServicesPageClientProps) {
   const searchParams = useSearchParams();
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
-  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all');
+  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('aluminium');
 
   // Check URL for service parameter and open modal, or category parameter and filter
   useEffect(() => {
@@ -274,7 +274,7 @@ export default function ServicesPageClient({
 
       {/* Success Toast Notification - Mobile Optimized */}
       {showSuccessToast && (
-        <div className="fixed bottom-[80px] md:bottom-6 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-[60] animate-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-[140px] md:bottom-6 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-[65] animate-in slide-in-from-bottom-5 duration-300">
           <div className="bg-green-600 text-white px-4 py-3 md:px-6 md:py-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-md mx-auto">
             <div className="flex-shrink-0 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

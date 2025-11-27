@@ -26,10 +26,18 @@ export function MobileServiceCard({
   category,
   onServiceClick,
 }: MobileServiceCardProps) {
+  const handleClick = (e: React.MouseEvent) => {
+    if (onServiceClick) {
+      e.preventDefault();
+      onServiceClick(serviceId);
+    }
+  };
+
   return (
     <a
       href={`/services?category=${category}`}
-      className="block w-full text-left bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+      onClick={handleClick}
+      className="block w-full text-left bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow active:scale-[0.98] transition-transform"
     >
       <div className="flex gap-3 p-3">
         {/* Image */}

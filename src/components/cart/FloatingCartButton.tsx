@@ -51,7 +51,7 @@ export default function FloatingCartButton() {
   return (
     <button
       onClick={handleClick}
-      className={`fixed bottom-32 right-4 md:bottom-6 md:right-6 z-30 bg-orange-600 text-white rounded-full shadow-lg hover:bg-orange-700 transition-all duration-300 ${
+      className={`fixed bottom-32 right-4 md:bottom-6 md:right-6 z-[55] bg-orange-600 text-white rounded-full shadow-lg hover:bg-orange-700 transition-all duration-300 ${
         isAnimating ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`}
       aria-label={`View cart with ${itemCount} items, total ₹${total.toLocaleString()}`}

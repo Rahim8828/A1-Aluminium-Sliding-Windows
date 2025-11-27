@@ -124,8 +124,24 @@ export default function HomePageClient() {
 
       {/* Success Toast */}
       {showSuccessToast && (
-        <div className="fixed bottom-24 lg:bottom-8 left-1/2 -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in">
-          ✓ {addedItemName} added to cart
+        <div className="fixed bottom-[140px] md:bottom-8 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-[65] animate-fade-in">
+          <div className="bg-green-600 text-white px-4 py-3 md:px-6 md:py-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-md mx-auto">
+            <div className="flex-shrink-0 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-sm mb-0.5">Added to Cart!</p>
+              <p className="text-xs text-green-100 truncate">{addedItemName}</p>
+            </div>
+            <button
+              onClick={() => window.location.href = '/cart'}
+              className="flex-shrink-0 px-3 py-1.5 bg-white text-green-600 rounded-lg text-xs font-semibold hover:bg-green-50 active:bg-green-100 transition-colors touch-manipulation"
+            >
+              View Cart
+            </button>
+          </div>
         </div>
       )}
     </>

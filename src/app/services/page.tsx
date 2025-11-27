@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import { services, getServicesByCategory } from '@/data/services';
 import { generateServiceSchema } from '@/lib/structured-data';
 import ServicesPageClient from '@/app/services/ServicesPageClient';
@@ -64,11 +65,20 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
 
-      <ServicesPageClient
-        aluminiumServices={aluminiumServices}
-        glassServices={glassServices}
-        nettingServices={nettingServices}
-      />
+      <Suspense fallback={
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading services...</p>
+          </div>
+        </div>
+      }>
+        <ServicesPageClient
+          aluminiumServices={aluminiumServices}
+          glassServices={glassServices}
+          nettingServices={nettingServices}
+        />
+      </Suspense>
     </>
   );
 }

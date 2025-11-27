@@ -65,7 +65,7 @@ export default function BookingSummaryBar() {
 
   return (
     <div
-      className={`fixed bottom-16 left-0 right-0 z-45 bg-white border-t border-gray-200 shadow-lg transition-all duration-300 md:bottom-0 ${
+      className={`fixed bottom-16 left-0 right-0 z-[60] bg-white border-t border-gray-200 shadow-lg transition-all duration-300 md:bottom-0 ${
         isAnimating ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
