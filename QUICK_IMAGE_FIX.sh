@@ -1,35 +1,40 @@
+#!/bin/bash
+
+# Quick Image Fix Script
+# Run this if images still not loading after Netlify deploy
+
+echo "🔧 Applying quick image fix..."
+
+# Backup current config
+cp next.config.ts next.config.ts.backup
+
+# Update next.config.ts to use unoptimized images
+cat > next.config.ts << 'EOF'
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: false,
   
-  // Image optimization settings for Netlify
+  // Image optimization settings - UNOPTIMIZED FOR NETLIFY
   images: {
+    unoptimized: true, // Quick fix for Netlify
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days cache for images
+    minimumCacheTTL: 60 * 60 * 24 * 30,
     dangerouslyAllowSVG: true,
-    // Disable optimization for Netlify - let Netlify plugin handle it
-    unoptimized: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [],
   },
 
-  // Enable compression
   compress: true,
-
-  // Enable strict mode for better performance
   reactStrictMode: true,
-
-  // Power off the X-Powered-By header for security
   poweredByHeader: false,
 
-  // Configure headers for caching and security
   async headers() {
     return [
       {
-        // Cache static assets
         source: '/images/:path*',
         headers: [
           {
@@ -39,7 +44,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Cache fonts
         source: '/fonts/:path*',
         headers: [
           {
@@ -49,7 +53,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Security headers for all routes
         source: '/:path*',
         headers: [
           {
@@ -102,25 +105,24 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['lucide-react', '@/components'],
   },
 
-  // Production optimizations
-  // Note: swcMinify is enabled by default in Next.js 13+
-  
-  // Optimize production builds
   productionBrowserSourceMaps: false,
-  
-  // Configure output for static export if needed
-  // output: 'export', // Uncomment for static export
-  
-  // Trailing slash configuration
   trailingSlash: false,
-  
-  // Skip trailing slash redirect
   skipTrailingSlashRedirect: false,
 };
 
 export default nextConfig;
+EOF
+
+echo "✅ Config updated with unoptimized images"
+echo ""
+echo "Now run:"
+echo "  git add next.config.ts"
+echo "  git commit -m 'fix: Enable unoptimized images for Netlify'"
+echo "  git push origin main"
+echo ""
+echo "To restore original config:"
+echo "  mv next.config.ts.backup next.config.ts"
