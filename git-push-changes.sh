@@ -1,4 +1,4 @@
-#!/bin/bash
+ab#!/bin/bash
 
 # Git Push Script for A1 Aluminium Website Changes
 # Run this script to commit and push all changes
