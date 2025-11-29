@@ -70,7 +70,7 @@ export function ProjectsGallery() {
     : projects.filter(p => p.category === filter);
 
   return (
-    <section className="py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section className="py-8 md:py-12 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
@@ -94,28 +94,36 @@ export function ProjectsGallery() {
         </div>
 
         {/* Desktop Header */}
-        <div className="hidden lg:block text-center mb-12 md:mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold">
+        <div className="hidden lg:block text-center mb-6 md:mb-8">
+          <div className="inline-block mb-2">
+            <span className="px-3 py-1.5 bg-blue-100 text-blue-600 rounded-full text-xs font-semibold">
               📸 Our Work
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Recent Projects
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            See our quality workmanship in action. Real projects from satisfied customers across Mumbai.
+          <p className="text-sm md:text-base text-gray-600 max-w-xl mx-auto">
+            Real projects from satisfied customers across Mumbai
           </p>
         </div>
 
         {/* Filter Buttons - Mobile Horizontal Scroll */}
-        <div className="lg:hidden overflow-x-auto pb-4 mb-6 -mx-4 px-4 scrollbar-hide overscroll-x-contain touch-pan-x">
+        <div 
+          className="lg:hidden overflow-x-auto pb-4 mb-6 -mx-4 px-4 scrollbar-hide"
+          style={{ 
+            overscrollBehaviorX: 'contain',
+            WebkitOverflowScrolling: 'touch',
+            touchAction: 'pan-x'
+          }}
+          onTouchMove={(e) => e.stopPropagation()}
+        >
           <div className="flex gap-2 min-w-max">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
-                className={`px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all ${
+                className={`px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all touch-manipulation ${
                   filter === category
                     ? 'bg-orange-600 text-white shadow-lg'
                     : 'bg-white text-gray-700 border border-gray-300'
@@ -128,15 +136,15 @@ export function ProjectsGallery() {
         </div>
 
         {/* Filter Buttons - Desktop */}
-        <div className="hidden lg:flex flex-wrap justify-center gap-3 mb-10">
+        <div className="hidden lg:flex flex-wrap justify-center gap-2 mb-6">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 ${
                 filter === category
-                  ? 'bg-gradient-to-r from-orange-600 to-orange-500 text-white shadow-xl scale-105'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 hover:shadow-lg hover:scale-105 border-2 border-gray-200'
+                  ? 'bg-orange-600 text-white shadow-md'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 hover:shadow-md border border-gray-200'
               }`}
             >
               {category}
@@ -145,7 +153,7 @@ export function ProjectsGallery() {
         </div>
 
         {/* Projects Grid - Mobile Optimized */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
@@ -155,24 +163,31 @@ export function ProjectsGallery() {
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
               }}
             >
-              <div className="relative h-40 lg:h-72 bg-gray-200 overflow-hidden">
+              <div className="relative h-40 lg:h-48 bg-gray-100 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-125 group-hover:rotate-2 transition-all duration-700"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-contain p-2 group-hover:scale-110 transition-all duration-500"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {/* Tap to View - Mobile */}
+                <div className="absolute bottom-2 right-2 lg:hidden">
+                  <span className="px-2 py-1 bg-white/90 text-gray-700 text-[10px] font-medium rounded-full">
+                    Tap to view
+                  </span>
+                </div>
+                
+                {/* Hover Overlay - Desktop Only */}
+                <div className="absolute inset-0 hidden lg:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40">
                   <div className="text-white text-center">
-                    <div className="w-16 h-16 mx-auto mb-3 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                      <span className="text-3xl">👁️</span>
+                    <div className="w-14 h-14 mx-auto mb-2 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <span className="text-2xl">👁️</span>
                     </div>
-                    <p className="text-lg font-bold">View Details</p>
+                    <p className="text-base font-bold">View Details</p>
                   </div>
                 </div>
 
@@ -184,13 +199,13 @@ export function ProjectsGallery() {
                 </div>
               </div>
               
-              <div className="p-3 lg:p-5 bg-gradient-to-br from-white to-gray-50 group-hover:from-orange-50 group-hover:to-white transition-all duration-500">
-                <h3 className="text-sm lg:text-xl font-bold text-gray-900 mb-1 lg:mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">
+              <div className="p-2.5 lg:p-3 bg-gradient-to-br from-white to-gray-50 group-hover:from-orange-50 group-hover:to-white transition-all duration-500">
+                <h3 className="text-xs lg:text-sm font-bold text-gray-900 mb-0.5 lg:mb-1 group-hover:text-orange-600 transition-colors line-clamp-1">
                   {project.title}
                 </h3>
                 <div className="flex items-center text-gray-600 group-hover:text-orange-600 transition-colors">
-                  <span className="text-sm lg:text-lg mr-1 lg:mr-2">📍</span>
-                  <p className="text-xs lg:text-sm font-medium truncate">{project.location}</p>
+                  <span className="text-xs lg:text-sm mr-1">📍</span>
+                  <p className="text-[10px] lg:text-xs font-medium truncate">{project.location}</p>
                 </div>
               </div>
             </div>
@@ -228,12 +243,12 @@ export function ProjectsGallery() {
                 <X className="w-6 h-6" />
               </button>
               
-              <div className="relative h-96">
+              <div className="relative h-64 md:h-96 bg-gray-100">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4"
                   sizes="(max-width: 1024px) 100vw, 1024px"
                 />
               </div>

@@ -21,7 +21,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             src={service.images[0] || '/website-images/placeholder-service.jpg'}
             alt={`${service.title} - Professional ${service.category} services in Mumbai`}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-110"
+            className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             quality={85}
           />

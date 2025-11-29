@@ -59,7 +59,7 @@ export default function CartPageClient() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-4 md:pt-12 pb-[180px] md:pb-12">
+    <div className="min-h-screen bg-gray-50 pt-4 md:pt-12 pb-20 md:pb-12">
       <div className="container mx-auto px-3 md:px-4 max-w-7xl">
         {/* Header - Mobile Optimized */}
         <div className="mb-4 md:mb-8">
@@ -107,7 +107,7 @@ export default function CartPageClient() {
         {/* Cart Content */}
         {!isEmpty && (
           <div className="grid lg:grid-cols-3 gap-4 md:gap-8">
-            {/* Left Column - Cart Items and Coupon */}
+            {/* Left Column - Cart Items, Coupon, and Mobile Summary */}
             <div className="lg:col-span-2 space-y-3 md:space-y-6">
               {/* Cart Items */}
               <div className="space-y-3 md:space-y-4">
@@ -123,6 +123,69 @@ export default function CartPageClient() {
 
               {/* Coupon Section */}
               <CouponSection />
+
+              {/* Mobile Order Summary - Inline (Below Coupon) */}
+              <div className="lg:hidden bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+                {/* Order Summary Header */}
+                <div className="mb-4">
+                  <h3 className="text-base font-bold text-gray-900">Order Summary</h3>
+                </div>
+
+                {/* Price Breakdown */}
+                <div className="space-y-3 mb-4 pb-4 border-b border-gray-200">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">
+                      Subtotal ({cart.items.length} {cart.items.length === 1 ? 'item' : 'items'})
+                    </span>
+                    <span className="text-base font-semibold text-gray-900">
+                      ₹{cart.items.reduce((sum, item) => sum + item.price * item.quantity, 0).toLocaleString()}
+                    </span>
+                  </div>
+                  {getDiscount() > 0 && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-green-600">Discount</span>
+                      <span className="text-base font-semibold text-green-600">
+                        -₹{getDiscount().toLocaleString()}
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-200">
+                    <span className="text-base font-bold text-gray-900">Total</span>
+                    <span className="text-2xl font-bold text-orange-600">
+                      ₹{getTotal().toLocaleString()}
+                    </span>
+                  </div>
+                </div>
+
+                {/* What Happens Next */}
+                <div className="bg-blue-50 rounded-lg p-4 mb-4">
+                  <h4 className="text-sm font-semibold text-blue-900 mb-2 flex items-center gap-1.5">
+                    <span>📱</span>
+                    <span>What happens next?</span>
+                  </h4>
+                  <ul className="text-xs text-blue-800 space-y-1.5">
+                    <li>• Click &quot;Book Now&quot; to send booking via WhatsApp</li>
+                    <li>• Our team will confirm availability</li>
+                    <li>• We&apos;ll schedule at your preferred time</li>
+                    <li>• Payment after service completion</li>
+                  </ul>
+                </div>
+
+                {/* Book Now Button - Inline */}
+                <button
+                  onClick={handleBookNow}
+                  className="w-full bg-green-600 text-white py-3.5 rounded-lg font-semibold hover:bg-green-700 active:bg-green-800 transition-colors shadow-lg active:scale-[0.98] flex items-center justify-center gap-2 min-h-[52px] touch-manipulation"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                  </svg>
+                  <span className="text-base">Book Now via WhatsApp</span>
+                </button>
+              </div>
             </div>
 
             {/* Right Column - Cart Summary (Desktop Only) */}
@@ -132,57 +195,11 @@ export default function CartPageClient() {
           </div>
         )}
 
-        {/* Mobile Cart Summary - Fixed at Bottom */}
-        {!isEmpty && (
-          <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-2xl z-40">
-            <div className="px-3 py-3">
-              {/* Price Summary */}
-              <div className="flex items-center justify-between mb-3 pb-3 border-b border-gray-200">
-                <div className="flex-1">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-xs text-gray-600">Subtotal:</span>
-                    <span className="text-sm font-semibold text-gray-900">
-                      ₹{cart.items.reduce((sum, item) => sum + item.price * item.quantity, 0).toLocaleString()}
-                    </span>
-                  </div>
-                  {getDiscount() > 0 && (
-                    <div className="flex items-baseline gap-2 mt-1">
-                      <span className="text-xs text-green-600">Discount:</span>
-                      <span className="text-sm font-semibold text-green-600">
-                        -₹{getDiscount().toLocaleString()}
-                      </span>
-                    </div>
-                  )}
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-600">Total</p>
-                  <p className="text-xl font-bold text-orange-600">
-                    ₹{getTotal().toLocaleString()}
-                  </p>
-                </div>
-              </div>
 
-              {/* Book Now Button */}
-              <button
-                onClick={handleBookNow}
-                className="w-full bg-green-600 text-white py-3.5 rounded-lg font-semibold hover:bg-green-700 active:bg-green-800 transition-colors shadow-lg active:scale-[0.98] flex items-center justify-center gap-2 min-h-[52px] touch-manipulation"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                <span className="text-base">Book Now via WhatsApp</span>
-              </button>
-            </div>
-          </div>
-        )}
 
-        {/* Additional Info - Mobile Optimized */}
+        {/* Additional Info - Desktop Only (Mobile has it in fixed summary) */}
         {!isEmpty && (
-          <div className="mt-4 md:mt-8 bg-blue-50 border border-blue-200 rounded-lg p-3 md:p-6 mb-4">
+          <div className="hidden md:block mt-4 md:mt-8 bg-blue-50 border border-blue-200 rounded-lg p-3 md:p-6 mb-4">
             <h3 className="text-xs md:text-base font-semibold text-blue-900 mb-2 flex items-center gap-1.5">
               <span>📱</span>
               <span>What happens next?</span>

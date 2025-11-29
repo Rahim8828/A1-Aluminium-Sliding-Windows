@@ -87,7 +87,15 @@ export default function ServiceCategoryGrid({
         <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
         
         {/* Scrollable container */}
-        <div className="overflow-x-auto scrollbar-hide -mx-1 px-1">
+        <div 
+          className="overflow-x-auto scrollbar-hide -mx-1 px-1"
+          style={{ 
+            overscrollBehaviorX: 'contain',
+            WebkitOverflowScrolling: 'touch',
+            touchAction: 'pan-x'
+          }}
+          onTouchMove={(e) => e.stopPropagation()}
+        >
           <div className="flex gap-3 pb-2">
             {categories.map((category) => (
               <button

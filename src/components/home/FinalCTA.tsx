@@ -19,7 +19,7 @@ export function FinalCTA() {
   };
 
   return (
-    <section className="relative pt-8 pb-0 md:py-20 lg:py-28 overflow-hidden">
+    <section className="relative pt-6 pb-0 md:py-10 lg:py-12 overflow-hidden">
       {/* Background with Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900" />
       
@@ -36,63 +36,62 @@ export function FinalCTA() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-6">
+          <h2 className="text-lg md:text-2xl lg:text-2xl font-bold text-white mb-2 md:mb-3">
             Ready to Transform Your Space?
           </h2>
           
           {/* Subheadling */}
-          <p className="text-sm md:text-base lg:text-lg text-gray-300 mb-6 md:mb-10 max-w-2xl mx-auto">
-            Get expert consultation and a free quote for your aluminium, glass, or netting project. 
-            Our team is ready to help you bring your vision to life.
+          <p className="text-xs md:text-sm text-gray-300 mb-4 md:mb-6 max-w-xl mx-auto">
+            Get expert consultation and a free quote for your project. Our team is ready to help.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-12">
+          <div className="flex flex-col sm:flex-row gap-2 md:gap-3 justify-center mb-4 md:mb-6">
             <button
               onClick={handleCallClick}
-              className="group inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-orange-600 text-white text-sm md:text-base font-semibold rounded-lg hover:bg-orange-700 transition-all hover:shadow-xl hover:scale-105 min-h-[48px] touch-manipulation"
+              className="group inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 bg-orange-600 text-white text-xs md:text-sm font-semibold rounded-lg hover:bg-orange-700 transition-all hover:shadow-lg min-h-[40px] touch-manipulation"
             >
-              <Phone className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:animate-pulse" />
+              <Phone className="w-4 h-4 mr-2 group-hover:animate-pulse" />
               Call Now
             </button>
             
             <button
               onClick={handleWhatsAppClick}
-              className="group inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-green-600 text-white text-sm md:text-base font-semibold rounded-lg hover:bg-green-700 transition-all hover:shadow-xl hover:scale-105 min-h-[48px] touch-manipulation"
+              className="group inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 bg-green-600 text-white text-xs md:text-sm font-semibold rounded-lg hover:bg-green-700 transition-all hover:shadow-lg min-h-[40px] touch-manipulation"
             >
-              <MessageCircle className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:scale-110 transition-transform" />
+              <MessageCircle className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
               WhatsApp Us
             </button>
             
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-gray-900 text-sm md:text-base font-semibold rounded-lg hover:bg-gray-100 transition-all hover:shadow-xl hover:scale-105 min-h-[48px] touch-manipulation"
+              className="group inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 bg-white text-gray-900 text-xs md:text-sm font-semibold rounded-lg hover:bg-gray-100 transition-all hover:shadow-lg min-h-[40px] touch-manipulation"
             >
-              <Mail className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <Mail className="w-4 h-4 mr-2" />
               Contact Form
             </a>
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-white/90 mb-6 md:mb-8">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-xs md:text-base">Free Consultation</span>
+          <div className="flex flex-wrap justify-center gap-3 md:gap-6 text-white/90 mb-4 md:mb-5">
+            <div className="flex items-center gap-1.5">
+              <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+              <span className="text-[10px] md:text-xs">Free Consultation</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-xs md:text-base">Quick Response</span>
+            <div className="flex items-center gap-1.5">
+              <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+              <span className="text-[10px] md:text-xs">Quick Response</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-xs md:text-base">No Obligation</span>
+            <div className="flex items-center gap-1.5">
+              <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+              <span className="text-[10px] md:text-xs">No Obligation</span>
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="pt-4 md:pt-8 border-t border-white/20">
-            <p className="text-xs md:text-base text-gray-400 mb-2 md:mb-4">Or reach us directly at</p>
-            <div className="flex flex-col sm:flex-row gap-2 md:gap-4 justify-center items-center text-white text-xs md:text-base">
+          <div className="pt-3 md:pt-4 border-t border-white/20">
+            <p className="text-[10px] md:text-xs text-gray-400 mb-1.5 md:mb-2">Or reach us directly at</p>
+            <div className="flex flex-col sm:flex-row gap-1.5 md:gap-3 justify-center items-center text-white text-[10px] md:text-xs">
               <a
                 href={`tel:${BUSINESS_INFO.phone.primary}`}
                 className="hover:text-orange-400 transition-colors font-medium"

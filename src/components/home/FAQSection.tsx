@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { BUSINESS_INFO } from '@/lib/constants';
 
 interface FAQ {
   question: string;
@@ -51,7 +52,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-12 md:py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section className="py-8 md:py-12 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl" />
@@ -73,17 +74,17 @@ export function FAQSection() {
         </div>
 
         {/* Desktop Header */}
-        <div className="hidden lg:block text-center mb-12 md:mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold">
+        <div className="hidden lg:block text-center mb-6 md:mb-8">
+          <div className="inline-block mb-2">
+            <span className="px-3 py-1.5 bg-purple-100 text-purple-600 rounded-full text-xs font-semibold">
               ❓ FAQ
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Frequently Asked Questions
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-            Got questions? We&apos;ve got answers. Find everything you need to know about our services.
+          <p className="text-sm md:text-base text-gray-600">
+            Got questions? We&apos;ve got answers.
           </p>
         </div>
 
@@ -145,31 +146,31 @@ export function FAQSection() {
           }
         `}</style>
 
-        <div className="mt-12 md:mt-16 text-center">
-          <div className="bg-gradient-to-br from-orange-600 via-orange-500 to-amber-600 rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
+        <div className="mt-8 md:mt-10 text-center">
+          <div className="bg-gradient-to-br from-orange-600 via-orange-500 to-amber-600 rounded-xl p-5 md:p-6 shadow-xl relative overflow-hidden">
             {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
             
             <div className="relative z-10">
-              <p className="text-xl md:text-2xl font-bold text-white mb-2">
+              <p className="text-lg md:text-xl font-bold text-white mb-1">
                 Still Have Questions?
               </p>
-              <p className="text-white/90 mb-6 text-sm md:text-base">
-                We&apos;re here to help! Get in touch with our expert team.
+              <p className="text-white/90 mb-4 text-xs md:text-sm">
+                Get in touch with our expert team
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
-                  href={`tel:${'+919876543210'}`}
-                  className="group inline-flex items-center justify-center px-8 py-4 bg-white text-orange-600 font-bold rounded-xl hover:bg-gray-50 transition-all hover:shadow-xl hover:scale-105 min-h-[56px]"
+                  href={`tel:${BUSINESS_INFO.phone.primary}`}
+                  className="group inline-flex items-center justify-center px-5 py-2.5 bg-white text-orange-600 font-bold rounded-lg hover:bg-gray-50 transition-all text-sm"
                 >
                   📞 Call Us Now
                 </a>
                 <a
-                  href={`https://wa.me/919876543210`}
+                  href={`https://wa.me/${BUSINESS_INFO.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all hover:shadow-xl hover:scale-105 min-h-[56px]"
+                  className="group inline-flex items-center justify-center px-5 py-2.5 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all text-sm"
                 >
                   💬 WhatsApp Us
                 </a>

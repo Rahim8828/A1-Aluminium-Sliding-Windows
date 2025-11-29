@@ -18,7 +18,6 @@ const Footer = dynamic(() => import("@/components/layout/Footer"));
 const MobileNav = dynamic(() => import("@/components/layout/MobileNav"));
 const Analytics = dynamic(() => import("@/components/analytics/Analytics"));
 const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp").then(mod => ({ default: mod.FloatingWhatsApp })));
-const LiveActivityFeed = dynamic(() => import("@/components/conversion/LiveActivityFeed").then(mod => ({ default: mod.LiveActivityFeed })));
 
 const BookingSummaryBar = dynamic(() => import("@/components/cart/BookingSummaryBar"));
 
@@ -142,9 +141,8 @@ export default function RootLayout({
           )}
           
           <Analytics />
-          <LiveActivityFeed />
           <Header />
-          <main id="main-content" className="min-h-screen pt-16 md:pt-20 pb-24 md:pb-0">
+          <main id="main-content" className="min-h-screen pt-16 md:pt-20">
             {children}
           </main>
           <Footer />

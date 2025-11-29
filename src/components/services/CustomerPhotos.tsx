@@ -124,7 +124,7 @@ export default function CustomerPhotos({
             <button
               key={photo.id}
               onClick={() => openLightbox(photo, index)}
-              className="group relative aspect-square overflow-hidden rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              className="group relative aspect-square overflow-hidden rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
               aria-label={`View photo from ${photo.customerName} in ${photo.location}`}
             >
               <Image
@@ -132,7 +132,7 @@ export default function CustomerPhotos({
                 alt={`${photo.service} project by ${photo.customerName} in ${photo.location}`}
                 fill
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                className="object-contain p-1 transition-transform duration-300 group-hover:scale-105"
               />
               
               {/* Overlay on hover */}

@@ -8,8 +8,9 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { Service } from '@/types';
-import { X, Star, Clock, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, Star, Clock, CheckCircle, ChevronDown, ChevronUp, ShoppingCart } from 'lucide-react';
 
 interface ServiceDetailModalProps {
   service: Service;
@@ -25,8 +26,11 @@ export default function ServiceDetailModal({
   onAddToCart,
 }: ServiceDetailModalProps) {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
-  const [selectedOption, setSelectedOption] = useState<string>(''); // No default selection
+  const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set()); // Multiple selection
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [addedItemName, setAddedItemName] = useState('');
   const quantity = 1; // Fixed quantity for now
+  const router = useRouter();
 
   // Handle escape key and body scroll
   useEffect(() => {
@@ -55,24 +59,58 @@ export default function ServiceDetailModal({
     }
   };
 
-  const handleAddToCart = () => {
-    if (selectedOption) {
-      onAddToCart(service.id, selectedOption, quantity);
-      // Close modal after adding to cart
-      onClose();
+  const toggleOptionSelection = (optionId: string) => {
+    const newSelected = new Set(selectedOptions);
+    if (newSelected.has(optionId)) {
+      newSelected.delete(optionId);
+    } else {
+      newSelected.add(optionId);
     }
+    setSelectedOptions(newSelected);
+  };
+
+  const handleAddToCart = () => {
+    if (selectedOptions.size > 0) {
+      // Add all selected options to cart
+      selectedOptions.forEach((optionId) => {
+        onAddToCart(service.id, optionId, quantity);
+      });
+      
+      // Show success toast
+      const count = selectedOptions.size;
+      setAddedItemName(count === 1 ? '1 item' : `${count} items`);
+      setShowSuccessToast(true);
+      
+      // Clear selections after adding
+      setSelectedOptions(new Set());
+      
+      // Hide toast after 3 seconds
+      setTimeout(() => {
+        setShowSuccessToast(false);
+      }, 3000);
+    }
+  };
+
+  const handleViewCart = () => {
+    router.push('/cart');
+    onClose();
   };
 
   const toggleFAQ = (index: number) => {
     setExpandedFAQ(expandedFAQ === index ? null : index);
   };
 
-  const selectedOptionData = service.options.find((opt) => opt.id === selectedOption);
-  const totalPrice = selectedOptionData ? selectedOptionData.price * quantity : 0;
+  // Calculate total price for all selected options
+  const totalPrice = Array.from(selectedOptions).reduce((sum, optionId) => {
+    const option = service.options.find((opt) => opt.id === optionId);
+    return sum + (option ? option.price * quantity : 0);
+  }, 0);
+  
+  const selectedCount = selectedOptions.size;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-0 md:p-4"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-0 md:p-4"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
@@ -80,6 +118,28 @@ export default function ServiceDetailModal({
     >
       {/* Modal Container - Full screen on mobile, centered on desktop */}
       <div className="relative w-full h-full md:h-auto md:max-h-[90vh] md:max-w-4xl bg-white md:rounded-xl shadow-2xl overflow-hidden flex flex-col">
+        
+        {/* Success Toast Notification */}
+        {showSuccessToast && (
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 z-50 animate-in slide-in-from-top duration-300">
+            <div className="bg-green-500 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 min-w-[280px] max-w-[90vw]">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <CheckCircle className="w-5 h-5" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-sm">Added to Cart!</p>
+                <p className="text-xs opacity-90 truncate">{addedItemName}</p>
+              </div>
+              <button
+                onClick={handleViewCart}
+                className="bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all active:scale-95 whitespace-nowrap"
+              >
+                View Cart
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Header - Sticky with improved mobile design */}
         <div className="sticky top-0 z-10 bg-gradient-to-b from-white to-gray-50 border-b border-gray-200 px-3 md:px-6 py-3 md:py-4 shadow-sm">
           <div className="flex items-start justify-between gap-3">
@@ -119,7 +179,7 @@ export default function ServiceDetailModal({
         </div>
 
         {/* Content - Scrollable - All sections vertically */}
-        <div className="flex-1 overflow-y-auto pb-24 md:pb-0">
+        <div className="flex-1 overflow-y-auto pb-40 md:pb-0">
           <div className="px-4 md:px-6 py-6 space-y-8">
             {/* Options Section - Enhanced Mobile Design */}
             <section>
@@ -139,76 +199,87 @@ export default function ServiceDetailModal({
                   <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
                   <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
                   
-                  <div className="overflow-x-auto scrollbar-hide px-1">
+                  <div 
+                    className="overflow-x-auto scrollbar-hide px-1"
+                    style={{ 
+                      overscrollBehaviorX: 'contain',
+                      WebkitOverflowScrolling: 'touch',
+                      touchAction: 'pan-x'
+                    }}
+                    onTouchMove={(e) => e.stopPropagation()}
+                  >
                     <div className="flex gap-3 pb-2">
-                      {service.options.map((option) => (
-                        <div
-                          key={option.id}
-                          className={`flex-shrink-0 w-40 border-2 rounded-xl overflow-hidden transition-all ${
-                            selectedOption === option.id
-                              ? 'border-orange-500 shadow-lg'
-                              : 'border-gray-200 hover:border-orange-300 hover:shadow-sm'
-                          }`}
-                        >
-                      {/* Option Image - Compact */}
-                      <div className="relative w-full aspect-square bg-gray-100">
-                        {option.image ? (
-                          <Image
-                            src={option.image}
-                            alt={option.name}
-                            fill
-                            className="object-contain p-2"
-                            sizes="(max-width: 768px) 50vw, 25vw"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center text-gray-300">
-                            <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                          </div>
-                        )}
-                        {/* Selection indicator */}
-                        {selectedOption === option.id && (
-                          <div className="absolute top-1.5 right-1.5 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center shadow-md">
-                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Option Details - Compact */}
-                      <div className="p-2.5">
-                        {/* Name */}
-                        <h4 className="font-bold text-xs text-gray-900 mb-1 line-clamp-1">
-                          {option.name}
-                        </h4>
-
-                        {/* Time Duration */}
-                        <div className="flex items-center gap-0.5 text-[10px] text-gray-600 mb-1.5">
-                          <Clock className="w-3 h-3" />
-                          <span>{option.estimatedTime}</span>
+                      {service.options.map((option) => {
+                        const isSelected = selectedOptions.has(option.id);
+                        return (
+                          <div
+                            key={option.id}
+                            className={`flex-shrink-0 w-40 border-2 rounded-xl overflow-hidden transition-all ${
+                              isSelected
+                                ? 'border-orange-500 shadow-lg'
+                                : 'border-gray-200 hover:border-orange-300 hover:shadow-sm'
+                            }`}
+                          >
+                        {/* Option Image - Compact */}
+                        <div className="relative w-full aspect-square bg-gray-100">
+                          {option.image ? (
+                            <Image
+                              src={option.image}
+                              alt={option.name}
+                              fill
+                              className="object-contain p-2"
+                              sizes="(max-width: 768px) 50vw, 25vw"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center text-gray-300">
+                              <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                            </div>
+                          )}
+                          {/* Selection indicator */}
+                          {isSelected && (
+                            <div className="absolute top-1.5 right-1.5 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center shadow-md">
+                              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </div>
+                          )}
                         </div>
 
-                        {/* Price */}
-                        <div className="text-base font-bold text-gray-900 mb-2">
-                          ₹{option.price.toLocaleString()}
-                        </div>
+                        {/* Option Details - Compact */}
+                        <div className="p-2.5">
+                          {/* Name */}
+                          <h4 className="font-bold text-xs text-gray-900 mb-1 line-clamp-1">
+                            {option.name}
+                          </h4>
 
-                        {/* Add Button - Compact */}
-                        <button
-                          onClick={() => setSelectedOption(option.id)}
-                          className={`w-full py-2 rounded-lg font-semibold text-xs transition-all active:scale-95 ${
-                            selectedOption === option.id
-                              ? 'bg-orange-500 text-white shadow-sm'
-                              : 'bg-white text-orange-600 border-2 border-orange-600 hover:bg-orange-50'
-                          }`}
-                        >
-                          {selectedOption === option.id ? 'Selected' : 'Add'}
-                        </button>
+                          {/* Time Duration */}
+                          <div className="flex items-center gap-0.5 text-[10px] text-gray-600 mb-1.5">
+                            <Clock className="w-3 h-3" />
+                            <span>{option.estimatedTime}</span>
+                          </div>
+
+                          {/* Price */}
+                          <div className="text-base font-bold text-gray-900 mb-2">
+                            ₹{option.price.toLocaleString()}
+                          </div>
+
+                          {/* Add/Remove Button - Compact */}
+                          <button
+                            onClick={() => toggleOptionSelection(option.id)}
+                            className={`w-full py-2 rounded-lg font-semibold text-xs transition-all active:scale-95 ${
+                              isSelected
+                                ? 'bg-orange-500 text-white shadow-sm'
+                                : 'bg-white text-orange-600 border-2 border-orange-600 hover:bg-orange-50'
+                            }`}
+                          >
+                            {isSelected ? 'Selected ✓' : 'Select'}
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
               
@@ -373,40 +444,55 @@ export default function ServiceDetailModal({
         </div>
 
         {/* Sticky Footer - Enhanced Mobile Design */}
-        <div className="fixed md:sticky bottom-0 left-0 right-0 md:left-auto md:right-auto bg-gradient-to-t from-white via-white to-white/95 border-t-2 border-orange-200 px-3 md:px-6 py-3 shadow-2xl backdrop-blur-sm z-20">
-          <div className="flex items-center gap-3">
-            {selectedOption ? (
-              <>
+        <div className="sticky bottom-0 left-0 right-0 bg-white border-t-2 border-orange-200 px-3 md:px-6 py-3 shadow-2xl z-30 mt-auto mb-16 md:mb-0">
+          {selectedCount > 0 ? (
+            <div className="space-y-2">
+              {/* Price and Add to Cart */}
+              <div className="flex items-center gap-3">
                 <div className="flex-1 min-w-0">
-                  <div className="text-[10px] text-gray-500 uppercase tracking-wide">Total Price</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wide">
+                    Total Price ({selectedCount} {selectedCount === 1 ? 'item' : 'items'})
+                  </div>
                   <div className="text-xl md:text-2xl font-bold text-orange-600 leading-tight">
                     ₹{totalPrice.toLocaleString()}
                   </div>
                   <div className="text-[10px] text-gray-500">
-                    {quantity} × ₹{selectedOptionData?.price.toLocaleString()}
+                    Tap items above to add or remove
                   </div>
                 </div>
                 <button
                   onClick={handleAddToCart}
                   className="px-6 md:px-8 py-3 md:py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm md:text-base font-bold rounded-xl transition-all shadow-lg hover:shadow-xl active:scale-95 min-h-[52px] touch-manipulation flex items-center gap-2"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                  <span>Add to Cart</span>
+                  <ShoppingCart className="w-5 h-5" />
+                  <span className="hidden sm:inline">Add to Cart</span>
+                  <span className="sm:hidden">Add ({selectedCount})</span>
                 </button>
-              </>
-            ) : (
-              <div className="flex-1 text-center py-2">
-                <p className="text-sm font-semibold text-gray-700 mb-1">
-                  👆 Please select a service option above
-                </p>
-                <p className="text-xs text-gray-500">
-                  Choose from {service.options.length} available options
+              </div>
+              
+              {/* Continue Shopping hint */}
+              <div className="text-center">
+                <p className="text-[10px] text-gray-500">
+                  � Yoeu can add more services or{' '}
+                  <button
+                    onClick={handleViewCart}
+                    className="text-orange-600 font-semibold hover:underline"
+                  >
+                    view cart
+                  </button>
                 </p>
               </div>
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className="flex-1 text-center py-2">
+              <p className="text-sm font-semibold text-gray-700 mb-1">
+                👆 Select one or more service options
+              </p>
+              <p className="text-xs text-gray-500">
+                You can select multiple options at once
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

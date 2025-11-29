@@ -109,7 +109,7 @@ export function WhyChooseUsWithStats() {
   return (
     <section ref={sectionRef} className="relative overflow-hidden">
       {/* Stats Section - Orange Background */}
-      <div className="bg-gradient-to-r from-orange-600 to-orange-800 py-16 md:py-20 relative">
+      <div className="bg-gradient-to-r from-orange-600 to-orange-800 py-8 md:py-10 relative">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -122,17 +122,17 @@ export function WhyChooseUsWithStats() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Title */}
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 px-4">
+          <div className="text-center mb-5 md:mb-6">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-1.5 px-4">
               Why 5000+ Customers Trust Us
             </h2>
-            <p className="text-sm md:text-base lg:text-lg text-orange-100 max-w-3xl mx-auto px-4">
+            <p className="text-xs md:text-sm text-orange-100 max-w-2xl mx-auto px-4">
               Proven track record of excellence in aluminium, glass, and netting solutions
             </p>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {stats.map((stat, index) => (
               <StatItem
                 key={stat.id}
@@ -146,10 +146,10 @@ export function WhyChooseUsWithStats() {
       </div>
 
       {/* Why Choose Us Section - White Background */}
-      <div className="bg-white py-16 md:py-24">
+      <div className="bg-white py-8 md:py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Value Propositions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {valuePropositions.map((proposition, index) => (
               <div
                 key={proposition.id}
@@ -158,19 +158,19 @@ export function WhyChooseUsWithStats() {
                   animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                 }}
               >
-                <div className="flex flex-col items-center text-center p-4 md:p-6 rounded-xl transition-all duration-300 hover:bg-orange-50 hover:shadow-lg">
+                <div className="flex flex-col items-center text-center p-3 md:p-4 rounded-lg transition-all duration-300 hover:bg-orange-50 hover:shadow-md">
                   {/* Icon */}
-                  <div className="mb-3 md:mb-4 p-3 md:p-4 bg-orange-100 rounded-full text-orange-600 transition-all duration-300 group-hover:bg-orange-600 group-hover:text-white group-hover:scale-110">
+                  <div className="mb-2 md:mb-3 p-2.5 md:p-3 bg-orange-100 rounded-full text-orange-600 transition-all duration-300 group-hover:bg-orange-600 group-hover:text-white group-hover:scale-110">
                     {proposition.icon}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-2 md:mb-3">
+                  <h3 className="text-sm md:text-base font-bold text-gray-900 mb-1.5 md:mb-2">
                     {proposition.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                  <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
                     {proposition.description}
                   </p>
                 </div>
@@ -233,20 +233,20 @@ function StatItem({ stat, isVisible, delay }: StatItemProps) {
   return (
     <div className="text-center group">
       {/* Icon */}
-      <div className="flex justify-center mb-4">
-        <div className="p-4 bg-white/10 rounded-full text-white group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
+      <div className="flex justify-center mb-2">
+        <div className="p-2.5 bg-white/10 rounded-full text-white group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
           {stat.icon}
         </div>
       </div>
 
       {/* Counter */}
-      <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 md:mb-2">
+      <div className="text-2xl md:text-3xl font-bold text-white mb-0.5">
         {count.toLocaleString()}
         {stat.suffix && <span className="text-orange-200">{stat.suffix}</span>}
       </div>
 
       {/* Label */}
-      <div className="text-xs md:text-sm lg:text-base text-orange-100 font-medium">
+      <div className="text-[10px] md:text-xs text-orange-100 font-medium">
         {stat.label}
       </div>
     </div>

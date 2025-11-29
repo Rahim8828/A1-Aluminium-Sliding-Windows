@@ -80,7 +80,7 @@ export function PriceCalculator() {
   const estimate = calculatePrice();
 
   return (
-    <section className="py-12 md:py-24 bg-gradient-to-br from-orange-50 via-amber-50 to-blue-50 relative overflow-hidden">
+    <section className="py-8 md:py-12 bg-gradient-to-br from-orange-50 via-amber-50 to-blue-50 relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-96 h-96 bg-orange-500 rounded-full blur-3xl animate-pulse" />
@@ -104,24 +104,24 @@ export function PriceCalculator() {
         </div>
 
         {/* Desktop Header */}
-        <div className="hidden lg:block text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full mb-6 shadow-2xl animate-bounce">
-            <Calculator className="w-10 h-10 text-white" />
+        <div className="hidden lg:block text-center mb-6 md:mb-8">
+          <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full mb-3 shadow-lg">
+            <Calculator className="w-7 h-7 text-white" />
           </div>
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-semibold">
+          <div className="inline-block mb-2">
+            <span className="px-3 py-1.5 bg-orange-100 text-orange-600 rounded-full text-xs font-semibold">
               💰 Pricing Tool
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Quick Price Estimator
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Get an instant estimate for your project. No hidden charges, transparent pricing.
+          <p className="text-sm md:text-base text-gray-600 max-w-xl mx-auto">
+            Get an instant estimate. No hidden charges, transparent pricing.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl lg:rounded-3xl shadow-2xl p-4 lg:p-10 border-2 border-orange-100">
+        <div className="bg-white rounded-xl lg:rounded-2xl shadow-xl p-4 lg:p-6 border border-orange-100">
           <div className="space-y-4 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6 mb-4 lg:mb-6">
             {/* Service Selection */}
             <div>

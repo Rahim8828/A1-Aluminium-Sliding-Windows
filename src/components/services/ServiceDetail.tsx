@@ -39,7 +39,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
               src={service.images[selectedImage] || '/website-images/placeholder-service.jpg'}
               alt={`${service.title} - Professional installation example ${selectedImage + 1} in Mumbai`}
               fill
-              className="object-cover"
+              className="object-contain p-2"
               sizes="(max-width: 1024px) 100vw, 50vw"
               quality={90}
               priority
@@ -53,7 +53,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`relative h-20 w-full overflow-hidden rounded-md transition-all ${
+                  className={`relative h-20 w-full overflow-hidden rounded-md transition-all bg-gray-50 ${
                     selectedImage === index
                       ? 'ring-2 ring-orange-600 ring-offset-2'
                       : 'opacity-70 hover:opacity-100'
@@ -63,7 +63,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
                     src={image}
                     alt={`${service.title} thumbnail ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-contain p-1"
                     sizes="100px"
                     quality={75}
                   />

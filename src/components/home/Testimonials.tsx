@@ -31,36 +31,36 @@ export function Testimonials() {
   const averageRating = (testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length).toFixed(1);
 
   return (
-    <section className="py-12 md:py-20 bg-gray-50 relative overflow-hidden">
+    <section className="py-8 md:py-12 bg-gray-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-30" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-30" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
             What Our Customers Say
           </h2>
-          <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from our satisfied customers across Mumbai
+          <p className="text-xs md:text-sm text-gray-600 max-w-xl mx-auto">
+            Hear from our satisfied customers across Mumbai
           </p>
         </div>
 
         {/* Testimonial Card */}
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 relative">
+          <div className="bg-white rounded-xl shadow-lg p-5 md:p-6 relative">
             {/* Quote Icon */}
-            <div className="absolute top-4 right-4 md:top-6 md:right-6 text-6xl md:text-8xl text-gray-100 font-serif leading-none">
+            <div className="absolute top-3 right-3 md:top-4 md:right-4 text-4xl md:text-5xl text-gray-100 font-serif leading-none">
               "
             </div>
 
             {/* Stars */}
-            <div className="flex gap-1 mb-4 md:mb-6">
+            <div className="flex gap-0.5 mb-3 md:mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-5 h-5 md:w-6 md:h-6 ${
+                  className={`w-4 h-4 md:w-5 md:h-5 ${
                     i < currentTestimonial.rating
                       ? 'text-yellow-400 fill-current'
                       : 'text-gray-300'
@@ -70,26 +70,26 @@ export function Testimonials() {
             </div>
 
             {/* Testimonial Text */}
-            <p className="text-base md:text-xl text-gray-700 leading-relaxed mb-6 md:mb-8 relative z-10">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4 md:mb-5 relative z-10">
               "{currentTestimonial.text}"
             </p>
 
             {/* Customer Info */}
-            <div className="border-t border-gray-200 pt-4 md:pt-6">
-              <h4 className="text-lg md:text-xl font-bold text-gray-900">
+            <div className="border-t border-gray-200 pt-3 md:pt-4">
+              <h4 className="text-base md:text-lg font-bold text-gray-900">
                 {currentTestimonial.name}
               </h4>
-              <p className="text-sm md:text-base text-gray-600 mb-2">
+              <p className="text-xs md:text-sm text-gray-600 mb-1">
                 {currentTestimonial.location}
               </p>
-              <span className="inline-block bg-orange-100 text-orange-700 text-xs md:text-sm px-3 py-1 rounded-full font-medium">
+              <span className="inline-block bg-orange-100 text-orange-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-medium">
                 {currentTestimonial.service}
               </span>
             </div>
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-center gap-4 mt-6 md:mt-8">
+          <div className="flex items-center justify-center gap-3 mt-4 md:mt-6">
             {/* Previous Button */}
             <button
               onClick={prevTestimonial}
@@ -130,13 +130,13 @@ export function Testimonials() {
           </div>
 
           {/* Rating Badge */}
-          <div className="flex justify-center mt-6 md:mt-8">
-            <div className="bg-white rounded-full shadow-lg px-4 md:px-6 py-2 md:py-3 flex items-center gap-2">
-              <Star className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 fill-current" />
-              <span className="text-lg md:text-xl font-bold text-gray-900">
+          <div className="flex justify-center mt-4 md:mt-5">
+            <div className="bg-white rounded-full shadow-md px-3 md:px-4 py-1.5 md:py-2 flex items-center gap-1.5">
+              <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-current" />
+              <span className="text-sm md:text-base font-bold text-gray-900">
                 {averageRating}/5
               </span>
-              <span className="text-sm md:text-base text-gray-600">
+              <span className="text-xs md:text-sm text-gray-600">
                 from {testimonials.length}+ reviews
               </span>
             </div>

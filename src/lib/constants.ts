@@ -77,10 +77,10 @@ export const BUSINESS_INFO = {
 // Navigation Links
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Products', href: '/products' },
   { label: 'Contact', href: '/contact' },
+  { label: 'About', href: '/about' },
 ];
 
 // Service Categories
@@ -104,7 +104,6 @@ export const SERVICE_CATEGORIES = [
 
 // Trust Badges
 export const TRUST_BADGES = [
-  'ISO Certified',
   '15+ Years Experience',
   '5000+ Projects',
   'Licensed & Insured',

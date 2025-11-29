@@ -98,17 +98,17 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-20">
+      <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-8 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
               About {BUSINESS_INFO.name}
             </h1>
-            <p className="text-xl md:text-2xl text-orange-100 mb-8">
+            <p className="text-sm md:text-lg text-orange-100 mb-2 md:mb-4">
               {BUSINESS_INFO.tagline}
             </p>
-            <p className="text-lg text-orange-50">
-              Serving Mumbai with excellence since{' '}
+            <p className="text-xs md:text-base text-orange-50">
+              Serving Mumbai since{' '}
               {new Date().getFullYear() - BUSINESS_INFO.stats.yearsOfExperience}
             </p>
           </div>
@@ -116,14 +116,14 @@ export default function AboutPage() {
       </section>
 
       {/* Company Story */}
-      <section className="py-16 bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">
                 Our Story
               </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-3 text-gray-700 leading-relaxed text-sm md:text-base">
                 <p>
                   Founded over {BUSINESS_INFO.stats.yearsOfExperience} years ago,
                   A1 Aluminium, Glass & Netting Solutions has grown from a small
@@ -151,13 +151,13 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative h-96 md:h-full min-h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-700/20" />
+            <div className="relative h-48 md:h-80 rounded-lg overflow-hidden shadow-xl bg-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-orange-700/10 z-10" />
               <Image
-                src="/images/about-company.jpg"
-                alt="A1 Aluminium, Glass & Netting Solutions team providing professional installation services in Mumbai"
+                src="/aluminium-category/Showroom-front.webp"
+                alt="A1 Aluminium, Glass & Netting Solutions - Professional installation services in Mumbai"
                 fill
-                className="object-cover"
+                className="object-contain p-4"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={90}
               />
@@ -167,39 +167,39 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Counter */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-6 md:py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <StatsCounter />
         </div>
       </section>
 
       {/* Our Values */}
-      <section className="py-16 bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
               Our Core Values
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xs md:text-sm text-gray-600 max-w-xl mx-auto">
               The principles that guide everything we do
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+                  className="bg-white border border-gray-200 rounded-lg p-3 md:p-4 hover:shadow-md transition-shadow duration-300"
                 >
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-orange-600" />
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-2 md:mb-3">
+                    <Icon className="w-4 h-4 md:w-5 md:h-5 text-orange-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-1">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600">{value.description}</p>
+                  <p className="text-[10px] md:text-xs text-gray-600">{value.description}</p>
                 </div>
               );
             })}
@@ -208,25 +208,25 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 md:py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
               Why Choose A1 Aluminium?
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Here&apos;s what sets us apart from the competition
+            <p className="text-xs md:text-sm text-gray-600 max-w-xl mx-auto">
+              What sets us apart from the competition
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 max-w-3xl mx-auto">
             {whyChooseUs.map((reason, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 bg-white p-4 rounded-lg border border-gray-200"
+                className="flex items-start gap-2 bg-white p-2.5 md:p-3 rounded-lg border border-gray-200"
               >
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">{reason}</span>
+                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                <span className="text-xs md:text-sm text-gray-700">{reason}</span>
               </div>
             ))}
           </div>
@@ -234,35 +234,35 @@ export default function AboutPage() {
       </section>
 
       {/* Service Areas */}
-      <section className="py-16 bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
               Areas We Serve
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xs md:text-sm text-gray-600 max-w-xl mx-auto">
               Providing quality services across Mumbai
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3 max-w-4xl mx-auto">
             {BUSINESS_INFO.serviceAreas.map((area, index) => (
               <div
                 key={index}
-                className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center hover:bg-orange-100 transition-colors duration-300"
+                className="bg-orange-50 border border-orange-200 rounded-lg p-2 md:p-3 text-center hover:bg-orange-100 transition-colors duration-300"
               >
-                <span className="text-gray-800 font-medium">{area}</span>
+                <span className="text-gray-800 font-medium text-xs md:text-sm">{area}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 text-center">
-            <p className="text-gray-600 mb-4">
-              Don&apos;t see your area listed? Contact us to check availability!
+          <div className="mt-4 md:mt-6 text-center">
+            <p className="text-xs md:text-sm text-gray-600 mb-3">
+              Don&apos;t see your area? Contact us!
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
+              className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-5 py-2 text-sm rounded-lg transition-colors duration-300"
             >
               Contact Us
             </Link>
@@ -271,16 +271,15 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-orange-600 to-orange-800 text-white">
+      <section className="py-8 md:py-12 bg-gradient-to-br from-orange-600 to-orange-800 text-white pb-24 md:pb-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-orange-100 mb-8">
-            Get a free consultation and quote today. Our experts are ready to help
-            you.
+          <p className="text-sm md:text-base text-orange-100 mb-4 md:mb-6">
+            Get a free consultation and quote today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <CallButton
               phoneNumber={BUSINESS_INFO.phone.primary}
               variant="secondary"
@@ -292,11 +291,10 @@ export default function AboutPage() {
               position="inline"
             />
           </div>
-          <div className="mt-8 flex items-center justify-center gap-2 text-orange-100">
-            <Phone className="w-5 h-5" />
+          <div className="mt-4 md:mt-6 flex items-center justify-center gap-2 text-orange-100 text-xs md:text-sm">
+            <Phone className="w-4 h-4" />
             <span>
-              Call us: {BUSINESS_INFO.phone.display} | Available{' '}
-              {BUSINESS_INFO.hours.weekdays}
+              {BUSINESS_INFO.phone.display}
             </span>
           </div>
         </div>

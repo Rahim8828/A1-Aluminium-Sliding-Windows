@@ -1,12 +1,10 @@
 'use client';
 
-import { MessageCircle, X } from 'lucide-react';
-import { useState } from 'react';
+import { MessageCircle } from 'lucide-react';
 
 export function FloatingWhatsApp() {
   const phoneNumber = '918828663585';
   const defaultMessage = 'Hi! I would like to know more about your services.';
-  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
@@ -18,8 +16,6 @@ export function FloatingWhatsApp() {
       {/* WhatsApp Button - Aligned with Activity Feed */}
       <button
         onClick={handleWhatsAppClick}
-        onMouseEnter={() => setShowTooltip(true)}
-        onMouseLeave={() => setShowTooltip(false)}
         className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-50 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 active:bg-green-800 text-white rounded-full p-3 md:p-5 shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group touch-manipulation"
         aria-label="Chat on WhatsApp"
         style={{ 

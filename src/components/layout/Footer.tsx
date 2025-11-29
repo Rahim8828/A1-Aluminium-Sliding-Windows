@@ -129,7 +129,7 @@ export default function Footer() {
                     className="text-sm hover:text-orange-500 transition-colors block font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-1"
                     aria-label={`Call primary phone number ${BUSINESS_INFO.phone.display}`}
                   >
-                    📞 {BUSINESS_INFO.phone.display}
+                    {BUSINESS_INFO.phone.display}
                   </a>
                   {BUSINESS_INFO.phone.secondary && (
                     <a
@@ -138,7 +138,7 @@ export default function Footer() {
                       className="text-sm hover:text-orange-500 transition-colors block focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-1"
                       aria-label={`Call secondary phone number ${BUSINESS_INFO.phone.secondary}`}
                     >
-                      📞 {BUSINESS_INFO.phone.secondary}
+                      {BUSINESS_INFO.phone.displaySecondary}
                     </a>
                   )}
                 </div>
@@ -204,7 +204,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800 bg-gray-950">
-        <div className="container mx-auto px-4 py-3 pb-16 lg:pb-6">
+        <div className="container mx-auto px-4 py-3 pb-20 md:pb-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <p className="text-xs md:text-sm text-gray-400 text-center md:text-left">
               © {currentYear} {BUSINESS_INFO.name}. All rights reserved.

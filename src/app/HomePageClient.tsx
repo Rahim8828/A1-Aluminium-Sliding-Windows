@@ -78,7 +78,7 @@ export default function HomePageClient() {
 
   return (
     <>
-      <div className="min-h-screen pb-32 md:pb-0">
+      <div className="min-h-screen pb-24 md:pb-0">
         {/* Hero Section - Same for Mobile & Desktop */}
         <MobileHeroSection onServiceClick={handleServiceClick} />
 
@@ -106,10 +106,8 @@ export default function HomePageClient() {
         {/* Final CTA Section */}
         <FinalCTA />
 
-        {/* Mobile Bottom Sticky CTA - Only on Mobile */}
-        <div className="lg:hidden">
-          <MobileBottomCTA />
-        </div>
+        {/* Mobile Bottom Sticky CTA - Removed as it conflicts with MobileNav */}
+        {/* MobileBottomCTA was causing overlap with bottom navigation */}
       </div>
 
       {/* Service Detail Modal */}
