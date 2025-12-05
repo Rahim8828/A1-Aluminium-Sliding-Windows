@@ -38,6 +38,7 @@ export interface Service {
   faqs: FAQItem[];
   trustBadges: TrustBadge[];
   relatedServices: string[];
+  visitingCharge?: number;
 }
 
 export interface FAQItem {
