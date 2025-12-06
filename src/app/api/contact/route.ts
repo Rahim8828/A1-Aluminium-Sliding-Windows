@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ContactFormData } from '@/types';
 
+// Use Edge Runtime to reduce bundle size
+export const runtime = 'edge';
+
 // Rate limiting configuration
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const MAX_REQUESTS_PER_WINDOW = 3; // 3 requests per minute per IP
