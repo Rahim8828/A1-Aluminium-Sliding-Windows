@@ -27,7 +27,7 @@ export function generateSEOMetadata({
   modifiedTime,
   author,
 }: SEOHeadProps): Metadata {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminiumglassnetting.com';
   const fullTitle = title.includes('A1 Aluminium') ? title : `${title} | A1 Aluminium Solutions`;
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : undefined;
   const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;

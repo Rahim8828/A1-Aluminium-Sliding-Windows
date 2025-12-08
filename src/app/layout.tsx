@@ -36,7 +36,7 @@ const poppins = Poppins({
 
 // Root metadata configuration
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminiumglassnetting.com'),
   title: {
     default: `${BUSINESS_INFO.name} | ${BUSINESS_INFO.tagline}`,
     template: `%s | ${BUSINESS_INFO.name}`,

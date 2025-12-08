@@ -89,7 +89,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://a1aluminium.com/blog/${post.slug}`,
+      '@id': `https://a1aluminiumglassnetting.com/blog/${post.slug}`,
     },
     keywords: post.tags.join(', '),
     articleSection: post.category,

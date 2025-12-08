@@ -4,7 +4,7 @@ import { BUSINESS_INFO } from './constants';
  * Generate LocalBusiness schema for the business
  */
 export function generateLocalBusinessSchema() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminiumglassnetting.com';
 
   return {
     '@context': 'https://schema.org',
@@ -72,7 +72,7 @@ export function generateServiceSchema(service: {
   url: string;
   areaServed?: string[];
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminiumglassnetting.com';
 
   // Generate areaServed based on provided areas or default to Mumbai
   const areaServedSchema = service.areaServed
@@ -121,7 +121,7 @@ export function generateArticleSchema(article: {
   author: string;
   url: string;
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminiumglassnetting.com';
 
   return {
     '@context': 'https://schema.org',
@@ -160,7 +160,7 @@ export function generateReviewSchema(review: {
   reviewBody: string;
   datePublished: string;
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminiumglassnetting.com';
 
   return {
     '@context': 'https://schema.org',
@@ -189,7 +189,7 @@ export function generateReviewSchema(review: {
  * Generate BreadcrumbList schema for navigation
  */
 export function generateBreadcrumbSchema(breadcrumbs: Array<{ name: string; url: string }>) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminiumglassnetting.com';
 
   return {
     '@context': 'https://schema.org',
