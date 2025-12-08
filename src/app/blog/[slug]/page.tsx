@@ -6,9 +6,9 @@ import RelatedPosts from '@/components/blog/RelatedPosts';
 import { blogPosts, getPostBySlug } from '@/data/blog-posts';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Enable ISR - revalidate every 3600 seconds (1 hour)
@@ -23,7 +23,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return {
@@ -59,8 +60,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -106,34 +108,34 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="min-h-screen bg-gray-50">
         {/* Breadcrumb */}
         <div className="bg-white border-b border-gray-200">
-          <div className="container mx-auto px-4 py-4">
-            <nav className="flex items-center gap-2 text-sm text-gray-600">
-              <Link href="/" className="hover:text-orange-600">
+          <div className="container mx-auto px-4 py-3 md:py-4">
+            <nav className="flex items-center gap-1.5 md:gap-2 text-xs md:text-sm text-gray-600 overflow-x-auto">
+              <Link href="/" className="hover:text-orange-600 whitespace-nowrap">
                 Home
               </Link>
               <span>/</span>
-              <Link href="/blog" className="hover:text-orange-600">
+              <Link href="/blog" className="hover:text-orange-600 whitespace-nowrap">
                 Blog
               </Link>
               <span>/</span>
-              <span className="text-gray-900">{post.title}</span>
+              <span className="text-gray-900 truncate">{post.title}</span>
             </nav>
           </div>
         </div>
 
         {/* Blog Post Content */}
-        <article className="py-12">
+        <article className="py-6 md:py-10 lg:py-12">
           <div className="container mx-auto px-4">
             <BlogPost post={post} />
           </div>
         </article>
 
         {/* Related Posts */}
-        <section className="py-16 bg-white">
+        <section className="py-8 md:py-12 lg:py-16 bg-white">
           <div className="container mx-auto px-4">
             <RelatedPosts 
               posts={blogPosts} 
-              currentPostSlug={params.slug}
+              currentPostSlug={slug}
               category={post.category}
               tags={post.tags}
               maxPosts={3}
@@ -142,30 +144,30 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-16">
+        <section className="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-8 md:py-12 lg:py-16 pb-20 md:pb-12">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
               Ready to Start Your Project?
             </h2>
-            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-sm md:text-lg lg:text-xl text-orange-100 mb-6 md:mb-8 max-w-2xl mx-auto">
               Get expert advice and a free quote for your aluminium, glass, or netting needs
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <a
                 href="tel:+919876543210"
-                className="inline-block bg-white text-orange-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+                className="inline-block bg-white text-orange-600 px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-gray-100 transition-colors"
               >
                 📞 Call Now
               </a>
               <a
                 href="https://wa.me/919876543210"
-                className="inline-block bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-colors"
+                className="inline-block bg-green-500 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-green-600 transition-colors"
               >
                 💬 WhatsApp Us
               </a>
               <a
                 href="/contact"
-                className="inline-block bg-orange-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-800 transition-colors border-2 border-white"
+                className="inline-block bg-orange-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-orange-800 transition-colors border-2 border-white"
               >
                 📧 Contact Form
               </a>

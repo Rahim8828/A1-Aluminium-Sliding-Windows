@@ -52,15 +52,15 @@ export default function RelatedPosts({
   }
 
   return (
-    <section className="mt-16 pt-16 border-t border-gray-200">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Related Articles</h2>
-        <p className="text-gray-600">
+    <section className="mt-8 md:mt-12 lg:mt-16 pt-8 md:pt-12 lg:pt-16 border-t border-gray-200">
+      <div className="mb-6 md:mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Related Articles</h2>
+        <p className="text-sm md:text-base text-gray-600">
           Continue reading with these related posts
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {scoredPosts.map((post) => (
           <BlogCard key={post.slug} post={post} />
         ))}

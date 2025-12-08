@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days cache for images
     dangerouslyAllowSVG: true,
+    qualities: [75, 85, 90], // Add quality options for images
     // Disable optimization for Netlify - let Netlify plugin handle it
     unoptimized: true,
     remotePatterns: [],
