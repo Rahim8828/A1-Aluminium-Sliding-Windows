@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/blog-posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminium.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://a1aluminiumglassnetting.com';
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
